@@ -1,7 +1,3 @@
-<?php include 'head.html' ?>
-
-<?php include 'header.html' ?>
-
     <!-- featured
     ================================================== -->
     <section class="s-featured">
@@ -22,14 +18,14 @@
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0"><?= $billet['id']; ?></a></span>
 
-                                <h1><a href="#0" title="">What Your Music Preference Says About You and Your Personality.</a></h1>
+                                <h1><a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>" title="">What Your Music Preference Says About You and Your Personality.</a></h1>
 
                                 <div class="entry__info">
                                     <a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>" class="entry__profile-pic">
                                         <img class="avatar" src="contenu/images/avatars/user-03.jpg" alt="">
                                     </a>
                                     <ul class="entry__meta">
-                                        <li><a href="#0"> <?= $billet['auteur']?></a></li>
+                                        <li><a href="#0"> Jean Forteroche</a></li>
                                         <li><?= $billet['date']?></li>
                                     </ul>
                                 </div>
