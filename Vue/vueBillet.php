@@ -287,28 +287,24 @@
                 <!-- START respond -->
                 <div id="respond" class="col-full">
 
-                    <h3 class="h2">Add Comment <span>Your email address will not be published</span></h3>
+                    <h3 class="h2">Laisser un commentaire</h3>
 
                     <form name="contactForm" id="contactForm" method="post" action="" autocomplete="off">
                         <fieldset>
 
                             <div class="form-field">
-                                <input name="cName" id="cName" class="full-width" placeholder="Your Name*" value="" type="text">
+                                <input name="auteur" id="auteur" class="full-width" placeholder="Votre Nom*" value="" type="text">
                             </div>
 
                             <div class="form-field">
-                                <input name="cEmail" id="cEmail" class="full-width" placeholder="Your Email*" value="" type="text">
-                            </div>
-
-                            <div class="form-field">
-                                <input name="cWebsite" id="cWebsite" class="full-width" placeholder="Website" value="" type="text">
+                                <input name="Email" id="Email" class="full-width" placeholder="Votre Email*" value="" type="text">
                             </div>
 
                             <div class="message form-field">
-                                <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message*"></textarea>
+                                <textarea name="Message" id="Message" class="full-width" placeholder="Votre Message*"></textarea>
                             </div>
 
-                            <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Add Comment" type="submit">
+                            <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Ajouter un commentaire" type="submit">
 
                         </fieldset>
                     </form> <!-- end form -->
@@ -323,113 +319,6 @@
     </section> <!-- end s-content -->
 
 
-    <!-- s-extra
-    ================================================== -->
-    <section class="s-extra">
-
-        <div class="row">
-
-            <div class="col-seven md-six tab-full popular">
-                <h3>Popular Posts</h3>
-
-                <div class="block-1-2 block-m-full popular__posts">
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/tulips-150.jpg" alt="">
-                        </a>
-                        <h5>10 Interesting Facts About Caffeine.</h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0">John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2018-06-14">Jun 14, 2018</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/wheel-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Visiting Theme Parks Improves Your Health.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0">John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2018-06-12">Jun 12, 2018</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/shutterbug-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Key Benefits Of Family Photography.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0">John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2018-06-12">Jun 12, 2018</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/cookies-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Absolutely No Sugar Oatmeal Cookies.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2018-06-12">Jun 12, 2018</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/beetle-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Throwback To The Good Old Days.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0">John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2018-06-12">Jun 12, 2018</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/salad-150.jpg" alt="">
-                        </a>
-                        <h5>Healthy Mediterranean Salad Recipes</h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2018-06-12">Jun 12, 2018</time></span>
-                        </section>
-                    </article>
-                </div> <!-- end popular_posts -->
-            </div> <!-- end popular -->
-
-            <div class="col-four md-six tab-full end">
-                <div class="row">
-                    <div class="col-six md-six mob-full categories">
-                        <h3>Categories</h3>
-
-                        <ul class="linklist">
-                            <li><a href="#0">Lifestyle</a></li>
-                            <li><a href="#0">Travel</a></li>
-                            <li><a href="#0">Recipes</a></li>
-                            <li><a href="#0">Management</a></li>
-                            <li><a href="#0">Health</a></li>
-                            <li><a href="#0">Creativity</a></li>
-                        </ul>
-                    </div> <!-- end categories -->
-
-                    <div class="col-six md-six mob-full sitelinks">
-                        <h3>Site Links</h3>
-
-                        <ul class="linklist">
-                            <li><a href="#0">Home</a></li>
-                            <li><a href="#0">Blog</a></li>
-                            <li><a href="#0">Styles</a></li>
-                            <li><a href="#0">About</a></li>
-                            <li><a href="#0">Contact</a></li>
-                            <li><a href="#0">Privacy Policy</a></li>
-                        </ul>
-                    </div> <!-- end sitelinks -->
-                </div>
-            </div>
-        </div> <!-- end row -->
-
-    </section> <!-- end s-extra -->
-
-
     <!-- s-footer
     ================================================== -->
     <footer class="s-footer">
@@ -439,7 +328,7 @@
 
                 <div class="col-six tab-full s-footer__about">
 
-                    <h4>About Wordsmith</h4>
+                    <h4>Concernant Jean Forteroche</h4>
 
                     <p>Fugiat quas eveniet voluptatem natus. Placeat error temporibus magnam sunt optio aliquam. Ut ut occaecati placeat at.
                     Fuga fugit ea autem. Dignissimos voluptate repellat occaecati minima dignissimos mollitia consequatur.
@@ -447,26 +336,6 @@
                     temporibus magnam est voluptatem.</p>
 
                 </div> <!-- end s-footer__about -->
-
-                <div class="col-six tab-full s-footer__subscribe">
-
-                    <h4>Our Newsletter</h4>
-
-                    <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
-
-                    <div class="subscribe-form">
-                        <form id="mc-form" class="group" novalidate="true">
-
-                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
-
-                            <input type="submit" name="subscribe" value="Send">
-
-                            <label for="mc-email" class="subscribe-message"></label>
-
-                        </form>
-                    </div>
-
-                </div> <!-- end s-footer__subscribe -->
 
             </div>
         </div> <!-- end s-footer__main -->
