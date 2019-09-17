@@ -81,7 +81,7 @@
                     <div class="entry__author-about">
                         <h5 class="entry__author-name">
                             <span>Ecrit par</span>
-                            <a href="#0">JEan Forteroche</a>
+                            <a href="#0">Jean Forteroche</a>
                         </h5>
 
                         <div class="entry__author-desc">
@@ -121,21 +121,22 @@
             <div id="comments" class="row">
                 <div class="col-full">
 
-                    <h3 class="h2">Comments</h3>
+                    <h3 class="h2">Commentaires</h3>
 
                     <!-- START commentlist -->
                     <ol class="commentlist">
 
                         <li class="depth-1 comment">
-                          <?php foreach ($commentaires as $commentaire): ?>
 
                             <div class="comment__avatar">
                                 <img class="avatar" src="contenu/images/avatars/user-01.jpg" alt="" width="50" height="50">
                             </div>
 
                             <div class="comment__content">
+                              <?php foreach ($commentaires as $commentaire): ?>
 
                                 <div class="comment__info">
+
                                     <div class="comment__author"><?= $commentaire['auteur'] ?></div>
 
                                     <div class="comment__meta">
@@ -149,9 +150,9 @@
                                 <div class="comment__text">
                                 <p><?= $commentaire['contenu'] ?></p>
                                 </div>
-
+                                <?php endforeach; ?>
                             </div>
-                          <?php endforeach; ?>
+
                         </li> <!-- end comment level 1 -->
 
                         <li class="thread-alt depth-1 comment">
