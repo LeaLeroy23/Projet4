@@ -8,7 +8,7 @@ class ControleurConnexion {
   private $connexion;
 
   public function __construct() {
-    $this->Connect = new Connect();
+    $this->Connect = new Connexion();
   }
 
   public function connect() {

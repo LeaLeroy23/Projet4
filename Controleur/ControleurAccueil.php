@@ -1,21 +1,21 @@
 <?php
 
-require_once 'Modele/Billet.php';
+require_once 'Modele/Chapitre.php';
 require_once 'Vue/Vue.php';
 
 class ControleurAccueil {
 
-  private $billet;
+  private $chapitre;
 
   public function __construct() {
-    $this->billet = new Billet();
+    $this->chapitre = new Chapitre();
   }
 
-  // Affiche la liste de tous les billets du blog
+  // Affiche la liste de tous les chapitres du blog
   public function accueil() {
-    $billets = $this->billet->getBillets();
+    $chapitres = $this->chapitre->getChapitres();
     $vue = new Vue("Accueil");
-    $vue->generer(array('billets' => $billets));
+    $vue->generer(array('chapitres' => $chapitres));
   }
 
 }

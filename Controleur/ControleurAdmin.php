@@ -11,11 +11,11 @@ class ControleurAdmin {
     $this->Admin = new Admin();
   }
 
-  // Affiche la liste de tous les billets du blog
+  // Affiche la liste de tous les chapitres du blog
   public function admin() {
-    $billets = $this->billet->getBillets();
+    $chapitres = $this->chapitre->getChapitres();
     $vue = new Vue("Admin");
-    $vue->generer(array('billets' => $billets));
+    $vue->generer(array('chapitres' => $chapitres));
   }
 
 }

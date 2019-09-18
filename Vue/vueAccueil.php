@@ -7,7 +7,7 @@
                 <div class="featured-slider featured" data-aos="zoom-in">
 
 
-                  <?php foreach ($billets as $billet): ?>
+                  <?php foreach ($chapitres as $chapitre): ?>
                     <div class="featured__slide">
 
                         <div class="entry">
@@ -15,17 +15,17 @@
                             <div class="entry__background" style="background-image:url('contenu/images/alaska-chapt1.jpg');"></div>
 
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0"><?= $billet['id']; ?></a></span>
+                                <span class="entry__category"><a href="#0"><?= $chapitre['id']; ?></a></span>
 
-                                <h1><a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>" title=""><?= $billet['titre']?></a></h1>
+                                <h1><a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>" title=""><?= $chapitre['titre']?></a></h1>
 
                                 <div class="entry__info">
-                                    <a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>" class="entry__profile-pic">
+                                    <a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>" class="entry__profile-pic">
                                         <img class="avatar" src="contenu/images/avatars/user-03.jpg" alt="">
                                     </a>
                                     <ul class="entry__meta">
                                         <li><a href="#0"> Jean Forteroche</a></li>
-                                        <li><?= $billet['date']?></li>
+                                        <li><?= $chapitre['date']?></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->
@@ -66,10 +66,10 @@
                                 <!--<a href="category.html">Design</a>-->
                             </div>
 
-                            <h1 class="item-entry__title"><a href="single-standard.html"><?= $billet['titre']?></a></h1>
+                            <h1 class="item-entry__title"><a href="single-standard.html"><?= $chapitre['titre']?></a></h1>
 
                             <div class="item-entry__date">
-                                <a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>"><?= $billet['date']?></a>
+                                <a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>"><?= $chapitre['date']?></a>
                             </div>
                         </div>
                     </div> <!-- item-entry -->

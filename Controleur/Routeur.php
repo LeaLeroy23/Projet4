@@ -1,20 +1,20 @@
 <?php
 // require
 require_once 'Controleur/ControleurAccueil.php';
-require_once 'Controleur/ControleurBillet.php';
+require_once 'Controleur/ControleurChapitre.php';
 require_once 'Controleur/ControleurConnexion.php';
 require_once 'Vue/vue.php';
 
 class Routeur {
     private $ctrlAccueil;
-    private $ctrlBillet;
-    private $ctrlConnect;
+    private $ctrlChapitre;
+    private $ctrlConnexion;
     //private $ctrlDashboard;
 
     public function __construct() {
         $this->ctrlAccueil = new ControleurAccueil();
-        $this->ctrlBillet = new ControleurBillet();
-        $this->ctrlConnect = new ControleurConnexion();
+        $this->ctrlChapitre = new ControleurChapitre();
+        $this->ctrlConnexion = new ControleurConnexion();
         //$this->ctrDashboard = new ControleurDashboard();
     }
 
@@ -22,19 +22,19 @@ class Routeur {
     public function routerRequete() {
         try {
             if (isset($_GET['action'])) {
-                if ($_GET['action'] == 'billet') {
-                    $idBillet = intval($this->getParametre($_GET, 'id'));
-                    if ($idBillet != 0) {
-                        $this->ctrlBillet->billet($idBillet);
+                if ($_GET['action'] == 'chapitre') {
+                    $idChapitre = intval($this->getParametre($_GET, 'id'));
+                    if ($idChapitre != 0) {
+                        $this->ctrlChapitre->chapitre($idChapitre);
                     }
                     else
-                        throw new Exception("Identifiant de billet non valide");
+                        throw new Exception("Identifiant du Chapitre non valide");
                 }
                 else if ($_GET['action'] == 'commenter') {
                     $auteur = $this->getParametre($_POST, 'auteur');
                     $contenu = $this->getParametre($_POST, 'contenu');
-                    $idBillet = $this->getParametre($_POST, 'id');
-                    $this->ctrlBillet->commenter($auteur, $contenu, $idBillet);
+                    $idChapitre = $this->getParametre($_POST, 'id');
+                    $this->ctrlChapitre->commenter($auteur, $contenu, $idChapitre);
                 }
                 else
                     throw new Exception("Action non valide");

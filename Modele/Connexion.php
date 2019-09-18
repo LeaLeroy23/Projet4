@@ -1,7 +1,7 @@
 <?php
 require_once 'Modele/Modele.php';
 
-class Connect extends Modele {
+class Connexion extends Modele {
 
   //renvoie les identifiants de connexion
   public function getConnect(){
