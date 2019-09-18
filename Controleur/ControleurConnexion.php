@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Modele/Connexion.php';
-require_once 'Vue/vue.php';
+require_once '../Modele/Connexion.php';
+require_once '../Vue/vue.php';
 
 class ControleurConnexion {
 
