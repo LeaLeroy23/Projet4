@@ -6,7 +6,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <title>Alaska - Jean Forteroche</title>
-    <meta name="description" content="">
+    <meta name="description" content="Jean Forteroche écrit toute les semaines un nouveau chapitre de son nouveau livre événement">
     <meta name="author" content="Lea Leroy">
 
     <!-- mobile specific metas
@@ -39,7 +39,7 @@
 
             <div class="header__logo">
                 <a class="logo" href="index.php">
-                    <img src="images/logo.svg" alt="Homepage">
+                    Jean Forteroche
                 </a>
             </div> <!-- end header__logo -->
 
@@ -64,29 +64,25 @@
                 <h2 class="header__nav-heading h6">Navigate to</h2>
 
                 <ul class="header__nav">
-                    <li class="current"><a href="index.html" title="">Home</a></li>
-                    <li class="has-children">
-                        <a href="#0" title="">Categories</a>
-                        <ul class="sub-menu">
-                            <li><a href="category.html">Lifestyle</a></li>
-                            <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Family</a></li>
-                            <li><a href="category.html">Management</a></li>
-                            <li><a href="category.html">Travel</a></li>
-                            <li><a href="category.html">Work</a></li>
-                        </ul>
+                    <li class="current">
+                      <a href="index.php" title="">Accueil</a>
                     </li>
-                    <li class="has-children">
-                        <a href="#0" title="">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="single-video.html">Video Post</a></li>
-                            <li><a href="single-audio.html">Audio Post</a></li>
-                            <li><a href="single-standard.html">Standard Post</a></li>
-                        </ul>
+
+                    <li>
+                        <a href="Modele/chapitres.php" title="">Chapitres</a>
                     </li>
-                    <li><a href="style-guide.html" title="">Styles</a></li>
-                    <li><a href="page-about.html" title="">About</a></li>
-                    <li><a href="page-contact.html" title="">Contact</a></li>
+
+                    <li>
+                        <a href="Auteur.php" title="">Jean Forteroche</a>
+                    </li>
+
+                    <li>
+                      <a href="page-contact.php" title="">Contact</a>
+                    </li>
+
+                    <li>
+                      <a href="Modele/connexion.php" title="">Accès</a>
+                    </li>
                 </ul> <!-- end header__nav -->
 
                 <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
@@ -109,7 +105,7 @@
 
         <div class="col-six tab-full s-footer__about">
 
-            <h4>About Wordsmith</h4>
+            <h4>Concernant l'auteur</h4>
 
               <p>Fugiat quas eveniet voluptatem natus. Placeat error temporibus magnam sunt optio aliquam. Ut ut occaecati placeat at.
               Fuga fugit ea autem. Dignissimos voluptate repellat occaecati minima dignissimos mollitia consequatur.

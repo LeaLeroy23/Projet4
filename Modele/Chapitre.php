@@ -24,4 +24,6 @@ class Chapitre extends Modele {
     else
       throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
     }
+
+
 }

@@ -1,20 +1,20 @@
 <?php
 
-require_once 'Modele/Admin.php';
+require_once 'Modele/Dashboard.php';
 require_once 'Vue/vue.php';
 
-class ControleurAdmin {
+class ControleurDashboard {
 
-  private $Admin;
+  private $Dashboard;
 
   public function __construct() {
-    $this->Admin = new Admin();
+    $this->Dashboard = new Dashboard();
   }
 
   // Affiche la liste de tous les chapitres du blog
-  public function admin() {
+  public function dashboard() {
     $chapitres = $this->chapitre->getChapitres();
-    $vue = new Vue("Admin");
+    $vue = new Vue("Dashboard");
     $vue->generer(array('chapitres' => $chapitres));
   }
 

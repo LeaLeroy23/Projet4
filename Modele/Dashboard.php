@@ -1,15 +1,27 @@
 <?php
-require_once 'Modele/Modele.php'
+require_once 'Modele/Modele.php';
 
-//class Admin extends Modele {
+class Dashboard extends Modele {
 
   //renvoie la liste des billets du blog
-  public function getAllBillets(){
+  private function getChapitres(){
     $sql = 'select BIL_ID as id, BIL_DATE as date,'
       . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
       . ' order by BIL_ID desc';
-    $allBillets = $this->executerRequete($sql);
-    return $allBillets;
+    $Chapitres = $this->executerRequete($sql);
+    return $Chapitres;
   }
-//}
-?>
+
+  // Renvoie les informations sur un chapitre
+  public function getChapitre($idChapitre) {
+    $sql = 'select BIL_ID as id, BIL_DATE as date,'
+      . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
+      . ' where BIL_ID=?';
+    $chapitre = $this->executerRequete($sql, array($idChapitre));
+    if ($chapitre->rowCount() == 1)
+      return $chapitre->fetch();  // Accès à la première ligne de résultat
+    else
+      throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
+    }
+
+}

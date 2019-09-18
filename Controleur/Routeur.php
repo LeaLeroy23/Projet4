@@ -3,19 +3,23 @@
 require_once 'Controleur/ControleurAccueil.php';
 require_once 'Controleur/ControleurChapitre.php';
 require_once 'Controleur/ControleurConnexion.php';
+require_once 'Controleur/ControleurDashboard.php';
+require_once 'Controleur/ControleurContact.php';
 require_once 'Vue/vue.php';
 
 class Routeur {
     private $ctrlAccueil;
     private $ctrlChapitre;
     private $ctrlConnexion;
-    //private $ctrlDashboard;
+    private $ctrlDashboard;
+    private $ctrlContact;
 
     public function __construct() {
         $this->ctrlAccueil = new ControleurAccueil();
         $this->ctrlChapitre = new ControleurChapitre();
         $this->ctrlConnexion = new ControleurConnexion();
-        //$this->ctrDashboard = new ControleurDashboard();
+        $this->ctrDashboard = new ControleurDashboard();
+        $this->ctrContact = new ControleurContact();
     }
 
     // Route une requête entrante : exécution l'action associée
@@ -36,13 +40,16 @@ class Routeur {
                     $idChapitre = $this->getParametre($_POST, 'id');
                     $this->ctrlChapitre->commenter($auteur, $contenu, $idChapitre);
                 }
+
                 else
                     throw new Exception("Action non valide");
+
             }
             else {  // aucune action définie : affichage de l'accueil
                 $this->ctrlAccueil->accueil();
             }
         }
+
         catch (Exception $e) {
             $this->erreur($e->getMessage());
         }
