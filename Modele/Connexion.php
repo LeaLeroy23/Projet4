@@ -1,14 +1,14 @@
 <?php
-require_once '../Modele/Modele.php';
+require_once 'Modele/Modele.php';
 
 class Connexion extends Modele {
 
   //renvoie les identifiants de connexion
-  public function getConnect(){
+  public function getConnexion(){
     $sql = 'select Co_id as id, Co_username as username,'
       . ' Co_password as password, from t_admin';
-    $connectUser = $this->executerRequete($sql);
-    return $connectUser;
+    $connexion = $this->executerRequete($sql);
+    return $connexion;
   }
 
 }

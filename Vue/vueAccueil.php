@@ -56,53 +56,30 @@
 
                     <div class="item-entry" data-aos="zoom-in">
                         <div class="item-entry__thumb">
-                            <a href="single-standard.html" class="item-entry__thumb-link">
-                                <img src="contenu/images/thumbs/post/lamp-400.jpg"
-                                     srcset="contenu/images/thumbs/post/lamp-400.jpg 1x, contenu/images/thumbs/post/lamp-800.jpg" alt="">
-                            </a>
+                            <a href="single-standard.html" class="item-entry__thumb-link"></a>
                         </div>
 
-                        <?php foreach ($chapitres as $chapitre): ?>
-
                         <div class="item-entry__text">
+                          <h3><?= $chapitre['titre']; ?></h3>
 
-                            <div class="item-entry__cat">
-                                <!--<a href="category.html">Design</a>-->
+                            <div class="item-entry__cat" style="border-top: 2px solid #6666;">
+                              <p style="font-size: 1.5rem;"><?= $chapitre['contenu']; ?></p>
                             </div>
 
-                            <h1 class="item-entry__title"><a href="single-standard.html"><?= $chapitre['titre']?></a></h1>
+                            <h1 class="item-entry__title"><a href="single-standard.html">Lire plus</a></h1>
 
                             <div class="item-entry__date">
-                                <a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>"><?= $chapitre['date']?></a>
+                                <a href=""></a>
                             </div>
                         </div>
 
                     </div> <!-- item-entry -->
-                    <?php endforeach; ?>
+
 
                 </article> <!-- end article -->
 
             </div> <!-- end entries -->
 
         </div> <!-- end entries-wrap -->
-
-
-        <div class="row pagination-wrap">
-            <div class="col-full">
-                <nav class="pgn" data-aos="fade-up">
-                    <ul>
-                        <li><a class="pgn__prev" href="#0">Prev</a></li>
-                        <li><a class="pgn__num" href="#0">1</a></li>
-                        <li><span class="pgn__num current">2</span></li>
-                        <li><a class="pgn__num" href="#0">3</a></li>
-                        <li><a class="pgn__num" href="#0">4</a></li>
-                        <li><a class="pgn__num" href="#0">5</a></li>
-                        <li><span class="pgn__num dots">…</span></li>
-                        <li><a class="pgn__num" href="#0">8</a></li>
-                        <li><a class="pgn__next" href="#0">Next</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
 
     </section> <!-- end s-content -->

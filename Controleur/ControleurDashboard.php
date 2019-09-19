@@ -13,7 +13,7 @@ class ControleurDashboard {
 
   // Affiche la liste de tous les chapitres du blog
   public function dashboard() {
-    $chapitres = $this->chapitre->getChapitres();
+    $dashboard = $this->dashboard->getDashboard();
     $vue = new Vue("Dashboard");
     $vue->generer(array('chapitres' => $chapitres));
   }

@@ -40,22 +40,13 @@ class Routeur {
                     $idChapitre = $this->getParametre($_POST, 'id');
                     $this->ctrlChapitre->commenter($auteur, $contenu, $idChapitre);
                 }
-                else
-                    throw new Exception("Action non valide");
-                }
-
                 else if ($_GET['action'] == 'connexion'){
-
+                  $this->ctrlConnexion->connexion(this->);
                 }
-
-                else if ($_GET['action'] == 'contact'){
-
-                }
-
-
                 else {  // aucune action définie : affichage de l'accueil
                 $this->ctrlAccueil->accueil();
             }
+          }
         }
 
         catch (Exception $e) {

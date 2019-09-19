@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="contenu/css/base.css">
     <link rel="stylesheet" href="contenu/css/vendor.css">
     <link rel="stylesheet" href="contenu/css/main.css">
+    <!--<link rel="stylesheet" href="contenu/css/bootstrap.min.css">-->
 
     <!-- script
     ================================================== -->
@@ -81,7 +82,7 @@
                     </li>
 
                     <li>
-                      <a href="Modele/connexion.php" title="">Accès</a>
+                      <a href="Controleur/controleurConnexion.php" title="acces">Accès</a>
                     </li>
                 </ul> <!-- end header__nav -->
 
