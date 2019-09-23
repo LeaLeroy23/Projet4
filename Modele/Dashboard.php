@@ -13,7 +13,7 @@ class Dashboard extends Modele {
   }
 
   // Renvoie les informations sur un chapitre
-  public function getChapitre($idChapitre) {
+  function getChapitre($idChapitre) {
     $sql = 'select BIL_ID as id, BIL_DATE as date,'
       . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
       . ' where BIL_ID=?';
@@ -23,18 +23,19 @@ class Dashboard extends Modele {
     } else {
       throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
     }
+  }
 
-    private function getComment(){
+    function getComment(){
       $sql = 'select COM_CONTENU as contenuCom, COM_AUTEUR as auteurCom from T_COMMENTAIRE';
       $commentaires = $this->executeRequete($sql);
-      return $commentaires
+      return $commentaires;
     }
 
-    private function getDashboard(){
+    function getDashboard(){
       $sql = 'select BIL_ID as id, BIL_DATE as date,'
         . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET';
       $dashboard = $this->executeRequete($sql);
-      return $dashboard
+      return $dashboard;
     }
 
-}
+  }

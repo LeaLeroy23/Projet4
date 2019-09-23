@@ -1,6 +1,8 @@
     <!-- featured
     ================================================== -->
+
     <section class="s-featured">
+
         <div class="row">
             <div class="col-full">
 
@@ -54,23 +56,20 @@
 
                   <article class="col-block">
 
+
                     <div class="item-entry" data-aos="zoom-in">
                         <div class="item-entry__thumb">
-                            <a href="single-standard.html" class="item-entry__thumb-link"></a>
+                            <a href="#" class="item-entry__thumb-link"></a>
                         </div>
 
-                        <div class="item-entry__text">
-                          <h3><?= $chapitre['titre']; ?></h3>
+                        <div class="item-entry__title">
+                          <h1><a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>"><?= $chapitre['titre']; ?></a></h1>
 
                             <div class="item-entry__cat" style="border-top: 2px solid #6666;">
-                              <p style="font-size: 1.5rem;"><?= $chapitre['contenu']; ?></p>
-                            </div>
 
-                            <h1 class="item-entry__title"><a href="single-standard.html">Lire plus</a></h1>
-
-                            <div class="item-entry__date">
-                                <a href=""></a>
+                              <p style="font-size: 1.6rem; padding: 15px; line-height: 25px;"><?= $chapitre['description']; ?></p>
                             </div>
+                            <h3 class="item-entry__text"><a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>">Lire plus</a></h3>
                         </div>
 
                     </div> <!-- item-entry -->

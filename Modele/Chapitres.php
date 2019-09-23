@@ -7,7 +7,7 @@ class Chapitre extends Modele {
   // Renvoie la liste des chapitres du blog
   public function getChapitres() {
     $sql = 'select BIL_ID as id, BIL_DATE as date,'
-      . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
+      . ' BIL_TITRE as titre, BIL_DESCRIPTION as description, BIL_CONTENU as contenu from T_BILLET'
       . ' order by BIL_ID desc';
     $Chapitres = $this->executerRequete($sql);
     return $Chapitres;

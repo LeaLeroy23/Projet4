@@ -10,16 +10,16 @@ require_once 'Vue/vue.php';
 class Routeur {
     private $ctrlAccueil;
     private $ctrlChapitre;
-    private $ctrlConnexion;
-    private $ctrlDashboard;
-    private $ctrlContact;
+    //private $ctrlConnexion;
+    //private $ctrlDashboard;
+    //private $ctrlContact;
 
     public function __construct() {
         $this->ctrlAccueil = new ControleurAccueil();
         $this->ctrlChapitre = new ControleurChapitre();
-        $this->ctrlConnexion = new ControleurConnexion();
-        $this->ctrDashboard = new ControleurDashboard();
-        $this->ctrContact = new ControleurContact();
+        //$this->ctrlConnexion = new ControleurConnexion();
+        //$this->ctrDashboard = new ControleurDashboard();
+        //$this->ctrContact = new ControleurContact();
     }
 
     // Route une requête entrante : exécution l'action associée
@@ -41,24 +41,27 @@ class Routeur {
                     $this->ctrlChapitre->commenter($auteur, $contenu, $idChapitre);
                 }
                 else if ($_GET['action'] == 'connexion'){
-                  $this->ctrlConnexion->connexion(this->);
+                  $this->ctrlConnexion->connexion();
                 }
-                else {  // aucune action définie : affichage de l'accueil
+                else
+                     throw new Exception("Action non valide");
+                 }
+                 else {  // aucune action définie : affichage de l'accueil
                 $this->ctrlAccueil->accueil();
             }
           }
-        }
-
-        catch (Exception $e) {
+          catch (Exception $e) {
             $this->erreur($e->getMessage());
         }
-    }
+      }
+
 
     // Affiche une erreur
     private function erreur($msgErreur) {
         $vue = new Vue("Erreur");
         $vue->generer(array('msgErreur' => $msgErreur));
     }
+
     // Recherche un paramètre dans un tableau
     private function getParametre($tableau, $nom) {
         if (isset($tableau[$nom])) {
@@ -66,5 +69,5 @@ class Routeur {
         }
         else
             throw new Exception("Paramètre '$nom' absent");
-    }
+          }
 }

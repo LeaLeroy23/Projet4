@@ -14,7 +14,6 @@ class ControleurConnexion {
   public function connexion() {
     $this->connect>getConnexion();
     $vue = new Vue("Connexion");
-    $vue->generer(array('connexion' => $connectUser));
+    $vue->generer(array('connexion' => $connexion));
   }
-
 }

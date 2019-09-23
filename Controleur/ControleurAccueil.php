@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Modele/Chapitre.php';
+require_once 'Modele/Chapitres.php';
 require_once 'Vue/Vue.php';
 
 class ControleurAccueil {

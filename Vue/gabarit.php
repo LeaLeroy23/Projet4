@@ -59,7 +59,7 @@
 
             </div>  <!-- end header__search -->
 
-            <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+            <a class="header__toggle-menu" href="index.php" title="Menu"><span>Menu</span></a>
             <nav class="header__nav-wrap">
 
                 <h2 class="header__nav-heading h6">Navigate to</h2>
@@ -70,19 +70,19 @@
                     </li>
 
                     <li>
-                        <a href="Modele/chapitres.php" title="">Chapitres</a>
+                        <a href="chapitres.php">Chapitres</a>
                     </li>
 
                     <li>
-                        <a href="Auteur.php" title="">Jean Forteroche</a>
+                        <a href="auteur.php" title="">Jean Forteroche</a>
                     </li>
 
                     <li>
-                      <a href="page-contact.php" title="">Contact</a>
+                      <a href="contact.php" title="">Contact</a>
                     </li>
 
                     <li>
-                      <a href="Controleur/controleurConnexion.php" title="acces">Accès</a>
+                      <a href="connexion.php" >Connexion</a>
                     </li>
                 </ul> <!-- end header__nav -->
 
