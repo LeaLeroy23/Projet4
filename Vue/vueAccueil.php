@@ -63,13 +63,15 @@
                         </div>
 
                         <div class="item-entry__title">
-                          <h1><a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>"><?= $chapitre['titre']; ?></a></h1>
+                          <h1>Biographie de Jean Forteroche</h1>
 
                             <div class="item-entry__cat" style="border-top: 2px solid #6666;">
 
-                              <p style="font-size: 1.6rem; padding: 15px; line-height: 25px;"><?= $chapitre['description']; ?></p>
+                              <p style="font-size: 1.6rem; padding: 15px; line-height: 25px;">
+                              </p>
+
                             </div>
-                            <h3 class="item-entry__text"><a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>">Lire plus</a></h3>
+
                         </div>
 
                     </div> <!-- item-entry -->

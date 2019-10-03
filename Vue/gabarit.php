@@ -70,19 +70,15 @@
                     </li>
 
                     <li>
-                        <a href="chapitres.php">Chapitres</a>
+                        <a href="index.php?action=chapitres">Chapitres</a>
                     </li>
 
                     <li>
-                        <a href="auteur.php" title="">Jean Forteroche</a>
+                      <a href="index.php?action=contact">Contact</a>
                     </li>
 
                     <li>
-                      <a href="contact.php" title="">Contact</a>
-                    </li>
-
-                    <li>
-                      <a href="connexion.php" >Connexion</a>
+                      <a href="index.php?action=connexion" >Connexion</a>
                     </li>
                 </ul> <!-- end header__nav -->
 
@@ -155,6 +151,7 @@
           <script src="contenu/js/jquery-3.2.1.min.js"></script>
           <script src="contenu/js/plugins.js"></script>
           <script src="contenu/js/main.js"></script>
+          <script src="https://cdn.tiny.cloud/1/78mkrrxmcpeanii9qztublptgkaurxri8bz5npmreh11moog/tinymce/5/tinymce.min.js"></script>
 
           </body>
 

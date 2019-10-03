@@ -10,16 +10,17 @@ require_once 'Vue/vue.php';
 class Routeur {
     private $ctrlAccueil;
     private $ctrlChapitre;
-    //private $ctrlConnexion;
-    //private $ctrlDashboard;
-    //private $ctrlContact;
+    private $ctrlConnexion;
+    private $ctrlDashboard;
+    private $ctrlContact;
 
     public function __construct() {
         $this->ctrlAccueil = new ControleurAccueil();
         $this->ctrlChapitre = new ControleurChapitre();
-        //$this->ctrlConnexion = new ControleurConnexion();
-        //$this->ctrDashboard = new ControleurDashboard();
-        //$this->ctrContact = new ControleurContact();
+        $this->ctrlChapitres = new ControleurChapitre();
+        $this->ctrlConnexion = new ControleurConnexion();
+        $this->ctrlDashboard = new ControleurDashboard();
+        $this->ctrlContact = new ControleurContact();
     }
 
     // Route une requête entrante : exécution l'action associée
@@ -40,9 +41,10 @@ class Routeur {
                     $idChapitre = $this->getParametre($_POST, 'id');
                     $this->ctrlChapitre->commenter($auteur, $contenu, $idChapitre);
                 }
-                else if ($_GET['action'] == 'connexion'){
-                  $this->ctrlConnexion->connexion();
+                else if ($_GET['action'] == 'chapitres'){
+                  $this->ctrlChapitres->chapitres();
                 }
+
                 else
                      throw new Exception("Action non valide");
                  }
