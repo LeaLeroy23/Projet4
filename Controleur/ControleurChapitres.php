@@ -1,14 +1,14 @@
 <?php
 
-require_once 'Modele/Chapitres.php';
+require_once 'Modele/Chapitre.php';
 require_once 'Vue/Vue.php';
 
 class ControleurChapitres {
 
-  private $chapitre;
+  private $chapitres;
 
   public function __construct() {
-    $this->chapitres = new Chapitres();
+    $this->chapitres = new Chapitre();
   }
 
   // Affiche la liste de tous les chapitres du blog
