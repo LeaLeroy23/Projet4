@@ -13,7 +13,7 @@ class ControleurAccueil {
 
   // Affiche la liste de tous les chapitres du blog
   public function accueil() {
-    $chapitres = $this->chapitre->getChapitres();
+    $chapitres = $this->chapitre->getChapitresLimit();
     $vue = new Vue("Accueil");
     $vue->generer(array('chapitres' => $chapitres));
   }

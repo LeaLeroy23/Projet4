@@ -1692,12 +1692,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   }
 
   .entries .col-block {
-    -webkit-box-flex: 0 0 33.33333%;
-    -moz-box-flex: 0 0 33.33333%;
-    -webkit-flex: 0 0 33.33333%;
-    -ms-flex: 0 0 33.33333%;
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    -webkit-box-flex: 0 0 100%;
+    -moz-box-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
 }
@@ -4065,6 +4065,37 @@ footer [class*="s-footer__"] > .row [class*="col-"]:last-child {
 .comment-respond form input[type="submit"],
 .comment-respond form .btn {
   margin-top: 6rem;
+}
+
+
+/* -------------------------------------------------------------------
+ * ## slider-chapitres
+ * ------------------------------------------------------------------- */
+
+.slider-chapitres{
+
+}
+
+.img-chapitres-slider{
+  height: 200px;
+  width: 1900px;
+}
+
+.chapitre-text{
+  margin: 0 auto;
+  font-size: 1.3rem;
+  padding: 15px;
+  line-height: 25px;
+}
+
+.titre-chapitre{
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.chapitre-date{
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 /* -------------------------------------------------------------------

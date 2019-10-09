@@ -67,7 +67,17 @@
 
                             <div class="item-entry__cat" style="border-top: 2px solid #6666;">
 
+                              <h3 class="title-bio">Ses Oeuvres</h3>
+
+                                <p style="font-size: 1.6rem; padding: 15px; line-height: 25px;">
+                                Jean Forteroche est un écrivain qui préfére s'inspirer de paysage à la limite du desertique.<br />
+                                Vous connaissez sans doute une partie de ses oeuvres précédente "Voyage ay bout du Nepal", "Les allées du Nevada" et bien d'autres écrit qui lui ont voulu de nombreuses récompenses dans des compétition littéraire
+                              </p>
+
+                              <h3 class="title-bio">Son Histoire</h3>
                               <p style="font-size: 1.6rem; padding: 15px; line-height: 25px;">
+                              Jean Forteroche est un écrivain qui préfére s'inspirer de paysage à la limite du desertique.<br />
+                              Vous connaissez sans doute une partie de ses oeuvres précédente "Voyage ay bout du Nepal", "Les allées du Nevada" et bien d'autres écrit qui lui ont voulu de nombreuses récompenses dans des compétition littéraire
                               </p>
 
                             </div>

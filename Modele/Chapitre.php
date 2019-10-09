@@ -13,6 +13,15 @@ class Chapitre extends Modele {
     return $chapitres;
   }
 
+  // Renvoie la liste des 5 derniers chapitres du blog
+  public function getChapitresLimit() {
+    $sql = 'select BIL_ID as id, BIL_DATE as date,'
+      . ' BIL_TITRE as titre, BIL_DESCRIPTION as description, BIL_CONTENU as contenu from T_BILLET'
+      . ' order by BIL_ID desc LIMIT 5';
+    $chapitres = $this->executerRequete($sql);
+    return $chapitres;
+  }
+
   // Renvoie les informations sur un chapitre
   public function getChapitre($idChapitre) {
     $sql = 'select BIL_ID as id, BIL_DATE as date,'
