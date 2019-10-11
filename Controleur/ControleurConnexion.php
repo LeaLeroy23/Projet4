@@ -8,12 +8,12 @@ class ControleurConnexion {
   private $connexion;
 
   public function __construct() {
-    $this->Connexion = new Connexion();
+    $this->connexion = new Connexion();
   }
 
   public function connexion() {
-    $this->connect>getConnexion();
-    $vue = new Vue("Connexion");
+    $connexion = $this->connexion->getConnexion();
+    $vue = new vue("Connexion");
     $vue->generer(array('connexion' => $connexion));
   }
 }

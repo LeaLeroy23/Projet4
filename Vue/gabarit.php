@@ -78,7 +78,7 @@
                     </li>
 
                     <li>
-                      <a href="index.php?action=connexion" >Connexion</a>
+                      <a href="index.php?action=connexion">Connexion</a>
                     </li>
                 </ul> <!-- end header__nav -->
 

@@ -1,6 +1,6 @@
 <?php
 // require
-require_once 'Controleur/ControleurAccueil.php';
+require_once './Controleur/ControleurAccueil.php';
 require_once 'Controleur/ControleurChapitre.php';
 require_once 'Controleur/ControleurChapitres.php';
 require_once 'Controleur/ControleurConnexion.php';
@@ -30,7 +30,7 @@ class Routeur {
     public function routerRequete() {
         try {
             if (isset($_GET['action'])) {
-                if ($_GET['action'] == 'chapitre') {
+                if ($_GET['action'] == 'Chapitre') {
                     $idChapitre = intval($this->getParametre($_GET, 'id'));
                     if ($idChapitre != 0) {
                         $this->ctrlChapitre->chapitre($idChapitre);
@@ -47,6 +47,12 @@ class Routeur {
                 else if ($_GET['action'] == 'chapitres'){
                   $this->ctrlChapitres->chapitres();
                 }
+                else if ($_GET['action'] == 'contact'){
+                    $this->ctrlContact->contact();
+                  }
+                  else if ($_GET['action'] == 'connexion'){
+                    $this->ctrlConnexion->connexion();
+                  }
 
                 else
                      throw new Exception("Action non valide");

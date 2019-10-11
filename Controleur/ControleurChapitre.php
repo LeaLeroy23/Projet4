@@ -2,7 +2,7 @@
 
 require_once 'Modele/Chapitre.php';
 require_once 'Modele/Commentaire.php';
-require_once 'Vue/Vue.php';
+require_once 'Vue/vue.php';
 
 class ControleurChapitre {
 
