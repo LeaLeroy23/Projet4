@@ -37,7 +37,7 @@
                 </p>
 
                 <p>
-                <img src="contenu/images/wheel-1000.jpg" srcset="images/wheel-2000.jpg 2000w, images/wheel-1000.jpg 1000w, images/wheel-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                <img src="contenu/images/wheel-1000.jpg" srcset="contenu/images/wheel-2000.jpg 2000w, images/wheel-1000.jpg 1000w, images/wheel-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
                 </p>
 
 
@@ -49,7 +49,7 @@
                 </div> <!-- end s-content__taxonomies -->
 
                 <div class="entry__author">
-                    <img src="images/avatars/user-03.jpg" alt="">
+                    <img src="contenu/images/avatars/user-03.jpg" alt="">
 
                     <div class="entry__author-about">
                         <h5 class="entry__author-name">

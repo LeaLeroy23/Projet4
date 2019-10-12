@@ -17,7 +17,7 @@
                             <div class="entry__background" style="background-image:url('contenu/images/alaska-chapt1.jpg');"></div>
 
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0"><?= $chapitre['id']; ?></a></span>
+                                <span class="entry__category"><a href="#0"></a></span>
 
                                 <h1><a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>" title=""><?= $chapitre['titre']?></a></h1>
 
@@ -26,7 +26,7 @@
                                         <img class="avatar" src="contenu/images/avatars/user-03.jpg" alt="">
                                     </a>
                                     <ul class="entry__meta">
-                                        <li><a href="#0"> Jean Forteroche</a></li>
+                                        <li>Jean Forteroche</a></li>
                                         <li><?= $chapitre['date']?></li>
                                     </ul>
                                 </div>
