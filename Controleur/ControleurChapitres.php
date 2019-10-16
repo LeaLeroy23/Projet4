@@ -18,7 +18,7 @@ class ControleurChapitres {
     $vue->generer(array('chapitres' => $chapitres));
   }
 
-  public static function excerpt($data, $endValue = 150, $beginValue = 0){
+  public static function excerpt($data, $endValue = 250, $beginValue = 0){
       return substr($data, $beginValue, $endValue);
   }
 

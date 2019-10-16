@@ -59,9 +59,8 @@
 
                         <div class="entry__author-desc">
                             <p>
-                            Alias aperiam at debitis deserunt dignissimos dolorem doloribus, fuga fugiat
-                            impedit laudantium magni maxime nihil nisi quidem quisquam sed ullam voluptas
-                            voluptatum. Lorem ipsum dolor sit.
+                            Je suis un auteur qui vous livre sa version du monde. Depuis plusieurs années je fai le tour du monde
+                            et j'écris toute émotions concernant ces lieux qui sont toujours remplis d'histoire et de culture bien différente que celle que l'on connait.
                             </p>
                         </div>
                     </div>
