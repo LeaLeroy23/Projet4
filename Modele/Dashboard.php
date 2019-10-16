@@ -5,18 +5,16 @@ class Dashboard extends Modele {
 
   //renvoie la liste des CHAlets du blog
   public function getChapitres(){
-    $sql = 'select CHA_ID as id, CHA_DATE as date,'
-      . ' CHA_TITRE as titre, CHA_CONTENU as contenu from chapitre'
-      . ' order by CHA_ID desc';
+    $sql = 'select id, date, title, content from chapters'
+      . ' order by id desc';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
   }
 
   // Renvoie les informations sur un chapitre
   function getChapitre($idChapitre) {
-    $sql = 'select CHA_ID as id, CHA_DATE as date,'
-      . ' CHA_TITRE as titre, CHA_CONTENU as contenu from chapitre'
-      . ' where CHA_ID=?';
+    $sql = 'select id, date, title, content from chapters'
+      . ' where id=?';
     $chapitre = $this->executerRequete($sql, array($idChapitre));
     if ($chapitre->rowCount() == 1){
       return $chapitre->fetch();  // Accès à la première ligne de résultat
@@ -26,7 +24,7 @@ class Dashboard extends Modele {
   }
 
     function getComment(){
-      $sql = 'select COM_CONTENU as contenuCom, COM_AUTEUR as auteurCom from COMMENTAIRE';
+      $sql = 'select content, author from comments';
       $commentaires = $this->executeRequete($sql);
       return $commentaires;
     }
