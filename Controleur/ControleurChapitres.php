@@ -3,19 +3,21 @@
 require_once 'Modele/Chapitre.php';
 require_once 'Vue/vue.php';
 
-class ControleurAccueil {
+class ControleurChapitres {
 
-  private $chapitre;
+  private $chapitres;
 
   public function __construct() {
-    $this->chapitre = new Chapitre();
+    $this->chapitres = new Chapitre();
   }
 
   // Affiche la liste de tous les chapitres du blog
-  public function accueil() {
-    $chapitres = $this->chapitre->getChapitresLimit();
-    $vue = new Vue("Accueil");
+  public function chapitres() {
+    $chapitres = $this->chapitres->getChapitres();
+    $vue = new Vue("Chapitres");
     $vue->generer(array('chapitres' => $chapitres));
   }
+
+  
 
 }

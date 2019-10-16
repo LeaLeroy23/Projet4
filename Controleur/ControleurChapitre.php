@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Modele/Chapitres.php';
+require_once 'Modele/Chapitre.php';
 require_once 'Modele/Commentaire.php';
-require_once 'Vue/Vue.php';
+require_once 'Vue/vue.php';
 
 class ControleurChapitre {
 
@@ -20,13 +20,6 @@ class ControleurChapitre {
     $commentaires = $this->commentaire->getCommentaires($idChapitre);
     $vue = new Vue("Chapitre");
     $vue->generer(array('chapitre' => $chapitre, 'commentaires' => $commentaires));
-  }
-
-  // Affiche tous les chapitres
-  public function chapitres() {
-    $chapitres = $this->chapitres->getChapitres();
-    $vue = new Vue("Chapitres");
-    $vue->generer(array('chapitres' => $chapitres));
   }
 
   // Ajoute un commentaire à un chapitre

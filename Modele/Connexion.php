@@ -5,11 +5,11 @@ class Connexion extends Modele {
 
   //renvoie les identifiants de connexion
   public function getConnexion(){
-    $sql = 'select Co_id as id, Co_username as username,'
-      . ' Co_password as password, from t_admin';
-    $connexion = $this->executerRequete($sql);
-    return $connexion;
+    $sql = 'select CHA_ID as id, CHA_DATE as date,'
+    . ' CHA_TITRE as titre, CHA_CONTENU as contenu from chapitre'
+    . ' order by CHA_ID desc';
+    $Connexion = $this->executerRequete($sql);
+    return $Connexion;
   }
-
 }
-?>
+

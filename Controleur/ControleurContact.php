@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Modele/Contact.php';
-require_once 'Vue/Vue.php';
+require_once 'Vue/vue.php';
 
 class ControleurContact {
 
@@ -13,9 +13,9 @@ class ControleurContact {
 
   // Affiche la liste de tous les chapitres du blog
   public function contact() {
-    $contacts = $this->contact->getContacts();
+    $contact = $this->contact->getContact();
     $vue = new Vue("Contact");
-    $vue->generer(array('contacts' => $contacts));
+    $vue->generer(array('contact' => $contact));
   }
 
 }

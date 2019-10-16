@@ -3,13 +3,13 @@ require_once 'Modele/Modele.php';
 
 class Contact extends Modele {
 
-  //renvoie la liste des billets du blog
-  private function getChapitres(){
-    $sql = 'select BIL_ID as id, BIL_DATE as date,'
-      . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
-      . ' order by BIL_ID desc';
-    $Chapitres = $this->executerRequete($sql);
-    return $Chapitres;
+  //renvoie la liste des CHAlets du blog
+  public function getContact(){
+    $sql = 'select CHA_ID as id, CHA_DATE as date,'
+      . ' CHA_TITRE as titre, CHA_CONTENU as contenu from chapitre'
+      . ' order by CHA_ID desc';
+    $Contact = $this->executerRequete($sql);
+    return $Contact;
   }
-
 }
+

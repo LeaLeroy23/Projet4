@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="contenu/css/base.css">
     <link rel="stylesheet" href="contenu/css/vendor.css">
     <link rel="stylesheet" href="contenu/css/main.css">
+    <script src="https://kit.fontawesome.com/8ce6adae27.js" crossorigin="anonymous"></script>
     <!--<link rel="stylesheet" href="contenu/css/bootstrap.min.css">-->
 
     <!-- script
@@ -78,7 +79,7 @@
                     </li>
 
                     <li>
-                      <a href="index.php?action=connexion" >Connexion</a>
+                      <a href="index.php?action=connexion">Connexion</a>
                     </li>
                 </ul> <!-- end header__nav -->
 

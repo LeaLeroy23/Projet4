@@ -443,7 +443,6 @@ dt {
 dd {
   margin: 0 0 0 2rem;
 }
-
 /* -------------------------------------------------------------------
  * ## responsive video container
  * ------------------------------------------------------------------- */
@@ -1692,12 +1691,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   }
 
   .entries .col-block {
-    -webkit-box-flex: 0 0 33.33333%;
-    -moz-box-flex: 0 0 33.33333%;
-    -webkit-flex: 0 0 33.33333%;
-    -ms-flex: 0 0 33.33333%;
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    -webkit-box-flex: 0 0 100%;
+    -moz-box-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
 }
@@ -3076,6 +3075,60 @@ body.search-is-visible {
 }
 
 /* -------------------------------------------------------------------
+ * ## Dashboard
+ * ------------------------------------------------------------------- */
+
+.column{
+  max-width: 18%;
+  background-color: #fff;
+  min-height: 530px;
+}
+
+.nav-dashboard{
+  line-height: 4;
+  background-color: #fff;
+  box-shadow: 3px 0px 7px #1a1d3b5e;
+  height: 830px;;
+}
+
+.summary{
+  padding-top: 30px;
+}
+
+.intern-link-dashboard{
+  margin-left: 11%;
+  text-decoration: none;
+}
+
+.sub-li-dashboard{
+  line-height: 2;
+  text-decoration: none;
+}
+
+.container{
+  width: 85%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.title-dashboard{
+  color: #111860;
+  margin-top: 2rem;
+}
+
+.col-3{
+  width: 45%;
+  height: 350px;
+  background-color: #fff;
+  box-shadow: 3px 0px 7px #1a1d3b5e;
+  border-radius: 10px;
+}
+
+.fas{
+  margin-right: 5%;
+}
+
+/* -------------------------------------------------------------------
  * ## link list
  * ------------------------------------------------------------------- */
 .s-extra .linklist {
@@ -3154,8 +3207,8 @@ body.search-is-visible {
  *
  * ------------------------------------------------------------------- */
 footer {
-  padding-top: 10.2rem;
-  padding-bottom: 10.2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   font-size: 1.5rem;
   line-height: 2;
   color: rgba(255, 255, 255, 0.5);
@@ -4065,6 +4118,37 @@ footer [class*="s-footer__"] > .row [class*="col-"]:last-child {
 .comment-respond form input[type="submit"],
 .comment-respond form .btn {
   margin-top: 6rem;
+}
+
+
+/* -------------------------------------------------------------------
+ * ## slider-chapitres
+ * ------------------------------------------------------------------- */
+
+.slider-chapitres{
+
+}
+
+.img-chapitres-slider{
+  height: 200px;
+  width: 1900px;
+}
+
+.chapitre-text{
+  margin: 0 auto;
+  font-size: 1.3rem;
+  padding: 15px;
+  line-height: 25px;
+}
+
+.titre-chapitre{
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.chapitre-date{
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 /* -------------------------------------------------------------------

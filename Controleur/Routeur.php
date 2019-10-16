@@ -2,6 +2,7 @@
 // require
 require_once 'Controleur/ControleurAccueil.php';
 require_once 'Controleur/ControleurChapitre.php';
+require_once 'Controleur/ControleurChapitres.php';
 require_once 'Controleur/ControleurConnexion.php';
 require_once 'Controleur/ControleurDashboard.php';
 require_once 'Controleur/ControleurContact.php';
@@ -10,14 +11,16 @@ require_once 'Vue/vue.php';
 class Routeur {
     private $ctrlAccueil;
     private $ctrlChapitre;
+    private $ctrlChapitres;
     private $ctrlConnexion;
     private $ctrlDashboard;
     private $ctrlContact;
 
+
     public function __construct() {
         $this->ctrlAccueil = new ControleurAccueil();
         $this->ctrlChapitre = new ControleurChapitre();
-        $this->ctrlChapitres = new ControleurChapitre();
+        $this->ctrlChapitres = new ControleurChapitres();
         $this->ctrlConnexion = new ControleurConnexion();
         $this->ctrlDashboard = new ControleurDashboard();
         $this->ctrlContact = new ControleurContact();
@@ -44,6 +47,15 @@ class Routeur {
                 else if ($_GET['action'] == 'chapitres'){
                   $this->ctrlChapitres->chapitres();
                 }
+                else if ($_GET['action'] == 'contact'){
+                    $this->ctrlContact->contact();
+                  }
+                  else if ($_GET['action'] == 'connexion'){
+                    $this->ctrlConnexion->connexion();
+                  }
+                  else if ($_GET['action'] == 'dashboard'){
+                    $this->ctrlDashboard->dashboard();
+                  }
 
                 else
                      throw new Exception("Action non valide");

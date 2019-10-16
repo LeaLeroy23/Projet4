@@ -5,17 +5,17 @@ require_once 'Vue/vue.php';
 
 class ControleurDashboard {
 
-  private $Dashboard;
+  private $dashboard;
 
   public function __construct() {
-    $this->Dashboard = new Dashboard();
+    $this->dashboard = new Dashboard();
   }
 
   // Affiche la liste de tous les chapitres du blog
   public function dashboard() {
-    $dashboard = $this->dashboard->getDashboard();
+    $dashboard = $this->dashboard->getChapitres();
     $vue = new Vue("Dashboard");
-    $vue->generer(array('chapitres' => $chapitres));
+    $vue->generer(array('dashboard' => $dashboard));
   }
 
 }

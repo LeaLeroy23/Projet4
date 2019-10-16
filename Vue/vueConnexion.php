@@ -4,22 +4,40 @@
 ================================================== -->
 <body id="top">
 
+    <section class="s-content">
 
-  <form name="cForm" id="cForm" class="contact-form" method="" action="">
-      <fieldset>
+    <!--Début slider-->
+    <div class="slider-connexion">
+        <img class="img-connexion-slider" src="contenu/images/slider-connexion.jpg" />
+    </div>
+    <!--fin slider-->
 
-          <div>
-              <input name="username" id="username" class="full-width" placeholder="Username" value="" type="text">
-          </div>
+    <div class="row narrow">
 
-          <div class="form-field">
-              <input name="password" id="cEmail" class="full-width" placeholder="Password" value="" type="text">
-          </div>
+        <div class="col-full s-content__main">
 
-          <button type="submit" class="submit btn btn--primary btn--large full-width">Accès interne</button>
+        <h2>Connectez-vous Jean !</h2>
 
-      </fieldset>
-  </form>
+            <form name="cForm" id="cForm" class="contact-form" method="post" action="index.php?action=dashboard">
+                <fieldset>
+                <input type="hidden" name="submitted" id="submitted" value="1"/>
+                <div>
+                    <input name="username" id="username" class="full-width" placeholder="Identifiant" value="" type="text">
+                </div>
 
+                <div class="form-field">
+                    <input name="password" id="cEmail" class="full-width" placeholder="Mot de passe" value="" type="text">
+                </div>
+
+                <button type="submit" class="submit btn btn--primary btn--large full-width">Suivez-nous Jean !</button>
+
+                </fieldset>
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
 
 </body>
