@@ -25,8 +25,8 @@
     <script src="https://cdn.tiny.cloud/1/78mkrrxmcpeanii9qztublptgkaurxri8bz5npmreh11moog/tinymce/5/tinymce.min.js" ></script>
     <script>
         tinymce.init({
-        selector: 'titre'
-        selector: 'chapitres.tinymce'
+        selector: 'titre',
+        selector: 'chapitres.tinymce',
         });
     </script>
 

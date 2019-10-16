@@ -6,18 +6,16 @@ class Chapitre extends Modele {
 
   // Renvoie la liste des chapitres du blog
   public function getChapitres() {
-    $sql = 'select BIL_ID as id, BIL_DATE as date,'
-      . ' BIL_TITRE as titre, BIL_DESCRIPTION as description, BIL_CONTENU as contenu from T_BILLET'
-      . ' order by BIL_ID desc';
+    $sql = 'select id, date, title, content from chapters'
+      . ' order by id desc';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
   }
 
   // Renvoie les informations sur un chapitre
   public function getChapitre($idChapitre) {
-    $sql = 'select BIL_ID as id, BIL_DATE as date,'
-      . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
-      . ' where BIL_ID=?';
+    $sql = 'select id, date, title, content from chapters'
+      . ' where id=?';
     $chapitre = $this->executerRequete($sql, array($idChapitre));
 
     if ($chapitre->rowCount() == 1)

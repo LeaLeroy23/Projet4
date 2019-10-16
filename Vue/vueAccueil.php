@@ -19,7 +19,7 @@
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0"></a></span>
 
-                                <h1><a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>" title=""><?= $chapitre['titre']?></a></h1>
+                                <h1><a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>" title=""><?= $chapitre['title']?></a></h1>
 
                                 <div class="entry__info">
                                     <a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>" class="entry__profile-pic">

@@ -6,27 +6,24 @@ class Chapitre extends Modele {
 
   // Renvoie la liste des chapitres du blog
   public function getChapitres() {
-    $sql = 'select CHA_ID as id, CHA_DATE as date,'
-      . ' CHA_TITRE as titre, CHA_CONTENU as contenu from chapitre'
-      . ' order by CHA_ID desc';
+    $sql = 'select id, date, title, content from chapters'
+      . ' order by id desc';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
   }
 
   // Renvoie la liste des 5 derniers chapitres du blog
   public function getChapitresLimit() {
-    $sql = 'select CHA_ID as id, CHA_DATE as date,'
-      . ' CHA_TITRE as titre, CHA_CONTENU as contenu from chapitre'
-      . ' order by CHA_ID desc LIMIT 5';
+    $sql = 'select id, date, title, content from chapters'
+      . ' order by id desc LIMIT 5';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
   }
 
   // Renvoie les informations sur un chapitre
   public function getChapitre($idChapitre) {
-    $sql = 'select CHA_ID as id, CHA_DATE as date,'
-      . ' CHA_TITRE as titre, CHA_CONTENU as contenu from chapitre'
-      . ' where CHA_ID=?';
+    $sql = 'select id, date, title, content from chapters'
+      . ' where id=?';
     $chapitre = $this->executerRequete($sql, array($idChapitre));
 
     if ($chapitre->rowCount() == 1)

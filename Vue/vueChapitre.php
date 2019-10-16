@@ -1,4 +1,4 @@
-<?php $this->titre = "Mon Blog - " . $chapitre['titre']; ?>
+<?php $this->titre = "Alaska - " . $chapitre['title']; ?>
 
 
     <!-- s-content
@@ -19,7 +19,7 @@
 
             <div class="entry__header col-full">
                 <h1 class="entry__header-title display-1">
-                    <?= $chapitre['titre'] ?>
+                    <?= $chapitre['title'] ?>
                 </h1>
                 <ul class="entry__header-meta">
                     <li class="date"><?= $chapitre['date'] ?></li>
@@ -33,7 +33,7 @@
             <div class="col-full entry__main">
 
                 <p class="lead drop-cap">
-                  <?= $chapitre['contenu']; ?>
+                  <?= $chapitre['content']; ?>
                 </p>
 
                 <p>
@@ -110,7 +110,7 @@
 
                                 <div class="comment__info">
 
-                                    <div class="comment__author"><?= $commentaire['auteur'] ?></div>
+                                    <div class="comment__author"><?= $commentaire['author'] ?></div>
 
                                     <div class="comment__meta">
                                         <div class="comment__time"><?= $commentaire['date'] ?></div>
@@ -121,7 +121,7 @@
                                 </div>
 
                                 <div class="comment__text">
-                                <p><?= $commentaire['contenu'] ?></p>
+                                <p><?= $commentaire['content'] ?></p>
                                 </div>
 
                             </div>

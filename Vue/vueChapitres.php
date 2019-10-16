@@ -26,12 +26,12 @@
 
                   <div class="item-entry__title" style= "margin-bottom: 2rem;">
                     <a href="<?= "index.php?action=chapitre&id=" . $chapitre['id'] ?>">
-                      <h2 class="titre-chapitre" style="font-size: 2.5rem;"><?= $chapitre['titre']?></h2>
+                      <h2 class="titre-chapitre" style="font-size: 2.5rem;"><?= $chapitre['title'] ?></h2>
                     </a>
 
                       <div class="item-entry__cat" style="width: 90%; margin: 0 auto; border-top: 2px solid #6666;">
 
-                        <p class="chapitre-text">Description du chapitre <?= $chapitre['contenu']?></p>
+                        <p class="chapitre-text"><?= ControleurChapitres::excerpt($chapitre['content']); ?></p>
 
                         <p class="chapitre-date">Date de publication: <?= $chapitre['date']?></p>
 
