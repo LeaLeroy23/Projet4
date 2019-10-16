@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
 
     <!--- basic page needs
@@ -20,6 +20,15 @@
     <link rel="stylesheet" href="contenu/css/main.css">
     <script src="https://kit.fontawesome.com/8ce6adae27.js" crossorigin="anonymous"></script>
     <!--<link rel="stylesheet" href="contenu/css/bootstrap.min.css">-->
+
+    <!--script TinyMCE-->
+    <script src="https://cdn.tiny.cloud/1/78mkrrxmcpeanii9qztublptgkaurxri8bz5npmreh11moog/tinymce/5/tinymce.min.js" ></script>
+    <script>
+        tinymce.init({
+        selector: 'titre'
+        selector: 'chapitres.tinymce'
+        });
+    </script>
 
     <!-- script
     ================================================== -->

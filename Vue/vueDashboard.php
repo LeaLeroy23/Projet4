@@ -23,6 +23,10 @@
 
             <div class="col-3" style="margin-right: 5%;">
               <h4 class="title-dashboard"><i class="fas fa-pen"></i>Ecrire un Chapitre</h4>
+              <form method="post">
+                
+                <textarea id="chapitres" name="mytextarea">Ici vous pouvez rediger votre chapitre !</textarea>
+              </form>
             </div>
 
             <div class="col-3">
