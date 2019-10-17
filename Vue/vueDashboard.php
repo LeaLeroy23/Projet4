@@ -31,6 +31,19 @@
 
             <div class="col-3">
               <h4 class="title-dashboard"><i class="fas fa-list-alt"></i>Liste des chapitres</h4>
+
+              <div class="row">
+                <div class="col-12">
+                  <label>                    
+                      <select name="chapters" multiple="yes" style="width: 100%;">
+                          <?php foreach ($dashboard as $dashboard): ?>
+                               <option value="<?= $dashboard['title'] ?>"><?= $dashboard['title'] ?></value>
+                          <?php endforeach; ?>
+                      </select>
+                  </label>
+                </div>
+              </div>
+
             </div>
 
           </div>
