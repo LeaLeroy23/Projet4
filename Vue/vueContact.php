@@ -31,10 +31,10 @@
 
 
                 <p>
-                Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor
-                sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim
-                mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco. Lorem
-                ipsum Nisi amet fugiat eiusmod et aliqua ad qui ut nisi Ut aute anim mollit fugiat aute.
+                Tout le long de ma carrière d'écrivain je me suis concentré sur la recherche de grands espace. 
+                Cette recherhce constante de plein air m'a permis de visité une grande partie de notre monde.
+                J'aime me plonger complétement dans les uses et coutumes de chaque région ou je m'installe pour quelques mois.
+                
                 </p>
 
                 <div class="row">
