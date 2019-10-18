@@ -35,9 +35,9 @@
               <div class="row">
                 <div class="col-12">
                   <label>                    
-                      <select name="chapters" multiple="yes" style="width: 100%;">
+                      <select name="chapters" multiple="yes" style="width: 100%; height: 275px;">
                           <?php foreach ($dashboard as $dashboard): ?>
-                               <option value="<?= $dashboard['title'] ?>"><?= $dashboard['title'] ?></value>
+                               <option value="<?= $dashboard['title'] ?>"><?= $dashboard['title'] ?></option>
                           <?php endforeach; ?>
                       </select>
                   </label>
