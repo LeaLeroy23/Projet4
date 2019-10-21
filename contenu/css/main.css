@@ -3104,6 +3104,7 @@ body.search-is-visible {
 
 .summary{
   padding-top: 30px;
+  text-decoration: none;
 }
 
 .intern-link-dashboard{
@@ -3119,6 +3120,11 @@ body.search-is-visible {
 .container{
   margin-top: 1%;
   margin-bottom: 4%;
+}
+
+.container-dashboard{
+  width: 90%;
+  margin-top: 4%;
 }
 
 .title-dashboard{

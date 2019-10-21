@@ -56,7 +56,7 @@ class Routeur {
                   else if ($_GET['action'] == 'dashboard'){
                     $this->ctrlDashboard->dashboard();
                   }
-
+                    
                 else
                      throw new Exception("Action non valide");
                  }

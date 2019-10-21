@@ -17,7 +17,7 @@
             </nav>
           </div>
         
-      <div class="container">
+      <div class="container-dashboard">
 
           <div class="row" style="margin-bottom: 3%;">
 
@@ -34,7 +34,7 @@
 
               <div class="row">
                 <div class="col-12">
-                  <label>                    
+                  <label>                   
                       <select name="chapters" multiple="yes" style="width: 100%; height: 275px;">
                           <?php foreach ($dashboard as $dashboard): ?>
                                <option value="<?= $dashboard['title'] ?>"><?= $dashboard['title'] ?></option>

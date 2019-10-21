@@ -11,7 +11,7 @@ class Dashboard extends Modele {
     return $chapitres;
   }
 
-  // Renvoie les informations sur un chapitre
+  /* Renvoie les informations sur un chapitre
   function getChapitre($idChapitre) {
     $sql = 'select id, date, title, content from chapters'
       . ' where id=?';
@@ -21,12 +21,7 @@ class Dashboard extends Modele {
     } else {
       throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
     }
-  }
+  }*/
 
-    function getComment(){
-      $sql = 'select content, author from comments';
-      $commentaires = $this->executeRequete($sql);
-      return $commentaires;
-    }
 
   }
