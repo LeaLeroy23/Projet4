@@ -3099,7 +3099,7 @@ body.search-is-visible {
   line-height: 4;
   background-color: #fff;
   box-shadow: 3px 0px 7px #1a1d3b5e;
-  height: 830px;;
+  height: 100%;
 }
 
 .summary{
@@ -3138,6 +3138,14 @@ body.search-is-visible {
   background-color: #fff;
   box-shadow: 3px 0px 7px #1a1d3b5e;
   border-radius: 10px;
+}
+
+.col-11{
+  border-radius: 10px;
+  background-color: #fff;
+  width: 95%;
+  height: 250px;
+  box-shadow: 3px 0px 7px #1a1d3b5e;
 }
 
 .fas{

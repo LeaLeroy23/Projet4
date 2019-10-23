@@ -50,11 +50,11 @@
 
           <div class="row">
 
-            <div class="col-3" style="margin-right: 5%;">
+            <div class="col-11" style="margin-bottom: 3%;">
               <h4 class="title-dashboard"><i class="fas fa-edit"></i>Supprimer / modifier un chapitre</h4>
             </div>
 
-            <div class="col-3">
+            <div class="col-11" style="margin-bottom: 3%;">
               <h4 class="title-dashboard"><i class="fas fa-comments"></i>Commentaires</h4>
             </div>
 

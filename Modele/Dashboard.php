@@ -11,6 +11,12 @@ class Dashboard extends Modele {
     return $chapitres;
   }
 
+  public function countChapters(){
+    $sql = 'select count(id) from chapters';
+    $this->numChapters = $chapters->fetchColumn();
+    
+  }
+
   /* Renvoie les informations sur un chapitre
   function getChapitre($idChapitre) {
     $sql = 'select id, date, title, content from chapters'
