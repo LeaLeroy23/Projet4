@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Modele/Contact.php';
+//require_once 'Modele/Contact.php';
 require_once 'Vue/vue.php';
 
 class ControleurContact {
@@ -8,7 +8,7 @@ class ControleurContact {
   private $contact;
 
   public function __construct() {
-    $this->contact = new Contact();
+    //$this->contact = new Contact();
   }
 
   // Affiche la liste de tous les chapitres du blog

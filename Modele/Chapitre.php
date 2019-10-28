@@ -15,10 +15,11 @@ class Chapitre extends Modele {
   // Renvoie la liste des 5 derniers chapitres du blog
   public function getChapitresLimit() {
     $sql = 'select id, date, title, content from chapters'
-      . ' order by id desc LIMIT 5';
+      . ' order by id desc LIMIT 0, 5';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
   }
+
 
   // Renvoie les informations sur un chapitre
   public function getChapitre($idChapitre) {

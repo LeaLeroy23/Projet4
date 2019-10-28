@@ -30,14 +30,14 @@
             </div>
 
             <div class="col-3" id="chapitre">
-              <h4 class="title-dashboard"><i class="fas fa-list-alt"></i>Liste des chapitres</h4>
+              <h4 class="title-dashboard"><i class="fas fa-list-alt"></i>Liste des chapitres (<?= $chapters->rowCount(); ?>)</h4>
 
               <div class="row">
                 <div class="col-12">
                   <label>                   
                       <select name="chapters" multiple="yes" style="width: 100%; height: 275px;">
-                          <?php foreach ($dashboard as $dashboard): ?>
-                               <option value="<?= $dashboard['title'] ?>"><?= $dashboard['title'] ?></option>
+                          <?php foreach ($chapters as $chapter): ?>
+                               <option value="<?= $chapter['title'] ?>"><?= $chapter['title'] ?></option>
                           <?php endforeach; ?>
                       </select>
                   </label>

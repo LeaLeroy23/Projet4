@@ -1,24 +1,22 @@
 <?php
 
-require_once 'Modele/Dashboard.php';
+require_once 'Modele/Chapitre.php';
 require_once 'Vue/vue.php';
 
 class ControleurDashboard {
 
-  private $dashboard;
+  private $chapitre;
   //private $commentaire;
 
   public function __construct() {
-    $this->dashboard = new Dashboard();
-    //$this->commentaire = new Commentaire();
+    $this->chapitre = new Chapitre();
   }
 
   // Affiche la liste de tous les chapitres du blog
   public function dashboard() {
-    $dashboard = $this->dashboard->getChapitres();
-    //$commentaires = $this->commentaire->getCommentaires();
+    $chapters = $this->chapitre->getChapitres();
     $vue = new Vue("Dashboard");
-    $vue->generer(array('dashboard' => $dashboard));
+    $vue->generer(array('chapters' => $chapters));
   }
 
 

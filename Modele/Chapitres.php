@@ -2,7 +2,7 @@
 
 require_once 'Modele/Modele.php';
 
-class Chapitre extends Modele {
+class Chapitres extends Modele {
 
   // Renvoie la liste des chapitres du blog
   public function getChapitres() {
@@ -10,6 +10,12 @@ class Chapitre extends Modele {
       . ' order by id desc';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
+  }
+
+  public function nbChapters() {
+    $sql = 'select COUNT(id) AS nbChapter from chapters' ;
+    $nbChapters = $this->executerRequete($sql);
+    return $nbChapters;
   }
 
   // Renvoie les informations sur un chapitre

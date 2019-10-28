@@ -27,6 +27,6 @@ class ControleurChapitre {
     // Sauvegarde du commentaire
     $this->commentaire->ajouterCommentaire($auteur, $contenu, $idChapitre);
     // Actualisation de l'affichage du chapitre
-    $this->chapitre($idChapitre);
+    //$this->chapitre($idChapitre);
   }
 }

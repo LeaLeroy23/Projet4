@@ -8,7 +8,7 @@ abstract class Modele {
   // Exécute une requête SQL éventuellement paramétrée
   protected function executerRequete($sql, $params = null) {
     if ($params == null) {
-      $resultat = $this->getBdd()->query($sql);    // exécution directe
+      $resultat = $this->getBdd()->query($sql);    // exécution directe 
     }
     else {
       $resultat = $this->getBdd()->prepare($sql);  // requête préparée
