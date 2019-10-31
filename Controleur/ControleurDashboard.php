@@ -1,12 +1,13 @@
 <?php
 
 require_once 'Modele/Chapitre.php';
+require_once 'Modele/Commentaire.php';
 require_once 'Vue/vue.php';
 
 class ControleurDashboard {
 
   private $chapitre;
-  //private $commentaire;
+  private $commentaire;
 
   public function __construct() {
     $this->chapitre = new Chapitre();

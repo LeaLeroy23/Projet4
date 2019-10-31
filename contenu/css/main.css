@@ -3105,6 +3105,7 @@ body.search-is-visible {
 .summary{
   padding-top: 30px;
   text-decoration: none;
+  list-style: none;
 }
 
 .intern-link-dashboard{
