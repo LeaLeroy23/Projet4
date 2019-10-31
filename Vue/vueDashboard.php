@@ -21,21 +21,31 @@
 
           <div class="row" style="margin-bottom: 3%;">
 
-            <div class="col-3" id="ecrit" style="margin-right: 5%;">
+            <div class="col-12" id="box-dashboard" style="margin-bottom: 3%;">
               <h4 class="title-dashboard"><i class="fas fa-pen"></i>Ecrire un Chapitre</h4>
-              <form method="post">
-                
-                <textarea id="chapitres" name="mytextarea">Ici vous pouvez rediger votre chapitre !</textarea>
-              </form>
+              <div class="col-12">
+                <form method="post" action="writting_post.php">
+                    <div class="col-12">
+                      <input type="text" id="form-writting" name="title" placeholder="Titre" style="height: 3.3rem;">
+                      <textarea id="form-writting" name="content">Ici vous pouvez rediger votre chapitre !</textarea>
+                      <input type="submit" id="form-writting" value="Publier">
+                    </div>
+                    
+                </form>
+              </div>
             </div>
 
-            <div class="col-3" id="chapitre">
+          </div>
+
+          <div class="row" style="margin-bottom: 3%;">
+
+            <div class="col-12" id="box-dashboard">
               <h4 class="title-dashboard"><i class="fas fa-list-alt"></i>Liste des chapitres (<?= $chapters->rowCount(); ?>)</h4>
 
               <div class="row">
                 <div class="col-12">
                   <label>                   
-                      <select name="chapters" multiple="yes" style="width: 100%; height: 275px;">
+                      <select name="chapters" multiple="yes" style="width: 100%; height: 350px;">
                           <?php foreach ($chapters as $chapter): ?>
                                <option value="<?= $chapter['title'] ?>"><?= $chapter['title'] ?></option>
                           <?php endforeach; ?>
@@ -48,17 +58,17 @@
 
           </div>
 
-          <div class="row">
+          <!--<div class="row">
 
             <div class="col-11" id="modification" style="margin-bottom: 3%;">
               <h4 class="title-dashboard"><i class="fas fa-edit"></i>Supprimer / modifier un chapitre</h4>
             </div>
 
-            <div class="col-11" id="commentaires" style="margin-bottom: 3%;">
+            <div class="col-12" id="box-dashboard" style="margin-bottom: 3%;">
               <h4 class="title-dashboard"><i class="fas fa-comments"></i>Commentaires</h4>
             </div>
 
-          </div>
+          </div>-->
 
       </div>
     </section>

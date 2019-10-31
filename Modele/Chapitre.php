@@ -6,7 +6,7 @@ class Chapitre extends Modele {
 
   // Renvoie la liste des chapitres du blog
   public function getChapitres() {
-    $sql = 'select id, date, title, content from chapters'
+    $sql = 'select id, date, title, content from chapter'
       . ' order by id desc';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
@@ -14,7 +14,7 @@ class Chapitre extends Modele {
 
   // Renvoie la liste des 5 derniers chapitres du blog
   public function getChapitresLimit() {
-    $sql = 'select id, date, title, content from chapters'
+    $sql = 'select id, date, title, content from chapter'
       . ' order by id desc LIMIT 0, 5';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
@@ -23,7 +23,7 @@ class Chapitre extends Modele {
 
   // Renvoie les informations sur un chapitre
   public function getChapitre($idChapitre) {
-    $sql = 'select id, date, title, content from chapters'
+    $sql = 'select id, date, title, content from chapter'
       . ' where id=?';
     $chapitre = $this->executerRequete($sql, array($idChapitre));
 
