@@ -22,17 +22,18 @@
           <div class="row" style="margin-bottom: 3%;">
 
             <div class="col-12" id="box-dashboard" style="margin-bottom: 3%;">
-              <h4 class="title-dashboard"><i class="fas fa-pen"></i>Ecrire un Chapitre</h4>
-              <div class="col-12">
-                <form method="post" action="writting_post.php">
+
+              
+                <form method="post" action="">
+                <h4 class="title-dashboard"><i class="fas fa-pen"></i>Ecrire un Chapitre</h4>
                     <div class="col-12">
                       <input type="text" id="form-writting" name="title" placeholder="Titre" style="height: 3.3rem;">
-                      <textarea id="form-writting" name="content">Ici vous pouvez rediger votre chapitre !</textarea>
+                      <textarea id="form-writting" name="content"></textarea>
                       <input type="submit" id="form-writting" value="Publier">
                     </div>
                     
                 </form>
-              </div>
+              
             </div>
 
           </div>

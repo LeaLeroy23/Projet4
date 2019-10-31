@@ -34,4 +34,12 @@ class Chapitre extends Modele {
       throw new Exception("Aucun chapitre ne correspond à l'identifiant '$idChapitre'");
     }
 
+    // Ajoute un chapitre dans la base
+    public function ajouterChapitre($title, $content) {
+    $sql = 'insert into comment(date, author, content)'
+       . ' values(?, ?, ?, ?)';
+    $date = date(DATE_W3C);  // Récupère la date courante
+    $this->executerRequete($sql, array($date, $title, $content));
+    }
+
 }
