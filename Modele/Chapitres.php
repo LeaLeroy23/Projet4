@@ -6,7 +6,7 @@ class Chapitres extends Modele {
 
   // Renvoie la liste des chapitres du blog
   public function getChapitres() {
-    $sql = 'select id, date, title, content from chapter'
+    $sql = 'select id, add_date, title, content from chapter'
       . ' order by id desc';
     $chapitres = $this->executerRequete($sql);
     return $chapitres;
@@ -20,7 +20,7 @@ class Chapitres extends Modele {
 
   // Renvoie les informations sur un chapitre
   public function getChapitre($idChapitre) {
-    $sql = 'select id, date, title, content from chapter'
+    $sql = 'select id, add_date, title, content from chapter'
       . ' where id=?';
     $chapitre = $this->executerRequete($sql, array($idChapitre));
 

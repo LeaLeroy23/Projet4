@@ -29,8 +29,13 @@
                     <div class="col-12">
                       <input type="text" id="form-writting" name="title" placeholder="Titre" style="height: 3.3rem;">
                       <textarea id="form-writting" name="content"></textarea>
-                      
-                      <input type="submit" id="form-writting" value="Publier">
+                        <div class="col-4">
+                          <input type="date"  name="add_date">
+                        </div>
+                        <div class="col-4">
+                          <input type="file"  name="url_photo" id="url_photo" enctype="multipart/form-data">
+                        </div>
+                          <input type="submit" id="form-writting" value="Publier">
                     </div>
                     
                 </form>

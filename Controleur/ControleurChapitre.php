@@ -23,10 +23,28 @@ class ControleurChapitre {
   }
 
   // Ajoute un chapitre
-  public function publier($title, $content) {
+  public function publier($title, $content, $add_date) {
     // Sauvegarde du commentaire
-    $this->chapitre->ajouterChapitre($title, $content);
+    $this->chapitre->ajouterChapitre($title, $content, $add_date);
     // Actualisation de l'affichage du dashboard
+  }
+
+  public function uploadFile($url_photo){
+    $target_dir = "images/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "Le fichier est une image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "le fichier n'est pas une image";
+            $uploadOk = 0;
+        }
+    }
   }
 
   // Ajoute un commentaire à un chapitre

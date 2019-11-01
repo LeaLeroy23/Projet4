@@ -57,7 +57,8 @@ class Routeur {
                     $this->ctrlDashboard->dashboard();
                     $title = $this->getParametre($_POST, 'title');
                     $content = $this->getParametre($_POST, 'content');
-                    $this->ctrlChapitre->publier($title, $content);
+                    $add_date = $this->getParametre($_POST, 'add_date');
+                    $this->ctrlChapitre->publier($title, $content, $add_date);
                   }
                     
                 else
