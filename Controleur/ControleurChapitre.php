@@ -23,14 +23,14 @@ class ControleurChapitre {
   }
 
   // Ajoute un chapitre
-  public function publier($title, $content, $add_date) {
-    // Sauvegarde du commentaire
-    $this->chapitre->ajouterChapitre($title, $content, $add_date);
+  public function publier($title, $content, $add_date, $url_photo) {
+    // Sauvegarde du chapitre
+    $this->chapitre->ajouterChapitre($title, $content, $add_date, $url_photo);
     // Actualisation de l'affichage du dashboard
   }
 
   public function uploadFile($url_photo){
-    $target_dir = "images/";
+    $target_dir = "contenu/images/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

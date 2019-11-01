@@ -34,11 +34,11 @@ class Chapitre extends Modele {
     }
 
     // Ajoute un chapitre dans la base
-    public function ajouterChapitre($title, $content, $add_date) {
-    $sql = 'insert into chapter(title, content, add_date)'
-       . ' values(?, ?, ?)';
+    public function ajouterChapitre($title, $content, $add_date, $url_photo) {
+    $sql = 'insert into chapter(title, content, add_date, url_photo)'
+       . ' values(?, ?, ?, ?)';
     //$date = date(DATE_W3C);  // Récupère la date courante
-    $this->executerRequete($sql, array($title, $content, $add_date));
+    $this->executerRequete($sql, array($title, $content, $add_date, $url_photo));
     }
 
 }
