@@ -22,6 +22,13 @@ class ControleurChapitre {
     $vue->generer(array('chapitre' => $chapitre, 'commentaires' => $commentaires));
   }
 
+  // Ajoute un chapitre
+  public function publier($title, $content) {
+    // Sauvegarde du commentaire
+    $this->chapitre->ajouterChapitre($title, $content);
+    // Actualisation de l'affichage du dashboard
+  }
+
   // Ajoute un commentaire à un chapitre
   public function commenter($auteur, $contenu, $idChapitre) {
     // Sauvegarde du commentaire

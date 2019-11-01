@@ -24,11 +24,12 @@
             <div class="col-12" id="box-dashboard" style="margin-bottom: 3%;">
 
               
-                <form method="post" action="">
+                <form method="post" action="index.php?action=dashboard">
                 <h4 class="title-dashboard"><i class="fas fa-pen"></i>Ecrire un Chapitre</h4>
                     <div class="col-12">
                       <input type="text" id="form-writting" name="title" placeholder="Titre" style="height: 3.3rem;">
                       <textarea id="form-writting" name="content"></textarea>
+                      
                       <input type="submit" id="form-writting" value="Publier">
                     </div>
                     

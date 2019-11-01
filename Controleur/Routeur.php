@@ -55,6 +55,9 @@ class Routeur {
                   }
                   else if ($_GET['action'] == 'dashboard'){
                     $this->ctrlDashboard->dashboard();
+                    $title = $this->getParametre($_POST, 'title');
+                    $content = $this->getParametre($_POST, 'content');
+                    $this->ctrlChapitre->publier($title, $content);
                   }
                     
                 else

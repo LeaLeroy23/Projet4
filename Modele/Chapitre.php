@@ -20,7 +20,6 @@ class Chapitre extends Modele {
     return $chapitres;
   }
 
-
   // Renvoie les informations sur un chapitre
   public function getChapitre($idChapitre) {
     $sql = 'select id, date, title, content from chapter'
@@ -36,10 +35,10 @@ class Chapitre extends Modele {
 
     // Ajoute un chapitre dans la base
     public function ajouterChapitre($title, $content) {
-    $sql = 'insert into comment(date, author, content)'
-       . ' values(?, ?, ?, ?)';
-    $date = date(DATE_W3C);  // Récupère la date courante
-    $this->executerRequete($sql, array($date, $title, $content));
+    $sql = 'insert into chapter(title, content)'
+       . ' values(?, ?)';
+    //$date = date(DATE_W3C);  // Récupère la date courante
+    $this->executerRequete($sql, array($title, $content));
     }
 
 }
