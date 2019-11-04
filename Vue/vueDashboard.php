@@ -11,7 +11,7 @@
                 <li class="li-dashboard"><a href="#dashboard" class="intern-link-dashboard">Tableau de bord</a></li>
                 <li class="li-dashboard"><a href="#chapitres" class="intern-link-dashboard">Chapitres</a></li>
                 <li class="li-dashboard"><a href="#ecrit" class="intern-link-dashboard">Ecriture d'un chapitre</a></li>
-                <li class="li-dashboard"><a href="#modification" class="intern-link-dashboard">Modification d'un chapitre</a></li>
+                <li class="li-dashboard"><a href="<?= "index.php?action=dashboard?action=modification&id=" . $chapitre['id'] ?>" class="intern-link-dashboard">Modification d'un chapitre</a></li>
                 <li class="li-dashboard"><a href="#commentaires" class="intern-link-dashboard">Commentaires</a></li>
               </ul>
             </nav>
@@ -52,11 +52,11 @@
               <div class="row">
                 <div class="col-12">
                   <label>                   
-                      <select name="chapters" multiple="yes" style="width: 100%; height: 350px;">
+                      
                           <?php foreach ($chapters as $chapter): ?>
-                               <option value="<?= $chapter['title'] ?>"><?= $chapter['title'] ?></option>
+                               <p><a href="<?= "index.php?action=dashboard&id=" . $chapitre['id'] ?>"><?= $chapter['title']; ?></a></p>
                           <?php endforeach; ?>
-                      </select>
+                      
                   </label>
                 </div>
               </div>

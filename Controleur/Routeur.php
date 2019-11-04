@@ -2,7 +2,7 @@
 // require
 require_once 'Controleur/ControleurAccueil.php';
 require_once 'Controleur/ControleurChapitre.php';
-require_once 'Controleur/ControleurChapitres.php';
+require_once 'Controleur/ControleurChapitres.php'; /*pour l'affichage de la liste*/ 
 require_once 'Controleur/ControleurConnexion.php';
 require_once 'Controleur/ControleurDashboard.php';
 require_once 'Controleur/ControleurContact.php';
@@ -48,19 +48,27 @@ class Routeur {
                   $this->ctrlChapitres->chapitres();
                 }
                 else if ($_GET['action'] == 'contact'){
-                    $this->ctrlContact->contact();
+                  $this->ctrlContact->contact();
+                }
+                else if ($_GET['action'] == 'connexion'){
+                  $this->ctrlConnexion->connexion();
+                }
+                else if ($_GET['action'] == 'dashboard'){
+                  $this->ctrlDashboard->dashboard();
+                  $title = $this->getParametre($_POST, 'title');
+                  $content = $this->getParametre($_POST, 'content');
+                  $add_date = $this->getParametre($_POST, 'add_date');
+                  $url_photo = $this->getParametre($_POST, 'url_photo');
+                  $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
+                }
+                else if ($_GET['action'] == 'modification') {
+                  $idChapitre = intval($this->getParametre($_GET, 'id'));
+                  if ($idChapitre != 0) {
+                    $this->ctrlChapitre->chapitre($idChapitre);
                   }
-                  else if ($_GET['action'] == 'connexion'){
-                    $this->ctrlConnexion->connexion();
-                  }
-                  else if ($_GET['action'] == 'dashboard'){
-                    $this->ctrlDashboard->dashboard();
-                    $title = $this->getParametre($_POST, 'title');
-                    $content = $this->getParametre($_POST, 'content');
-                    $add_date = $this->getParametre($_POST, 'add_date');
-                    $url_photo = $this->getParametre($_POST, 'url_photo');
-                    $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
-                  }
+                  else
+                    throw new Exception("Identifiant du Chapitre non valide");
+                }
                     
                 else
                      throw new Exception("Action non valide");

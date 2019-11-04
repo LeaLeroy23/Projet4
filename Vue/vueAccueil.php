@@ -27,7 +27,7 @@
                                     </a>
                                     <ul class="entry__meta">
                                         <li>Jean Forteroche</a></li>
-                                        <li><?= $chapitre['date']?></li>
+                                        <li><?= $chapitre['add_date']?></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->

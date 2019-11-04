@@ -33,7 +33,7 @@
 
                         <p class="chapitre-text"><?= ControleurChapitres::excerpt($chapitre['content']); ?></p>
 
-                        <p class="chapitre-date">Date de publication: <?= $chapitre['date']?></p>
+                        <p class="chapitre-date">Date de publication: <?= $chapitre['add_date']?></p>
 
                       </div>
 
