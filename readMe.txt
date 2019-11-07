@@ -13,3 +13,6 @@ formulaire pour ajout d'un chapitre depuis le dashboard [X]
     Travail en plus
     Fomulaire ajout d'une date [X]
     Formulaire ajout d'une image [en cours]
+
+"Objectfs" pour le 11/11
+uplaod d'un fichier avec sécurité et erreurs

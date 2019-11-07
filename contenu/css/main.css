@@ -192,6 +192,10 @@ h6, .h6 {
   max-width: 100%;
 }
 
+p {
+  margin-bottom: 1.5rem;
+}
+
 /* ===================================================================
  * # base style overrides
  *
@@ -540,11 +544,13 @@ li {
 }
 
 ol, ul {
-  margin-left: 1.7rem;
+  margin-left: 1.1rem;
+  margin-right: 1.1rem;
 }
 
 ul li {
   padding-left: .4rem;
+  padding-right: .4rem;
 }
 
 ul ul, ul ol, ol ol, ol ul {
@@ -667,7 +673,6 @@ select,
 pre,
 figure,
 table,
-p,
 ul,
 ol,
 dl,
@@ -3224,24 +3229,49 @@ body.search-is-visible {
 /* -------------------------------------------------------------------
  * ## Dashboard
  * ------------------------------------------------------------------- */
+.dashboard-section{
+  padding-bottom: 0;
+  display: flex;
+  padding-top: 7,8rem;
+}
+
+.col-nav{
+  padding-left: 0px;
+}
+
+ .bloc-dash{
+  padding: 0px;
+  display: flex;
+}
+
+.box-dashboard{
+  margin-bottom: 3%;
+}
+
+.row-dashboard{
+  margin-top: 4%;
+}
 
 .column{
-  max-width: 18%;
+  /*max-width: 18%;*/
   background-color: #fff;
-  min-height: 530px;
+  padding: 0px;
+  /*min-height: 530px;*/
 }
 
 .nav-dashboard{
   line-height: 4;
   background-color: #fff;
   box-shadow: 3px 0px 7px #1a1d3b5e;
-  height: 100%;
+  min-height: 1170px;
 }
 
 .summary{
   padding-top: 30px;
   text-decoration: none;
   list-style: none;
+  line-height: 70px;
+  font-size: 1.7rem;
 }
 
 .intern-link-dashboard{
@@ -3261,7 +3291,7 @@ body.search-is-visible {
 
 .container-dashboard{
   width: 90%;
-  margin-top: 4%;
+  margin: 0 auto;
 }
 
 .title-dashboard{
