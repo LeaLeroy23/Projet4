@@ -53,24 +53,29 @@ class ControleurDashboard {
                 // Vérifie le type MIME du fichier
                 if(in_array($filetype, $allowed)){
                     //verifie si le fichier existe avant de le telecharger
-                    if(file_exists("upload/" . $_FILES["url_photo"]["name"])){
+                    if(file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])){
                         echo $_FILES["url_photo"]["name"] . "existe déjà.";
                     } else {
-                        move_uploaded_file($_FILES["url_photo"]["tmp_name"], "upload/" .$_FILES["url_photo"]["name"]);
+                        $chapitre = $this->chapitre->getChapitres();
+                        move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  uniqid() . '.' . $ext);
                         echo "votre fichier a été télécharger avec succès";
+                        print_r($_FILES);
+                        die();
                     }
                 } else{
                     echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer."; 
                 }
+
             }
                          
                   // traitement de formulaire photo, extention, error=0
-                  // genere un nom unique et on lui ajoute l'extension
+                  // genere un nom unique et on lui ajoute l'extension (function uniqid() + extension)
 
                   // if
                   //$this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
-                  // move_upload_files fichier tmp -> images/nom du fichier generé
+                  // move_upload_files fichier tmp -> images/nom du fichier generé [X]
                   // else erreur impossible de poster l'article
+                  
         }
     
 

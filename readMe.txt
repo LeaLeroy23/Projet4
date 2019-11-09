@@ -8,11 +8,12 @@ Finir le template de l'administration [ ]
 Afficher les chapitres dans l'espace d'administration (+ le nombre si possible)[X]
 
 "Objectfs" pour le 30/10
-Vérifier l'intéret des fichiers type contact [X], connexion [X] ou chapitres [ ]
+Vérifier l'intéret des fichiers type contact [X], connexion [X] ou chapitres [X]
 formulaire pour ajout d'un chapitre depuis le dashboard [X]
     Travail en plus
     Fomulaire ajout d'une date [X]
-    Formulaire ajout d'une image [en cours]
+    Formulaire ajout d'une image [X
 
 "Objectfs" pour le 11/11
-uplaod d'un fichier avec sécurité et erreurs
+mettre en français la date et l'upload de fichier
+uplaod d'un fichier avec sécurité et erreurs [en cours]
