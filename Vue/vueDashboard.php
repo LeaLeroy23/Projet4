@@ -35,15 +35,23 @@
                         <div class="col-12">
                           <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= isset($title) ? $title : '' ?>'>
                               <?php if (isset($errors['message']['title'])) { ?>
-                                <div class="col-12 errors">
+                                <div class="errors">
                                   <p>Le titre ne doit pas être vide et doit comporter au maximum 100 caractères </p>
                                 </div>
                               <?php } if (isset($errors['form']['title'])) {?>
-                            <p>Le titre à une taille supérieur à 100 caractères</p>
+                                <div class="errors">
+                                  <p>Le titre à une taille supérieur à 100 caractères</p>
+                                </div>
                               <?php } ?>
                           <textarea id="form-writting" name="content"><?= isset($form['content']) ? $form['content'] : '' ?></textarea>
                           <?php if (isset($errors['message']['content'])) { ?>
-                          <p>Le contenu ne doit pas être vide</p>
+                            <div class="errors">
+                              <p>Le contenu ne doit pas être vide</p>
+                            </div>
+                          <?php } if (isset($errors['form']['content'])) {?>
+                            <div class="errors">
+                              <p>Le contenu ne doit pas dépasser 2000 caractères</p>
+                            </div>
                           <?php } ?>
                             <div class="col-4">
                               <input type="date" name="add_date" required pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}">
