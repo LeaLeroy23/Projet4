@@ -15,5 +15,11 @@ formulaire pour ajout d'un chapitre depuis le dashboard [X]
     Formulaire ajout d'une image [X
 
 "Objectfs" pour le 11/11
-mettre en français la date et l'upload de fichier
-uplaod d'un fichier avec sécurité et erreurs [en cours]
+mettre en français la date et l'upload de fichier [didn't find]
+uplaod d'une image avec changement de nom et placement dans un fichier à pars [X]
+verif taille + extension + nom [x]
+
+"Objectifs" pour le 13/11
+Faire le traitement des messages d'erreurs pour l'ajout d'article []
+Mettre en place l'ajout de l'url de l'image dans la bdd []
+Mettre en place des constantes []

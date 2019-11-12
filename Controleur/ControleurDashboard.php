@@ -16,7 +16,7 @@ class ControleurDashboard {
     //Affiche les détails sur un chapitre
     public function modification($idChapitre){
         $chapitre = $this->chapitre->getChapitre($idChapitre);
-        $commentaires = $this->commentaire->getVommentaire($idChapitre);
+        $commentaires = $this->commentaire->getCommentaire($idChapitre);
         $vue = new Vue("modification");
         $vue->generer(array('chapitre' => $chapitre, 'commentaires' => $commentaires));
     }
@@ -25,13 +25,26 @@ class ControleurDashboard {
     public function dashboard() {
         //echo '<pre>';
         //print_r($_POST);
+        $errors=[];
+        $form=[];
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //créer un tableau $errors
+        
         //le formulaire est posté
         //je traite les données
             $title = $_POST['title'];
+            if(empty($title)){
+                $errors['message']['title'] = 'le titre est vide';
+            
+            }
             // si title vide ou n'a pas la longueur -> $errors['title'] = 'vide ou pas la bonne longueur'
             $content = $_POST['content'];
+            if(empty($content)){
+                $errors['message']['content'] = 'le content est vide';
+            } else {
+                $form['content'] = $content;
+            }
+            
             $add_date = $_POST['add_date'];
 
             //traitement d'un fichier a uplader
@@ -53,23 +66,22 @@ class ControleurDashboard {
                 // Vérifie le type MIME du fichier
                 if(in_array($filetype, $allowed)){
                     //verifie si le fichier existe avant de le telecharger
-                    if(file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])){
+                    if(file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])){ //$_SERVER['REMOTE_HOST'] DIRECTORY_SEPARATOR
                         echo $_FILES["url_photo"]["name"] . "existe déjà.";
                     } else {
                         $chapitre = $this->chapitre->getChapitres();
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  uniqid() . '.' . $ext);
                         echo "votre fichier a été télécharger avec succès";
-                        print_r($_FILES);
-                        die();
                     }
                 } else{
                     echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer."; 
                 }
 
             }
+
                          
-                  // traitement de formulaire photo, extention, error=0
-                  // genere un nom unique et on lui ajoute l'extension (function uniqid() + extension)
+                  // traitement de formulaire photo, extention, error=0 [X]
+                  // genere un nom unique et on lui ajoute l'extension (function uniqid() + extension) [X]
 
                   // if
                   //$this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
@@ -82,6 +94,10 @@ class ControleurDashboard {
     // affichage de la vue
     $chapters = $this->chapitre->getChapitres();
     $vue = new Vue("Dashboard");
-    $vue->generer(array('chapters' => $chapters));
+    $vue->generer(array(
+        'chapters' => $chapters,
+        'errors' => $errors,
+        'form' => $form
+    ));
   }
 }
