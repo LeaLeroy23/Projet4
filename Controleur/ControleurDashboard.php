@@ -35,12 +35,13 @@ class ControleurDashboard {
             $title = $_POST['title'];
             if(empty($title)){
                 $errors['message']['title'] = 'le titre est vide';
-            
+            } if (strlen($title)>100){
+                $errors['form']['title'] = 'le titre est trop long';
             }
             // si title vide ou n'a pas la longueur -> $errors['title'] = 'vide ou pas la bonne longueur'
             $content = $_POST['content'];
             if(empty($content)){
-                $errors['message']['content'] = 'le content est vide';
+                $errors['message']['content'] = 'le contenu est vide';
             } else {
                 $form['content'] = $content;
             }

@@ -34,9 +34,13 @@
                     <h4 class="title-dashboard"><i class="fas fa-pen"></i>Ecrire un Chapitre</h4>
                         <div class="col-12">
                           <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= isset($title) ? $title : '' ?>'>
-                          <?php if (isset($errors['message']['title'])) { ?>
-                          <p>Le titre ne doit pas être vide et doit comporter au maximum ... </p>
-                          <?php } ?>
+                              <?php if (isset($errors['message']['title'])) { ?>
+                                <div class="col-12 errors">
+                                  <p>Le titre ne doit pas être vide et doit comporter au maximum 100 caractères </p>
+                                </div>
+                              <?php } if (isset($errors['form']['title'])) {?>
+                            <p>Le titre à une taille supérieur à 100 caractères</p>
+                              <?php } ?>
                           <textarea id="form-writting" name="content"><?= isset($form['content']) ? $form['content'] : '' ?></textarea>
                           <?php if (isset($errors['message']['content'])) { ?>
                           <p>Le contenu ne doit pas être vide</p>
