@@ -98,7 +98,7 @@
 
         </header> <!-- s-header -->
 
-    <body>
+    
 
           <?= $contenu ?>
 

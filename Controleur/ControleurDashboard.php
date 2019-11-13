@@ -9,6 +9,8 @@ class ControleurDashboard {
     private $chapitre;
     private $commentaire;
 
+    const MAXSIZE = 5*1024*1024;
+
     public function __construct() {
         $this->chapitre = new Chapitre();
     }
@@ -28,7 +30,7 @@ class ControleurDashboard {
         $errors=[];
         $form=[];
         $maxsize = 5 * 1024 * 1024;
-
+        
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //le formulaire est posté
         //je traite les données
@@ -60,7 +62,7 @@ class ControleurDashboard {
                 if(!array_key_exists($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide.");
 
                 // Vérifie la taille du fichier - 5Mo maximum
-                if($filesize > $maxsize) die("Erreur: La taille du fichier est supérieure à la limite autorisée.");
+                if($filesize > self::MAXSIZE) die("Erreur: La taille du fichier est supérieure à la limite autorisée.");
 
                 // Vérifie le type MIME du fichier
                 if(in_array($filetype, $allowed)){
@@ -78,9 +80,7 @@ class ControleurDashboard {
                 }
 
             }
-                  // if
                   //$this->chapitre->publier($title, $content, $add_date, $url_photo);
-                  // else erreur impossible de poster l'article
         }
 
     // affichage de la vue

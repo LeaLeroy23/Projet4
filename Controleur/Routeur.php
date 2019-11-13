@@ -59,8 +59,8 @@ class Routeur {
                     /*$title = $this->getParametre($_POST, 'title');
                     $content = $this->getParametre($_POST, 'content');
                     $add_date = $this->getParametre($_POST, 'add_date');
-                    $url_photo = $this->getParametre($_POST, 'url_photo');
-                    $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);*/
+                    $url_photo = $this->getParametre($_POST, 'url_photo');*/
+                    $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
                 }
                 else if ($_GET['action'] == 'modification') {
                     $idChapitre = intval($this->getParametre($_GET, 'id'));
