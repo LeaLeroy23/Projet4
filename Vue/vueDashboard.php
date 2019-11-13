@@ -35,7 +35,7 @@
                         <div class="col-12">
                           <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= isset($title) ? $title : '' ?>'>
                               <?php if (isset($errors['message']['title'])) { ?>
-                                <div class="errors">
+                                <div class="error">
                                   <p>Le titre ne doit pas être vide et doit comporter au maximum 100 caractères </p>
                                 </div>
                               <?php } if (isset($errors['form']['title'])) {?>

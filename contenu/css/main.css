@@ -3275,17 +3275,12 @@ body.search-is-visible {
 }
 
 .intern-link-dashboard{
-  
   text-decoration: none;
 }
 
 .sub-li-dashboard{
   line-height: 2;
   text-decoration: none;
-}
-
-.errors{
-  background: #FF8D8B;
 }
 
 /*.container{

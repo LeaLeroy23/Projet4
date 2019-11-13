@@ -27,9 +27,9 @@ class ControleurDashboard {
         //print_r($_POST);
         $errors=[];
         $form=[];
+        $maxsize = 5 * 1024 * 1024;
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //créer un tableau $errors
-        
         //le formulaire est posté
         //je traite les données
             $title = $_POST['title'];
@@ -38,7 +38,6 @@ class ControleurDashboard {
             } if (strlen($title)>100){
                 $errors['form']['title'] = 'le titre est trop long';
             }
-            // si title vide ou n'a pas la longueur -> $errors['title'] = 'vide ou pas la bonne longueur'
             $content = $_POST['content'];
             if(empty($content)){
                 $errors['message']['content'] = 'le contenu est vide';
@@ -61,16 +60,16 @@ class ControleurDashboard {
                 if(!array_key_exists($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide.");
 
                 // Vérifie la taille du fichier - 5Mo maximum
-                $maxsize = 5 * 1024 * 1024;
                 if($filesize > $maxsize) die("Erreur: La taille du fichier est supérieure à la limite autorisée.");
 
                 // Vérifie le type MIME du fichier
                 if(in_array($filetype, $allowed)){
                     //verifie si le fichier existe avant de le telecharger
+                    //if(file_exists($_SERVER['REMOTE_HOST'] . DIRECTORY_SEPARATOR . 'upload'. DIRECTORY_SEPARATOR . 'contenu' . DIRECTORY_SEPARATOR))
                     if(file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])){ //$_SERVER['REMOTE_HOST'] DIRECTORY_SEPARATOR
                         echo $_FILES["url_photo"]["name"] . "existe déjà.";
                     } else {
-                        $chapitre = $this->chapitre->getChapitres();
+                        //$chapitre = $this->chapitre->getChapitres();
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  uniqid() . '.' . $ext);
                         echo "votre fichier a été télécharger avec succès";
                     }
@@ -79,18 +78,10 @@ class ControleurDashboard {
                 }
 
             }
-
-                         
-                  // traitement de formulaire photo, extention, error=0 [X]
-                  // genere un nom unique et on lui ajoute l'extension (function uniqid() + extension) [X]
-
                   // if
-                  //$this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
-                  // move_upload_files fichier tmp -> images/nom du fichier generé [X]
+                  //$this->chapitre->publier($title, $content, $add_date, $url_photo);
                   // else erreur impossible de poster l'article
-                  
         }
-    
 
     // affichage de la vue
     $chapters = $this->chapitre->getChapitres();

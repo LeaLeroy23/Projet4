@@ -12,7 +12,7 @@ Vérifier l'intéret des fichiers type contact [X], connexion [X] ou chapitres [
 formulaire pour ajout d'un chapitre depuis le dashboard [X]
     Travail en plus
     Fomulaire ajout d'une date [X]
-    Formulaire ajout d'une image [X
+    Formulaire ajout d'une image [X]
 
 "Objectfs" pour le 11/11
 mettre en français la date et l'upload de fichier [didn't find]
@@ -20,6 +20,6 @@ uplaod d'une image avec changement de nom et placement dans un fichier à pars [
 verif taille + extension + nom [x]
 
 "Objectifs" pour le 13/11
-Faire le traitement des messages d'erreurs pour l'ajout d'article []
+Faire le traitement des messages d'erreurs pour l'ajout d'article [X]
 Mettre en place l'ajout de l'url de l'image dans la bdd []
 Mettre en place des constantes []

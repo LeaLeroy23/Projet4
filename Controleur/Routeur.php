@@ -45,40 +45,41 @@ class Routeur {
                     $this->ctrlChapitre->commenter($auteur, $contenu, $idChapitre);
                 }
                 else if ($_GET['action'] == 'chapitres'){
-                  $this->ctrlChapitres->chapitres();
+                    $this->ctrlChapitres->chapitres();
                 }
                 else if ($_GET['action'] == 'contact'){
-                  $this->ctrlContact->contact();
+                    $this->ctrlContact->contact();
                 }
                 else if ($_GET['action'] == 'connexion'){
-                  $this->ctrlConnexion->connexion();
+                    $this->ctrlConnexion->connexion();
                 }
                 else if ($_GET['action'] == 'dashboard'){
-                  $this->ctrlDashboard->dashboard();
-                  /*$title = $this->getParametre($_POST, 'title');
-                  $content = $this->getParametre($_POST, 'content');
-                  $add_date = $this->getParametre($_POST, 'add_date');
-                  $url_photo = $this->getParametre($_POST, 'url_photo');
-                  $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);*/
+                    $this->ctrlDashboard->dashboard();
+                    
+                    /*$title = $this->getParametre($_POST, 'title');
+                    $content = $this->getParametre($_POST, 'content');
+                    $add_date = $this->getParametre($_POST, 'add_date');
+                    $url_photo = $this->getParametre($_POST, 'url_photo');
+                    $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);*/
                 }
                 else if ($_GET['action'] == 'modification') {
-                  $idChapitre = intval($this->getParametre($_GET, 'id'));
+                    $idChapitre = intval($this->getParametre($_GET, 'id'));
                   if ($idChapitre != 0) {
-                    $this->ctrlChapitre->chapitre($idChapitre);
+                      $this->ctrlChapitre->chapitre($idChapitre);
                   }
                   else
-                    throw new Exception("Identifiant du Chapitre non valide");
+                      throw new Exception("Identifiant du Chapitre non valide");
                 }
                     
                 else
                      throw new Exception("Action non valide");
                  }
                  else {  // aucune action définie : affichage de l'accueil
-                $this->ctrlAccueil->accueil();
+              $this->ctrlAccueil->accueil();
             }
           }
           catch (Exception $e) {
-            $this->erreur($e->getMessage());
+              $this->erreur($e->getMessage());
         }
       }
 
