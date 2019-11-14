@@ -1,3 +1,9 @@
+<?php $this->titre = "Espace Administration / Edition"; ?>
+
+    <?php
+    include 'gabaritSidebar.php';
+    ?>
+
             <div class="col-10">
                 <div class="container-dashboard" id="dashboard">
 
