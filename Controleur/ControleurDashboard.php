@@ -9,6 +9,7 @@ class ControleurDashboard {
     private $chapitre;
     private $commentaire;
 
+    //définition de constante pour l'utilisation dans plusieurs fonciton
     const MAXSIZE = 5*1024*1024;
 
     public function __construct() {
@@ -83,13 +84,25 @@ class ControleurDashboard {
                   //$this->chapitre->publier($title, $content, $add_date, $url_photo);
         }
 
-    // affichage de la vue
-    $chapters = $this->chapitre->getChapitres();
-    $vue = new Vue("Dashboard");
-    $vue->generer(array(
-        'chapters' => $chapters,
-        'errors' => $errors,
-        'form' => $form
-    ));
-  }
+        // affichage de la vue
+        $chapters = $this->chapitre->getChapitres();
+        $vue = new Vue("Dashboard");
+        $vue->generer(array(
+            'chapters' => $chapters,
+            'errors' => $errors,
+            'form' => $form
+        ));
+    }
+
+    public function edit(){
+        // affichage de la vue
+        $chapters = $this->chapitre->getChapitres();
+        $vue = new Vue("edit");
+        $vue->generer(array(
+            /*'chapters' => $chapters,
+            'errors' => $errors,
+            'form' => $form*/
+        ));
+
+    }
 }

@@ -25,6 +25,7 @@ Mettre en place l'ajout de l'url de l'image dans la bdd []
 Mettre en place des constantes []
 
 "Objectifs" pour le 20/11
-revoir indentation code
-MModifier liste chap dans Dashboard pour ajout modif + supp[]
-eclater vueDashboard avec include sidebar + creation vueEdit[]
+revoir indentation code [X]
+Modifier liste chap dans Dashboard pour ajout modif + supp[]
+eclater vueDashboard avec include sidebar + creation vueEdit[X]
+Mise en suppression du modele Chapitres [X]

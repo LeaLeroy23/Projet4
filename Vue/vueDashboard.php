@@ -17,6 +17,7 @@
 
                                     <h4 class="title-dashboard"><i class="fas fa-pen"></i>Ecrire un Chapitre</h4>
 
+                                    <!--Formulaire de redaction d'un chapitre-->
                                     <div class="col-12">
                                       <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= isset($title) ? $title : '' ?>'>
                                           <?php if (isset($errors['message']['title'])) { ?>
@@ -46,6 +47,7 @@
                                         </div>
                                           <input type="submit" id="form-writting" value="Publier">
                                     </div>
+                                    <!--Fin -- Formulaire de redaction d'un chapitre-->
                                 
                             </form>
                           
@@ -56,18 +58,29 @@
                     <div class="row row-dashboard">
 
                         <div class="col-12" id="box-dashboard">
-                        
+
                             <h4 class="title-dashboard"><i class="fas fa-list-alt"></i>Liste des chapitres (<?= $chapters->rowCount(); ?>)</h4>
 
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12 crud-block">
+
                                     <label>                   
                                         
                                         <?php foreach ($chapters as $chapter): ?>
-                                            <p><a href=""><?= $chapter['title']; ?></a></p>
+                                            <div class="crud-block">
+                                                <a href="" class="crud-link">
+                                                    <p><?= $chapter['title']; ?></p>
+                                                </a>
+                                                    
+                                                <a href="" class="crud-link"><i class="fas fa-edit"></i></a>
+
+                                                <a href="" class="crud-link"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                                
                                         <?php endforeach; ?>
                                         
                                     </label>
+
                                 </div>
                             </div>
 

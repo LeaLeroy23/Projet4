@@ -60,21 +60,17 @@ class Routeur {
                     $content = $this->getParametre($_POST, 'content');
                     $add_date = $this->getParametre($_POST, 'add_date');
                     $url_photo = $this->getParametre($_POST, 'url_photo');*/
-                    $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
+                   // $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
                 }
-                else if ($_GET['action'] == 'modification') {
-                    $idChapitre = intval($this->getParametre($_GET, 'id'));
-                  if ($idChapitre != 0) {
-                      $this->ctrlChapitre->chapitre($idChapitre);
-                  }
-                  else
-                      throw new Exception("Identifiant du Chapitre non valide");
+                else if ($_GET['action'] == 'edit') {
+                    $this->ctrlDashboard->edit();
                 }
                     
                 else
-                     throw new Exception("Action non valide");
-                 }
-                 else {  // aucune action définie : affichage de l'accueil
+                    throw new Exception("Action non valide");
+                }
+
+                else {  // aucune action définie : affichage de l'accueil
               $this->ctrlAccueil->accueil();
             }
           }

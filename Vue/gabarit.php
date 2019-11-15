@@ -58,11 +58,14 @@
             <div class="header__search">
 
                 <form role="search" method="get" class="header__search-form" action="#">
+
                     <label>
                         <span class="hide-content">Search for:</span>
                         <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
                     </label>
+
                     <input type="submit" class="search-submit" value="Search">
+
                 </form>
 
                 <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
@@ -75,8 +78,9 @@
                 <h2 class="header__nav-heading h6">Navigate to</h2>
 
                 <ul class="header__nav">
+
                     <li class="current">
-                      <a href="index.php" title="">Accueil</a>
+                        <a href="index.php" title="">Accueil</a>
                     </li>
 
                     <li>
@@ -88,8 +92,9 @@
                     </li>
 
                     <li>
-                      <a href="index.php?action=connexion">Connexion</a>
+                        <a href="index.php?action=connexion">Connexion</a>
                     </li>
+
                 </ul> <!-- end header__nav -->
 
                 <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
@@ -100,69 +105,77 @@
 
     
 
-          <?= $contenu ?>
+        <?= $contenu; ?>
 
 
-<!-- s-footer
-================================================== -->
-<footer class="s-footer">
+        <!-- s-footer
+        ================================================== -->
 
-    <div class="s-footer__main">
-      <div class="row">
+        <footer class="s-footer">
+
+            <div class="s-footer__bottom">
+
+                <div class="row">
+
+                    <div class="col-six">
+
+                        <ul class="footer-social">
+
+                            <li>
+                                <a href="#0"><i class="fab fa-facebook"></i></a>
+                            </li>
+
+                            <li>
+                                <a href="#0"><i class="fab fa-twitter"></i></a>
+                            </li>
+
+                            <li>
+                                <a href="#0"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="#0"><i class="fab fa-youtube"></i></a>
+                            </li>
+
+                            <li>
+                                <a href="#0"><i class="fab fa-pinterest"></i></a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-six">
+
+                        <div class="s-footer__copyright">
+
+                            <span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tout droit réservé | Ce thème  a été fait avec <i class="fa fa-heart" aria-hidden="true"></i> <br />par <a href="https://lea-leroy.com" target="_blank">Lea Leroy</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </span>
+                                
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div> <!-- end s-footer__bottom -->
+
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                </div>
+
+        </footer> <!-- end s-footer -->
 
 
-                  </div>
-              </div> <!-- end s-footer__main -->
+                <!-- Java Script
+                ================================================== -->
+                <script src="contenu/js/jquery-3.2.1.min.js"></script>
+                <script src="contenu/js/plugins.js"></script>
+                <script src="contenu/js/main.js"></script>
+                <script src="https://cdn.tiny.cloud/1/78mkrrxmcpeanii9qztublptgkaurxri8bz5npmreh11moog/tinymce/5/tinymce.min.js"></script>
 
-              <div class="s-footer__bottom">
-                  <div class="row">
+    </body>
 
-                      <div class="col-six">
-                          <ul class="footer-social">
-                              <li>
-                                  <a href="#0"><i class="fab fa-facebook"></i></a>
-                              </li>
-                              <li>
-                                  <a href="#0"><i class="fab fa-twitter"></i></a>
-                              </li>
-                              <li>
-                                  <a href="#0"><i class="fab fa-instagram"></i></a>
-                              </li>
-                              <li>
-                                  <a href="#0"><i class="fab fa-youtube"></i></a>
-                              </li>
-                              <li>
-                                  <a href="#0"><i class="fab fa-pinterest"></i></a>
-                              </li>
-                          </ul>
-                      </div>
-
-                      <div class="col-six">
-                          <div class="s-footer__copyright">
-                              <span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </span>
-                          </div>
-                      </div>
-
-                  </div>
-              </div> <!-- end s-footer__bottom -->
-
-              <div class="go-top">
-                  <a class="smoothscroll" title="Back to Top" href="#top"></a>
-              </div>
-
-          </footer> <!-- end s-footer -->
-
-
-          <!-- Java Script
-          ================================================== -->
-          <script src="contenu/js/jquery-3.2.1.min.js"></script>
-          <script src="contenu/js/plugins.js"></script>
-          <script src="contenu/js/main.js"></script>
-          <script src="https://cdn.tiny.cloud/1/78mkrrxmcpeanii9qztublptgkaurxri8bz5npmreh11moog/tinymce/5/tinymce.min.js"></script>
-
-          </body>
-
-          </html>
+</html>

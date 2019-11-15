@@ -49,27 +49,6 @@
 
                     </div>
 
-                    <div class="row row-dashboard">
-
-                        <div class="col-12" id="box-dashboard">
-                            <h4 class="title-dashboard"><i class="fas fa-list-alt"></i>Liste des chapitres (<?= $chapters->rowCount(); ?>)</h4>
-
-                            <div class="row">
-                                <div class="col-12">
-                                    <label>                   
-                                
-                                        <?php foreach ($chapters as $chapter): ?>
-                                            <p><a href=""><?= $chapter['title']; ?></a></p>
-                                        <?php endforeach; ?>
-                                
-                                    </label>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
 

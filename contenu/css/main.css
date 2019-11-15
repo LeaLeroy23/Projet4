@@ -3315,8 +3315,11 @@ body.search-is-visible {
   box-shadow: 3px 0px 7px #1a1d3b5e;
 }
 
+.crud-link{
+}
+
 .fas{
-  margin-right: 5%;
+  margin-right: 3%;
 }
 
 #form-writting{
