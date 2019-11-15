@@ -62,19 +62,27 @@
                             <h4 class="title-dashboard"><i class="fas fa-list-alt"></i>Liste des chapitres (<?= $chapters->rowCount(); ?>)</h4>
 
                             <div class="row">
-                                <div class="col-12 crud-block">
+                                <div class="col-12">
 
                                     <label>                   
                                         
                                         <?php foreach ($chapters as $chapter): ?>
                                             <div class="crud-block">
-                                                <a href="" class="crud-link">
-                                                    <p><?= $chapter['title']; ?></p>
-                                                </a>
-                                                    
-                                                <a href="" class="crud-link"><i class="fas fa-edit"></i></a>
 
-                                                <a href="" class="crud-link"><i class="fas fa-trash-alt"></i></a>
+                                                <div class="col-10">
+                                                    <a href="" class="crud-link">
+                                                        <p><?= $chapter['title']; ?></p>
+                                                    </a>
+                                                </div>
+
+                                                <div class="col-1">
+                                                    <a href="" class="crud-link"><i class="fas fa-edit"></i></a>
+                                                </div>
+
+                                                <div class="col-1">
+                                                    <a href="" class="crud-link"><i class="fas fa-trash-alt"></i></a>
+                                                </div>
+
                                             </div>
                                                 
                                         <?php endforeach; ?>

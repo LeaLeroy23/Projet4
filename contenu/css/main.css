@@ -985,7 +985,7 @@ select:focus {
 label, legend {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: .9rem;
   line-height: 1.714;
   color: #000000;
@@ -3299,13 +3299,6 @@ body.search-is-visible {
   padding-left: 12px;
 }
 
-.col-3{
-  width: 45%;
-  height: 350px;
-  background-color: #fff;
-  box-shadow: 3px 0px 7px #1a1d3b5e;
-  border-radius: 10px;
-}
 
 #box-dashboard{
   border-radius: 10px;
@@ -3315,8 +3308,11 @@ body.search-is-visible {
   box-shadow: 3px 0px 7px #1a1d3b5e;
 }
 
-.crud-link{
+.crud-block{
+  display: flex;
+  /*justify-content: space-around;*/
 }
+
 
 .fas{
   margin-right: 3%;

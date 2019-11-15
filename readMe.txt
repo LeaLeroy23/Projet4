@@ -26,6 +26,6 @@ Mettre en place des constantes []
 
 "Objectifs" pour le 20/11
 revoir indentation code [X]
-Modifier liste chap dans Dashboard pour ajout modif + supp[]
+Modifier liste chap dans Dashboard pour ajout modif + supp[X]
 eclater vueDashboard avec include sidebar + creation vueEdit[X]
 Mise en suppression du modele Chapitres [X]
