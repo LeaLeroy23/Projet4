@@ -40,7 +40,10 @@ class ControleurDashboard {
                 $errors['message']['title'] = 'le titre est vide';
             } if (strlen($title)>100){
                 $errors['form']['title'] = 'le titre est trop long';
+            } else {
+                
             }
+
             $content = $_POST['content'];
             if(empty($content)){
                 $errors['message']['content'] = 'le contenu est vide';
@@ -81,8 +84,9 @@ class ControleurDashboard {
                 }
 
             }
-                  //$this->chapitre->publier($title, $content, $add_date, $url_photo);
-        }
+        } /*else {
+            $this->chapitre->addChapter($title, $content, $add_date, $url_photo);
+        }*/
 
         // affichage de la vue
         $chapters = $this->chapitre->getChapitres();
@@ -94,7 +98,18 @@ class ControleurDashboard {
         ));
     }
 
+
     public function edit(){
+        if(isset($_POST['update'])){
+            $title=$_POST['title'];
+            $content=$_POST['content'];
+            $add_date=$_POST['add_date'];
+            $url_photo=$_POST['url_photo'];
+        } else{
+            $this->chapitre->updateChapitre($title, $contenu, $add_date, $url_photo);
+            echo 'Le chapitre à bien été mis à jour';
+        }
+
         // affichage de la vue
         $chapters = $this->chapitre->getChapitres();
         $vue = new Vue("edit");
@@ -104,5 +119,9 @@ class ControleurDashboard {
             'form' => $form*/
         ));
 
+    }
+
+    public function delete(){
+        
     }
 }

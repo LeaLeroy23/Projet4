@@ -55,12 +55,14 @@ class Routeur {
                 }
                 else if ($_GET['action'] == 'dashboard'){
                     $this->ctrlDashboard->dashboard();
+                    //$addChapter = $this->ctrlChapitre->ajouterChapitre();
                     
                     /*$title = $this->getParametre($_POST, 'title');
                     $content = $this->getParametre($_POST, 'content');
                     $add_date = $this->getParametre($_POST, 'add_date');
                     $url_photo = $this->getParametre($_POST, 'url_photo');*/
                    // $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
+
                 }
                 else if ($_GET['action'] == 'edit') {
                     $this->ctrlDashboard->edit();

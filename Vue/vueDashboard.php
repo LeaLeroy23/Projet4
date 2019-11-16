@@ -40,7 +40,7 @@
                                         </div>
                                       <?php } ?>
                                         <div class="col-4">
-                                          <input type="date" name="add_date" required pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}">
+                                          <input type="date" name="add_date">
                                         </div>
                                         <div class="col-4">
                                           <input type="file" name="url_photo" id="url_photo">
@@ -70,13 +70,13 @@
                                             <div class="crud-block">
 
                                                 <div class="col-10">
-                                                    <a href="" class="crud-link">
+                                                    <a href="<?= "index.php?action=chapitre&id=" . $chapter['id']; ?>" class="crud-link">
                                                         <p><?= $chapter['title']; ?></p>
                                                     </a>
                                                 </div>
 
                                                 <div class="col-1">
-                                                    <a href="" class="crud-link"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?="index.php?action=edit&id=" . $chapter['id']; ?>" class="crud-link"><i class="fas fa-edit"></i></a>
                                                 </div>
 
                                                 <div class="col-1">

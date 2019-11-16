@@ -22,14 +22,14 @@ class ControleurChapitre {
     $vue->generer(array('chapitre' => $chapitre, 'commentaires' => $commentaires));
   }
 
-  // Ajoute un chapitre
-  public function publier($title, $content, $add_date, $url_photo) {
+  //Ajoute un chapitre
+  public function ajouterChaptire($title, $content, $add_date, $url_photo) {
     // Sauvegarde du chapitre
-    $this->chapitre->ajouterChapitre($title, $content, $add_date, $url_photo);
+    $this->chapitre->addChapter($title, $content, $add_date, $url_photo);
     // Actualisation de l'affichage du dashboard
   }
 
-  public function uploadFile($url_photo){
+  /*public function uploadFile($url_photo){
     $target_dir = "./contenu/images/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
@@ -45,7 +45,7 @@ class ControleurChapitre {
             $uploadOk = 0;
         }
     }
-  }
+  }*/
 
   // Ajoute un commentaire à un chapitre
   public function commenter($auteur, $contenu, $idChapitre) {

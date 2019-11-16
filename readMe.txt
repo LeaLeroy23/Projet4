@@ -29,3 +29,4 @@ revoir indentation code [X]
 Modifier liste chap dans Dashboard pour ajout modif + supp[X]
 eclater vueDashboard avec include sidebar + creation vueEdit[X]
 Mise en suppression du modele Chapitres [X]
+Ajout lien vers chaque chapitre dans liste chapitre

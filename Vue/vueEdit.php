@@ -14,7 +14,8 @@
                             <form method="POST" action="index.php?action=dashboard" enctype="multipart/form-data" novalidate>
 
                             <input type="hidden" name="chapter" value="add" />
-                            <h4 class="title-dashboard"><i class="fas fa-pen"></i>Ecrire un Chapitre</h4>
+
+                            <h4 class="title-dashboard"><i class="fas fa-pen"></i>Modification d'un chapitre</h4>
 
                                 <div class="col-12">
                                     <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= isset($title) ? $title : '' ?>'>
@@ -33,14 +34,14 @@
                                         <?php } ?>
 
                                     <div class="col-4">
-                                        <input type="date" name="add_date" required pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}">
+                                        <input type="date" name="add_date">
                                     </div>
 
                                     <div class="col-4">
                                         <input type="file" name="url_photo" id="url_photo">
                                     </div>
 
-                                        <input type="submit" id="form-writting" value="Publier">
+                                        <input type="submit" id="form-updating" value="Modifier">
                                 </div>
                                 
                             </form>
