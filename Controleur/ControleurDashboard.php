@@ -56,7 +56,7 @@ class ControleurDashboard {
             //traitement d'un fichier a uplader
             // Vérifie si le fichier a été uploadé sans erreur.
             if(isset($_FILES["url_photo"]) && $_FILES["url_photo"]["error"] == 0){
-                $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png");
+                $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png", "PNG" => "image/PNG");
                 $filename = $_FILES["url_photo"]["name"];
                 $filetype = $_FILES["url_photo"]["type"];
                 $filesize = $_FILES["url_photo"]["size"];
@@ -75,18 +75,20 @@ class ControleurDashboard {
                     if(file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])){ //$_SERVER['REMOTE_HOST'] DIRECTORY_SEPARATOR
                         echo $_FILES["url_photo"]["name"] . "existe déjà.";
                     } else {
-                        //$chapitre = $this->chapitre->getChapitres();
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  uniqid() . '.' . $ext);
-                        echo "votre fichier a été télécharger avec succès";
+                        //echo "votre fichier a été télécharger avec succès";
                     }
+                    $this->chapitre->addChapter($title, $content, $add_date, $_FILES['url_photo']['name']);
+                    echo 'Un chapitre a bien été ajouter au site';
                 } else{
                     echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer."; 
                 }
-
+            } else {
+               
+               
             }
-        } /*else {
-            $this->chapitre->addChapter($title, $content, $add_date, $url_photo);
-        }*/
+        }
+
 
         // affichage de la vue
         $chapters = $this->chapitre->getChapitres();
@@ -99,14 +101,14 @@ class ControleurDashboard {
     }
 
 
-    public function edit(){
+    public function edit($title, $content, $add_date, $url_photo){
         if(isset($_POST['update'])){
             $title=$_POST['title'];
             $content=$_POST['content'];
             $add_date=$_POST['add_date'];
             $url_photo=$_POST['url_photo'];
         } else{
-            $this->chapitre->updateChapitre($title, $contenu, $add_date, $url_photo);
+            $updateChapter = $chapitre->updateChapitre($title, $contenu, $add_date, $url_photo);
             echo 'Le chapitre à bien été mis à jour';
         }
 
