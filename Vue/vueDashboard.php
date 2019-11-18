@@ -69,10 +69,14 @@
                                         <?php foreach ($chapters as $chapter): ?>
                                             <div class="crud-block">
 
-                                                <div class="col-10">
+                                                <div class="col-9">
                                                     <a href="<?= "index.php?action=chapitre&id=" . $chapter['id']; ?>" class="crud-link">
                                                         <p><?= $chapter['title']; ?></p>
                                                     </a>
+                                                </div>
+
+                                                <div class="col-1">
+                                                    <a href="<?="index.php?action=moderation&id=" . $chapter['id']; ?>" class="crud-link"><i class="fas fa-comments"></i></a>
                                                 </div>
 
                                                 <div class="col-1">

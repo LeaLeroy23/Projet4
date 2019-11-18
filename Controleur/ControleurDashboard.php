@@ -14,6 +14,7 @@ class ControleurDashboard {
 
     public function __construct() {
         $this->chapitre = new Chapitre();
+        $this->commentaire = new Commentaire();
     }
 
     //Affiche les détails sur un chapitre
@@ -83,12 +84,8 @@ class ControleurDashboard {
                 } else{
                     echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer."; 
                 }
-            } else {
-               
-               
-            }
+            } 
         }
-
 
         // affichage de la vue
         $chapters = $this->chapitre->getChapitres();
@@ -125,5 +122,17 @@ class ControleurDashboard {
 
     public function delete(){
         
+    }
+
+    public function moderaiton(){
+
+        // affichage de la vueModeration
+        $comments = $this->commentaire->getComment();
+        $vue = new Vue("moderation");
+        $vue->generer(array(
+            /*'chapters' => $chapters,
+            'errors' => $errors,
+            'form' => $form*/
+        ));
     }
 }
