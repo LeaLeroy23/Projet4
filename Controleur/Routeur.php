@@ -67,6 +67,10 @@ class Routeur {
                 else if ($_GET['action'] == 'edit') {
                     $this->ctrlDashboard->edit();
                 }
+
+                else if ($_GET['action'] == 'moderation') {
+                    $this->ctrlDashboard->moderation();
+                }
                     
                 else
                     throw new Exception("Action non valide");
