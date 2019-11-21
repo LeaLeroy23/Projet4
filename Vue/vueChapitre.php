@@ -22,7 +22,7 @@
                     <?= $chapitre['title'] ?>
                 </h1>
                 <ul class="entry__header-meta">
-                    <li class="date"><?= $chapitre['date'] ?></li>
+                    <li class="date"><?= $chapitre['add_date'] ?></li>
                     <li class="byline">
                         Par
                         <a href="#0">Jean Forteroche</a>
@@ -109,10 +109,10 @@
 
                                 <div class="comment__info">
 
-                                    <div class="comment__author"><?= $commentaire['author'] ?></div>
+                                    <div class="comment__author"><?= $commentaire['COM_author'] ?></div>
 
                                     <div class="comment__meta">
-                                        <div class="comment__time"><?= $commentaire['date'] ?></div>
+                                        <div class="comment__time"><?= $commentaire['COM_date'] ?></div>
                                         <div class="comment__reply">
                                             <a class="comment-reply-link" href="#0">Reply</a>
                                         </div>
@@ -120,7 +120,7 @@
                                 </div>
 
                                 <div class="comment__text">
-                                <p><?= $commentaire['content'] ?></p>
+                                <p><?= $commentaire['COM_content'] ?></p>
                                 </div>
 
                             </div>

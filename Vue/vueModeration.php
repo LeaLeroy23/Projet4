@@ -15,11 +15,19 @@
 
                             <input type="hidden" name="chapter" value="add" />
 
-                            <h4 class="title-dashboard"><i class="fas fa-pen"></i>Modération des commentaires</h4>
+                            <h4 class="title-dashboard"><i class="fas fa-comments"></i>Modération des commentaires</h4>
 
-                                <div class="col-12">
+
+                                <?php foreach ($chapters as $chapter): ?>
+
+                                    <div class="col-12">
+
                                     
-                                </div>
+
+                                    </div>
+
+                                <?php endforeach; ?>  
+                                
                                 
                             </form>
                         

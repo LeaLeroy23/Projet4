@@ -3,15 +3,18 @@
 //require_once 'Modele/Connexion.php';
 require_once 'Vue/vue.php';
 
-class ControleurConnexion {
+class ControleurConnexion
+{
 
   //private $connexion;
 
-    public function __construct() {
+    public function __construct()
+    {
         //$this->connexion = new Connexion();
     }
 
-    public function connexion() {
+    public function connexion()
+    {
         //$connexion = $this->connexion->getConnexion();
         $vue = new vue("Connexion");
         $vue->generer(array('connexion' /*=> $connexion*/));

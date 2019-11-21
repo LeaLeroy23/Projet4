@@ -14,7 +14,9 @@
 
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url(<?php $chapitre['url_photo'];?>);"></div>
+                            <div class="entry__background" style="background-image:url(<?php $chapitre['url_photo'];?>);">
+                                <img src=""><!--$_SERVER['REMOTE_HOST] 'contenu/upload' $chapitre['url_photo']-->
+                            </div>
 
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0"></a></span>
