@@ -1,8 +1,10 @@
 <?php $this->titre = "Espace Administration / Edition"; ?>
 
-    <?php
-    include 'gabaritSidebar.php';
-    ?>
+<body id="top">
+    <section class="s-content dashboard-section">
+        <?php
+        include 'gabaritSidebar.php';
+        ?>
 
             <div class="col-10">
                 <div class="container-dashboard" id="dashboard">
@@ -56,4 +58,5 @@
         
         </div>
     </section>
+
 </body>

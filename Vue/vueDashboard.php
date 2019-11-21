@@ -1,8 +1,10 @@
 <?php $this->titre = "Espace Administration"; ?>
 
-    <?php
-    include 'gabaritSidebar.php';
-    ?>
+<body id="top">
+  	<section class="s-content dashboard-section">
+		<?php
+		include 'gabaritSidebar.php';
+		?>
         
             <div class="col-10">
                 <div class="container-dashboard" id="dashboard">
@@ -105,5 +107,6 @@
 
         <!--fermeture des éléments appelé en include-->
         </div>
+		
     </section>
 </body>
