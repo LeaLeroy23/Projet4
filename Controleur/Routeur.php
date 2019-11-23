@@ -41,10 +41,6 @@ class Routeur
                         throw new Exception("Identifiant du Chapitre non valide");
                     }
                 } elseif ($_GET['action'] == 'commenter') {
-                    $COM_author = $this->getParametre($_POST, 'COM_author');
-                    $COM_content = $this->getParametre($_POST, 'COM_content');
-                    $COM_date = $this->getParametre($_POST, 'COM_date');
-                    $idChapitre = $this->getParametre($_POST, 'id');
                     $this->ctrlChapitre->addComment($COM_author, $COM_content, $COM_date, $idChapitre);
                 } elseif ($_GET['action'] == 'chapitres') {
                     $this->ctrlChapitres->chapitres();
@@ -54,13 +50,6 @@ class Routeur
                     $this->ctrlConnexion->connexion();
                 } elseif ($_GET['action'] == 'dashboard') {
                     $this->ctrlDashboard->dashboard();
-                //$addChapter = $this->ctrlChapitre->ajouterChapitre();
-                    
-                    /*$title = $this->getParametre($_POST, 'title');
-                    $content = $this->getParametre($_POST, 'content');
-                    $add_date = $this->getParametre($_POST, 'add_date');
-                    $url_photo = $this->getParametre($_POST, 'url_photo');*/
-                   // $this->ctrlChapitre->publier($title, $content, $add_date, $url_photo);
                 } elseif ($_GET['action'] == 'edit') {
                     $this->ctrlDashboard->edit();
                 } elseif ($_GET['action'] == 'moderation') {

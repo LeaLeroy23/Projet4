@@ -18,14 +18,14 @@ class ControleurDashboard
         $this->commentaire = new Commentaire();
     }
 
-    /*Affiche les détails sur un chapitre
+    //Affiche les détails sur un chapitre
     public function modification($idChapitre)
     {
         $chapitre = $this->chapitre->getChapitre($idChapitre);
         $commentaires = $this->commentaire->getCommentaire($idChapitre);
         $vue = new Vue("modification");
         $vue->generer(array('chapitre' => $chapitre, 'commentaires' => $commentaires));
-    }*/
+    }
 
     // Affiche la liste de tous les chapitres du blog
     public function dashboard()
@@ -106,7 +106,7 @@ class ControleurDashboard
     }
 
 
-    public function edit()
+    public function edit($title, $content, $add_date, $url_photo)
     {
         if (isset($_POST['update'])) {
             $title=$_POST['title'];
@@ -114,7 +114,7 @@ class ControleurDashboard
             $add_date=$_POST['add_date'];
             $url_photo=$_POST['url_photo'];
         } else {
-            $this->chapitre->updateChapter($title, $content, $add_date, $url_photo);
+            $updateChapter = $chapitre->updateChapitre($title, $contenu, $add_date, $url_photo);
             echo 'Le chapitre à bien été mis à jour';
         }
 
@@ -124,13 +124,14 @@ class ControleurDashboard
         $vue->generer(array());
     }
 
-
-    /* Commentaires signalés
     public function moderationComments()
     {
         $comments = $this->commentaire->getCommentaires($idChapitre);
         $vue = new Vue("Moderation");
         $vue->generer(array('moderation'));
-    }*/
+    }
 
+    public function delete()
+    {
+    }
 }

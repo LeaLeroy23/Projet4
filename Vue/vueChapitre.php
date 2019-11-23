@@ -9,20 +9,16 @@
 
             <div class="entry__media col-full">
                 <div class="entry__post-thumb">
-                    <img src="contenu/images/thumbs/single/standard/standard-1000.jpg"
-                         srcset="contenu/images/thumbs/single/standard/standard-2000.jpg 2000w,
-                                 contenu/images/thumbs/single/standard/standard-1000.jpg 1000w,
-                                 contenu/images/thumbs/single/standard/standard-500.jpg 500w"
-                         sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                    <img src="<?= $_SERVER['REMOTE_HOST'] . '/contenu/upload/' . $chapitre['url_photo']; ?>">
                 </div>
             </div>
 
             <div class="entry__header col-full">
                 <h1 class="entry__header-title display-1">
-                    <?= $chapitre['title'] ?>
+                    <?= $chapitre['title']; ?>
                 </h1>
                 <ul class="entry__header-meta">
-                    <li class="date"><?= $chapitre['add_date'] ?></li>
+                    <li class="date"><?= $chapitre['add_date']; ?></li>
                     <li class="byline">
                         Par
                         <a href="#0">Jean Forteroche</a>
@@ -37,7 +33,7 @@
                 </p>
 
                 <p>
-                <img src="contenu/images/wheel-1000.jpg" srcset="contenu/images/wheel-2000.jpg 2000w, images/wheel-1000.jpg 1000w, images/wheel-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                <!--<img src="contenu/images/wheel-1000.jpg" srcset="contenu/images/wheel-2000.jpg 2000w, images/wheel-1000.jpg 1000w, images/wheel-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">-->
                 </p>
 
 
@@ -49,7 +45,7 @@
                 </div> <!-- end s-content__taxonomies -->
 
                 <div class="entry__author">
-                    <img src="contenu/images/avatars/user-03.jpg" alt="">
+                    <img src="contenu/images/avatars/user-03.jpg" alt="jean-Forteroche">
 
                     <div class="entry__author-about">
                         <h5 class="entry__author-name">
@@ -109,10 +105,10 @@
 
                                 <div class="comment__info">
 
-                                    <div class="comment__author"><?= $commentaire['COM_author'] ?></div>
+                                    <div class="comment__author"><?= $commentaire['COM_author']; ?></div>
 
                                     <div class="comment__meta">
-                                        <div class="comment__time"><?= $commentaire['COM_date'] ?></div>
+                                        <div class="comment__time"><?= $commentaire['COM_date']; ?></div>
                                         <div class="comment__reply">
                                             <a class="comment-reply-link" href="#0">Reply</a>
                                         </div>
@@ -120,7 +116,7 @@
                                 </div>
 
                                 <div class="comment__text">
-                                <p><?= $commentaire['COM_content'] ?></p>
+                                <p><?= $commentaire['COM_content']; ?></p>
                                 </div>
 
                             </div>

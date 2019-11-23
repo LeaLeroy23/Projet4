@@ -20,7 +20,7 @@
                             <h4 class="title-dashboard"><i class="fas fa-pen"></i>Modification d'un chapitre</h4>
 
                                 <div class="col-12">
-                                    <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= isset($title) ? $title : '' ?>'>
+                                    <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= $chapitre['title'];?>'><?= $chapitre['title'];?>
 
                                         <?php if (isset($errors['message']['title'])) { ?>
                                             <p class="errors">Le titre ne doit pas être vide et doit comporter au maximum 100 caractères </p>

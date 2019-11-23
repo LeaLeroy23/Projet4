@@ -14,8 +14,8 @@
 
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url(contenu/images/alaska-chapt1.jpg);">
-                                <!--$_SERVER['REMOTE_HOST] 'contenu/upload' $chapitre['url_photo']-->
+                            <div class="entry__background">
+                                <img src="<?= $_SERVER['REMOTE_HOST'] . 'contenu/upload' . $chapitre['url_photo'];?>"><!--$_SERVER['REMOTE_HOST] 'contenu/upload' $chapitre['url_photo']-->
                             </div>
 
                             <div class="entry__content">

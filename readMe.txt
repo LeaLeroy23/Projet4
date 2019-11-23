@@ -30,3 +30,9 @@ Modifier liste chap dans Dashboard pour ajout modif + supp[X]
 eclater vueDashboard avec include sidebar + creation vueEdit[X]
 Mise en suppression du modele Chapitres [X]
 Ajout lien vers chaque chapitre dans liste chapitre [X]
+
+"Objectifs" pour le 27/11
+Modifier le Front pour afficher les photos de la base de données (le chemin est fait mais l'image ne s'affiche pas en local) [X]
+Faire la partie contrôleur pour l'édition d'un chapitre
+Ré-indenter ton code dans la globalité [X]
+Ajout d'un li commentaires signalés [X]
