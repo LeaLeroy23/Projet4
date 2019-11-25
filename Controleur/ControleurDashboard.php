@@ -105,32 +105,4 @@ class ControleurDashboard
         ));
     }
 
-
-    public function edit()
-    {
-        if (isset($_POST['update'])) {
-            $title=$_POST['title'];
-            $content=$_POST['content'];
-            $add_date=$_POST['add_date'];
-            $url_photo=$_POST['url_photo'];
-        } else {
-            $this->chapitre->updateChapter($title, $content, $add_date, $url_photo);
-            echo 'Le chapitre à bien été mis à jour';
-        }
-
-        // affichage de la vue
-        $chapters = $this->chapitre->getChapitres();
-        $vue = new Vue("Edit");
-        $vue->generer(array());
-    }
-
-
-    /* Commentaires signalés
-    public function moderationComments()
-    {
-        $comments = $this->commentaire->getCommentaires($idChapitre);
-        $vue = new Vue("Moderation");
-        $vue->generer(array('moderation'));
-    }*/
-
 }

@@ -5,6 +5,7 @@ require_once 'Controleur/ControleurChapitre.php';
 require_once 'Controleur/ControleurChapitres.php'; /*pour l'affichage de la liste*/
 require_once 'Controleur/ControleurConnexion.php';
 require_once 'Controleur/ControleurDashboard.php';
+require_once 'Controleur/ControleurEdit.php';
 require_once 'Controleur/ControleurContact.php';
 require_once 'Vue/vue.php';
 
@@ -15,6 +16,7 @@ class Routeur
     private $ctrlChapitres;
     private $ctrlConnexion;
     private $ctrlDashboard;
+    private $ctrlEdit;
     private $ctrlContact;
 
 
@@ -25,6 +27,7 @@ class Routeur
         $this->ctrlChapitres = new ControleurChapitres();
         $this->ctrlConnexion = new ControleurConnexion();
         $this->ctrlDashboard = new ControleurDashboard();
+        $this->ctrlEdit = new ControleurEdit();
         $this->ctrlContact = new ControleurContact();
     }
 
@@ -51,11 +54,11 @@ class Routeur
                 } elseif ($_GET['action'] == 'dashboard') {
                     $this->ctrlDashboard->dashboard();
                 } elseif ($_GET['action'] == 'edit') {
-                    $this->ctrlDashboard->edit();
-                } elseif ($_GET['action'] == 'moderation') {
                     $idChapitre = intval($this->getParametre($_GET, 'id'));
                     if ($idChapitre != 0) {
-                        $this->ctrlDashboard->moderationComments($idChapitre);
+                        $this->ctrlEdit->edit($idChapitre);
+                    } else {
+                        throw new Exception("la modification n'est pas possible");
                     }
                 } else {
                     throw new Exception("Action non valide");
