@@ -78,7 +78,7 @@
                                                 </div>
 
                                                 <div class="col-1">
-                                                    <a href="<?="index.php?action=moderation&id=" . $chapter['id']; ?>" class="crud-link"><i class="fas fa-comments"></i></a>
+                                                    <a href="<?="index.php?action=edit&id=" . $chapter['id']; ?>" class="crud-link"><i class="fas fa-comments"></i></a>
                                                 </div>
 
                                                 <div class="col-1">

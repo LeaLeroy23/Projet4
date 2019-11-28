@@ -33,9 +33,17 @@ class ControleurChapitre
     }
 
     // Ajoute un commentaire à un chapitre
-    public function addComment($COM_author, $COM_content, $COM_date, $idChapitre)
+    public function addComment()
     {
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            $COM_author = $_POST['COM_author'];
+            $COM_email = $_POST['COM_email'];
+            $COM_content = $_POST['COM_content'];
+
+            echo "votre commentaire n'est pas encore ajouter à la base de donnée" ;
+
+            $this->commentaire->ajouterCommentaire($COM_author, $COM_email, $COM_content);
+        }
         // Sauvegarde du commentaire
-        $this->commentaire->ajouterCommentaire($COM_author, $COM_content, $COM_date, $idChapitre);
     }
 }

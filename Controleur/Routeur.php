@@ -44,7 +44,7 @@ class Routeur
                         throw new Exception("Identifiant du Chapitre non valide");
                     }
                 } elseif ($_GET['action'] == 'commenter') {
-                    $this->ctrlChapitre->addComment($COM_author, $COM_content, $COM_date, $idChapitre);
+                    $this->ctrlChapitre->addComment();
                 } elseif ($_GET['action'] == 'chapitres') {
                     $this->ctrlChapitres->chapitres();
                 } elseif ($_GET['action'] == 'contact') {
@@ -54,12 +54,7 @@ class Routeur
                 } elseif ($_GET['action'] == 'dashboard') {
                     $this->ctrlDashboard->dashboard();
                 } elseif ($_GET['action'] == 'edit') {
-                    $idChapitre = intval($this->getParametre($_GET, 'id'));
-                    if ($idChapitre != 0) {
-                        $this->ctrlEdit->edit($idChapitre);
-                    } else {
-                        throw new Exception("la modification n'est pas possible");
-                    }
+                    $this->ctrlDashboard->edit();
                 } else {
                     throw new Exception("Action non valide");
                 }

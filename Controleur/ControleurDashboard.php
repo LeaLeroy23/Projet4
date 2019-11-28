@@ -105,4 +105,29 @@ class ControleurDashboard
         ));
     }
 
+    // modifier un chapitre
+    public function edit()
+    {
+        /*if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $comAuthor = $_POST['COM_author'];
+                $comEmail = $_POST['COM_email'];
+                $comContent = $_POST['COM_content'];
+
+                $this->chapitre->updateChapter($comAuthor, $comEmail, $comContent, $chapter_id);
+
+            } else{
+
+            }
+
+
+        }*/
+
+        $chapter_id = $_GET['id'];
+        // affichage de la vue
+        $chapitre = $this->chapitre->getChapitre($chapter_id);
+        $vue = new Vue("Edit");
+        $vue->generer([
+            'chapitre' => $chapitre
+        ]);
+    }
 }

@@ -2,7 +2,7 @@
 ================================================== -->
 <section class="s-content">
 
-  <div class="container">
+  <div class="container slidebar">
 
     <!--Début slider-->
       <div class="slider-chapitres">

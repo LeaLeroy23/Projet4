@@ -17,8 +17,7 @@ class Chapitre extends Modele
     // Renvoie la liste des 5 derniers chapitres du blog
     public function getChapitresLimit()
     {
-        $sql = 'select id, add_date, title, content, url_photo from chapter'
-          . ' order by id desc LIMIT 0, 5';
+        $sql = 'select id, add_date, title, content, url_photo from chapter order by id desc LIMIT 0, 5';
         $chapitres = $this->executerRequete($sql);
         return $chapitres;
     }
@@ -47,10 +46,11 @@ class Chapitre extends Modele
         $this->executerRequete($sql, array($title, $content, $add_date, $url_photo));
     }
 
-    // Ajoute un chapitre dans la base
-    public function updateChapter($title, $content, $add_date, $url_photo)
+    // modififcation d'un chapitre dans la base
+    public function updateChapter($title, $content, $add_date, $url_photo, $idChapitre)
     {
-        $sql = "update chapter SET title = ?, content = ?, add_date= ?, url_photo= ?";
-        $this->executerRequete($sql, array($title, $content, $add_date, $url_photo));
+        $sql = "update chapter SET title = ?, content = ?, add_date= ?, url_photo= ? where id=?";
+        $this->executerRequete($sql, array($title, $content, $add_date, $url_photo, $idChaptre));
     }
+    
 }

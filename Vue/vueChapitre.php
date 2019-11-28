@@ -9,7 +9,7 @@
 
             <div class="entry__media col-full">
                 <div class="entry__post-thumb">
-                    <img src="<?= $_SERVER['REMOTE_HOST'] . '/contenu/upload/' . $chapitre['url_photo']; ?>">
+                    <img src="<?=  './contenu/upload/' . $chapitre['url_photo']; ?>">
                 </div>
             </div>
 
@@ -140,15 +140,15 @@
                         <fieldset>
 
                             <div class="form-field">
-                                <input name="auteur" id="auteur" class="full-width" placeholder="Votre Nom*" value="" type="text">
+                                <input name="COM_author" id="auteur" class="full-width" placeholder="Votre Nom*" value="" type="text">
                             </div>
 
                             <div class="form-field">
-                                <input name="Email" id="Email" class="full-width" placeholder="Votre Email*" value="" type="text">
+                                <input name="COM_email" id="Email" class="full-width" placeholder="Votre Email*" value="" type="text">
                             </div>
 
                             <div class="message form-field">
-                                <textarea name="Message" id="Message" class="full-width" placeholder="Votre Message*"></textarea>
+                                <textarea name="COM_content" id="Message" class="full-width" placeholder="Votre Message*"></textarea>
                             </div>
 
                             <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Ajouter un commentaire" type="submit">
