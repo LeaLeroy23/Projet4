@@ -105,6 +105,16 @@ class ControleurDashboard
         ));
     }
 
+    public function chapterList()
+    {
+        // affichage de la vue
+        $chapters = $this->chapitre->getChapitres();
+        $vue = new Vue("ChapterList");
+        $vue->generer(array(
+            'chapters' => $chapters
+        ));
+    }
+
     // modifier un chapitre
     public function edit()
     {
