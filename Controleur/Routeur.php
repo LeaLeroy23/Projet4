@@ -54,6 +54,8 @@ class Routeur
                     $this->ctrlDashboard->chapterList();
                 } elseif ($_GET['action'] == 'edit') {
                     $this->ctrlDashboard->edit();
+                }elseif ($_GET['action'] == 'comments') {
+                    $this->ctrlDashboard->comments();
                 }else {
                     throw new Exception("Action non valide");
                 }

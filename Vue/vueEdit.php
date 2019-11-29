@@ -22,9 +22,19 @@
 
                                 <div class="col-12">
                                     <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= $chapitre['title'];?>'>
-
+                                    <?php if (isset($errors['message']['title'])) { ?>
+                                        <p class="errors">Le titre ne doit pas être vide et doit comporter au maximum 100 caractères </p>
+                                    <?php } if (isset($errors['form']['title'])) {?>
+                                        <p class="errors">Le titre à une taille supérieur à 100 caractères</p>
+                                    <?php } ?>
 
                                     <textarea id="form-writting" name="content" placeholder="Contenu"><?= $chapitre['content'];?></textarea>
+                                    <?php if (isset($errors['message']['content'])) { ?>
+                                        <p class="errors">Le contenu ne doit pas être vide</p>
+                                    <?php } if (isset($errors['form']['content'])) {?>
+                                        <p class="errors">Le contenu ne doit pas dépasser 2000 caractères</p>
+                                    <?php } ?>
+
 
                                     <div class="col-4">
                                         <input type="file" name="url_photo" id="url_photo">

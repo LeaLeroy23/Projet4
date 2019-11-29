@@ -22,7 +22,7 @@ abstract class Modele {
     if ($this->bdd == null) {
       // Création de la connexion
       $this->bdd = new PDO('mysql:host=db5000180673.hosting-data.io;dbname=dbs175388;charset=utf8',
-        'u96199096', 'd7Sh_zvf2nN7tAB', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        'dbu58152', 'd7Sh_zvf2nN7tAB', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
     return $this->bdd;
   }

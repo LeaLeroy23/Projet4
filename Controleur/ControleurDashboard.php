@@ -118,19 +118,30 @@ class ControleurDashboard
     // modifier un chapitre
     public function edit()
     {
-        /*if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $comAuthor = $_POST['COM_author'];
-                $comEmail = $_POST['COM_email'];
-                $comContent = $_POST['COM_content'];
+        $errors=[];
+        $form=[];
+        $maxsize = 5 * 1024 * 1024;
 
-                $this->chapitre->updateChapter($comAuthor, $comEmail, $comContent, $chapter_id);
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $title = $_POST['title'];
+            if (empty($title)) {
+                $errors['message']['title'] = 'le titre est vide';
+            }
+            if (strlen($title)>100) {
+                $errors['form']['title'] = 'le titre est trop long';
+            } else {
+            }
 
-            } else{
-
+            $content = $_POST['content'];
+            if (empty($content)) {
+                $errors['message']['content'] = 'le contenu est vide';
+            } else {
+                $form['content'] = $content;
             }
 
 
-        }*/
+            $this->chapitre->updateChapter($title, $contenu, $url_photo);
+        }
 
         $chapter_id = $_GET['id'];
         // affichage de la vue
@@ -139,5 +150,15 @@ class ControleurDashboard
         $vue->generer([
             'chapitre' => $chapitre
         ]);
+    }
+
+    public function comments()
+    {
+        // affichage de la vue
+        $comments = $this->commentaire->getCommentaires();
+        $vue = new Vue("Comments");
+        $vue->generer(array(
+            'comment' => $comment
+        ));
     }
 }
