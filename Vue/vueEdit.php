@@ -13,10 +13,10 @@
 
                         <div class="col-12 box-dashboard" id="box-dashboard">
 
-                            <form method="POST" action="index.php?action=edit" enctype="multipart/form-data" novalidate>
+                            <form method="POST" action="<?= "index.php?action=edit&id=" . $chapitre['id']; ?>" enctype="multipart/form-data">
 
                             <input type="hidden" name="chapter" value="update" />
-                            <input type="hidden" name="chapter_id" value="<?= $chapitre['id']; ?>" />
+                            <input type="hidden" name="chapter_id" value="<?php $chapitre['id']; ?>" />
 
                             <h4 class="title-dashboard"><i class="fas fa-pen"></i>Modification d'un chapitre</h4>
 
@@ -37,7 +37,7 @@
 
 
                                     <div class="col-4">
-                                        <input type="file" name="url_photo" id="url_photo">
+                                        <input type="file" name="url_photo" id="url_photo" placeholder="<?= $chapitre['url_photo'];?>">
                                     </div>
 
                                         <input type="submit" id="form-updating" value="mettre à jour">

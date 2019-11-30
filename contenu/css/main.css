@@ -3326,6 +3326,11 @@ body.search-is-visible {
   width: 100%;
 }
 
+.errors{
+  color: #A80800;
+  background-color:#FFA4A0;
+  border-radius: 7px;
+}
 
 /* -------------------------------------------------------------------
  * ## link list

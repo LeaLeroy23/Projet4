@@ -18,15 +18,6 @@ class ControleurDashboard
         $this->commentaire = new Commentaire();
     }
 
-    /*Affiche les détails sur un chapitre
-    public function modification($idChapitre)
-    {
-        $chapitre = $this->chapitre->getChapitre($idChapitre);
-        $commentaires = $this->commentaire->getCommentaire($idChapitre);
-        $vue = new Vue("modification");
-        $vue->generer(array('chapitre' => $chapitre, 'commentaires' => $commentaires));
-    }*/
-
     // Affiche la liste de tous les chapitres du blog
     public function dashboard()
     {
@@ -139,8 +130,42 @@ class ControleurDashboard
                 $form['content'] = $content;
             }
 
+            // Vérifie si le fichier a été uploadé sans erreur.
+            if (isset($_FILES["url_photo"]) && $_FILES["url_photo"]["error"] == 0) {
+                $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png", "PNG" => "image/PNG");
+                $filename = $_FILES["url_photo"]["name"];
+                $filetype = $_FILES["url_photo"]["type"];
+                $filesize = $_FILES["url_photo"]["size"];
 
-            $this->chapitre->updateChapter($title, $contenu, $url_photo);
+                // Vérifie l'extension du fichier
+                $ext = pathinfo($filename, PATHINFO_EXTENSION);
+                if (!array_key_exists($ext, $allowed)) {
+                    die("Erreur : Veuillez sélectionner un format de fichier valide.");
+                }
+
+                // Vérifie la taille du fichier - 5Mo maximum
+                if ($filesize > self::MAXSIZE) {
+                    die("Erreur: La taille du fichier est supérieure à la limite autorisée.");
+                }
+
+                // Vérifie le type MIME du fichier
+                if (in_array($filetype, $allowed)) {
+                    //verifie si le fichier existe avant de le telecharger
+                    //if(file_exists($_SERVER['REMOTE_HOST'] . DIRECTORY_SEPARATOR . 'upload'. DIRECTORY_SEPARATOR . 'contenu' . DIRECTORY_SEPARATOR))
+                    if (file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])) { //$_SERVER['REMOTE_HOST'] DIRECTORY_SEPARATOR
+                        echo $_FILES["url_photo"]["name"] . "existe déjà.";
+                    } else {
+                        $filename = uniqid() . '.' . $ext;
+                        move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  $filename);
+                        //echo "votre fichier a été télécharger avec succès";
+                    }
+                    $this->chapitre->updateChapter($title, $content, $filename);
+                    echo 'Un chapitre a bien été mis à jour au site';
+                } else {
+                    echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
+                }
+            }
+
         }
 
         $chapter_id = $_GET['id'];
@@ -148,7 +173,9 @@ class ControleurDashboard
         $chapitre = $this->chapitre->getChapitre($chapter_id);
         $vue = new Vue("Edit");
         $vue->generer([
-            'chapitre' => $chapitre
+            'chapitre' => $chapitre,
+            'errors' => $errors,
+            'form' => $form
         ]);
     }
 
