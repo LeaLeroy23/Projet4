@@ -47,10 +47,10 @@ class Chapitre extends Modele
     }
 
     // modififcation d'un chapitre dans la base
-    public function updateChapter($title, $content, $add_date, $url_photo, $idChapitre)
+    public function updateChapter($title, $content, $url_photo, $idChapitre)
     {
-        $sql = "update chapter SET title = ?, content = ?, add_date= ?, url_photo= ? where id=?";
-        $this->executerRequete($sql, array($title, $content, $add_date, $url_photo, $idChaptre));
+        $sql = "UPDATE chapter SET title = ?, content = ?, url_photo= ? WHERE id=?";
+        $this->executerRequete($sql, array($title, $content, $url_photo, $idChapitre));
     }
     
 }

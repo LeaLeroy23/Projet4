@@ -3330,6 +3330,10 @@ body.search-is-visible {
   color: #A80800;
   background-color:#FFA4A0;
   border-radius: 7px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.4rem;
 }
 
 /* -------------------------------------------------------------------

@@ -96,6 +96,7 @@ class ControleurDashboard
         ));
     }
 
+    //déclenche la vue de la liste des chapitres
     public function chapterList()
     {
         // affichage de la vue
@@ -109,6 +110,8 @@ class ControleurDashboard
     // modifier un chapitre
     public function edit()
     {
+        $chapter_id = $_GET['id'];
+
         $errors=[];
         $form=[];
         $maxsize = 5 * 1024 * 1024;
@@ -130,6 +133,7 @@ class ControleurDashboard
                 $form['content'] = $content;
             }
 
+            //traitement d'un fichier a uplader
             // Vérifie si le fichier a été uploadé sans erreur.
             if (isset($_FILES["url_photo"]) && $_FILES["url_photo"]["error"] == 0) {
                 $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png", "PNG" => "image/PNG");
@@ -159,8 +163,8 @@ class ControleurDashboard
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  $filename);
                         //echo "votre fichier a été télécharger avec succès";
                     }
-                    $this->chapitre->updateChapter($title, $content, $filename);
-                    echo 'Un chapitre a bien été mis à jour au site';
+                    $this->chapitre->updateChapter($title, $content, $filename, $chapter_id);
+                    echo 'Un chapitre a bien été modifié';
                 } else {
                     echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
                 }
@@ -168,7 +172,6 @@ class ControleurDashboard
 
         }
 
-        $chapter_id = $_GET['id'];
         // affichage de la vue
         $chapitre = $this->chapitre->getChapitre($chapter_id);
         $vue = new Vue("Edit");
