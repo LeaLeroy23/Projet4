@@ -41,7 +41,7 @@ class Routeur
                         throw new Exception("Identifiant du Chapitre non valide");
                     }
                 } elseif ($_GET['action'] == 'commenter') {
-                    $this->ctrlChapitre->addComment();
+                    $this->ctrlChapitre->ajouterCommentaire($author, $email, $content);
                 } elseif ($_GET['action'] == 'chapitres') {
                     $this->ctrlChapitres->chapitres();
                 } elseif ($_GET['action'] == 'contact') {
@@ -55,7 +55,7 @@ class Routeur
                 } elseif ($_GET['action'] == 'edit') {
                     $this->ctrlDashboard->edit();
                 }elseif ($_GET['action'] == 'comments') {
-                    $this->ctrlDashboard->comments();
+                    $this->ctrlDashboard->commentsList();
                 }else {
                     throw new Exception("Action non valide");
                 }

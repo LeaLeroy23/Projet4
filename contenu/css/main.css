@@ -3249,7 +3249,7 @@ body.search-is-visible {
 }
 
 .row-dashboard{
-  margin-top: 4%;
+  margin: 0 auto;
 }
 
 .column{
@@ -3311,6 +3311,7 @@ body.search-is-visible {
 .crud-block{
   display: flex;
   /*justify-content: space-around;*/
+  margin-bottom: 0;
 }
 
 
@@ -3335,6 +3336,20 @@ body.search-is-visible {
   padding-bottom: 5px;
   font-size: 1.4rem;
 }
+
+.comment_list{
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.background_area{
+  padding-top: 5%;
+}
+
+.table-comment{
+  margin-bottom: 0;
+}
+
 
 /* -------------------------------------------------------------------
  * ## link list

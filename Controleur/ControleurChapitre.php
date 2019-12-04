@@ -32,18 +32,51 @@ class ControleurChapitre
         // Actualisation de l'affichage du dashboard
     }
 
-    // Ajoute un commentaire à un chapitre
-    public function addComment()
+    //ajouter un commentaire
+    public function ajouterCommentaire($author, $email, $content)
     {
+        $errors=[];
+        $form=[];
+
+        echo 'bientot votre commentaire sera en ligne';
+
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $COM_author = $_POST['COM_author'];
-            $COM_email = $_POST['COM_email'];
-            $COM_content = $_POST['COM_content'];
+            $author = $_POST['author'];
+            if (empty($author)){
+                $errors['message']['author'] = 'votre nom est vide';
+            }
+            if (strlen($author)>100){
+                $errors['form']['author'] = 'votre nom est trop long';
+            } else{
 
-            echo "votre commentaire n'est pas encore ajouter à la base de donnée" ;
+            }
 
-            $this->commentaire->ajouterCommentaire($COM_author, $COM_email, $COM_content);
+            $email = $_POST['email'];
+            if (empty($email)){
+                $errors['message']['email'] = 'votre email est vide';
+            }
+            if (strlen($email)>100){
+                $errors['form']['email'] = 'votre email est trop long';
+            }else{
+            }
+
+            $content = $_POST['content'];
+            if (empty($content)){
+                $errors['message']['content'] = 'votre commentaire est vide';
+            }
+            if (strlen($content)>1000){
+                $errors['form']['content'] = 'votre commentaire est trop long';
+            }else{
+            }
+
+            $idChapitre = $_POST['id'];
+
+            echo 'votre commentaire a été mis en ligne';
+
+            $this->commentaire->addComment($author, $email, $content, $idChapitre);
+            
         }
+
         // Sauvegarde du commentaire
     }
 }

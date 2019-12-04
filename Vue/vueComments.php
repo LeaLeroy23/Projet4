@@ -6,38 +6,62 @@
 		include 'gabaritSidebar.php';
 		?>
         
-            <div class="col-10">
+            <div class="col-10 background_area">
                 
                     <div class="row row-dashboard">
 
                         <div class="col-12" id="box-dashboard">
 
-                            <h4 class="title-dashboard"><i class="fas fa-list-alt"></i>Liste des commentaires (<?= $comments->rowCount(); ?>)</h4>
+                            <h4 class="title-dashboard"><i class="fas fa-comments"></i>Liste des commentaires (<?= $comments->rowCount(); ?>)</h4>
 
                             <div class="row">
                                 <div class="col-12">
 
-                                    <label>                   
+                                    <label>
+
+                                    <div class="crud-block">
+                                        <div class="col-3 table-comment">
+                                            <p>Chapitre</p>
+                                        </div>
+
+                                        <div class="col-2 table-comment">
+                                            <p>Auteur</p>
+                                        </div>
+
+                                        <div class="col-4 table-comment">
+                                            <p>Content</p>
+                                        </div>
+
+                                        <div class="col-2 table-comment">
+                                            <p>Date</p>
+                                        </div>
+
+                                        <div class="col-1 table-comment">
+                                        </div>
+
+                                    </div>                   
                                         
                                         <?php foreach ($comments as $comment): ?>
                                             <div class="crud-block">
 
-                                                <div class="col-9">
-                                                    <a href="<?= "index.php?action=chapitre&id=" . $comment['id']; ?>" class="crud-link">
-                                                        <p><?= $comment['title']; ?></p>
-                                                    </a>
+                                                <div class="col-3 table-comment">
+                                                    <p class="comment_list">Chapitre</p>
                                                 </div>
 
-                                                <div class="col-1">
-                                                    <a href="<?="index.php?action=edit&id=" . $comment['id']; ?>" class="crud-link"><i class="fas fa-comments"></i></a>
+                                                <div class="col-2 table-comment">
+                                                    <p class="comment_list"><?= $comment['author']; ?></p>
                                                 </div>
 
-                                                <div class="col-1">
-                                                    <a href="<?="index.php?action=edit&id=" . $comment['id']; ?>" class="crud-link"><i class="fas fa-edit"></i></a>
+                                                <div class="col-4 table-comment">
+                                                    <p class="comment_list"><?= $comment['content']; ?></p>
                                                 </div>
 
-                                                <div class="col-1">
-                                                    <a href="" class="crud-link"><i class="fas fa-trash-alt"></i></a>
+                                                <div class="col-2 table-comment">
+                                                    <p class="comment_list"><?= $comment['date']; ?></p>
+                                                </div>
+
+                                                <div class="col-1 table-comment">
+                                                    <a href="" class="crud-link"><i class="fas fa-times"></i></a>
                                                 </div>
 
                                             </div>

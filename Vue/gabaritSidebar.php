@@ -11,8 +11,8 @@
 
                             <li class="li-dashboard"><a href="index.php?action=dashboard" class="intern-link-dashboard">Dashboard</a></li>
                             <li class="li-dashboard"><a href="index.php?action=chapterList" class="intern-link-dashboard">Chapitres</a></li>
-                            <li class="li-dashboard"><a href="index.php?action=moderation" class="intern-link-dashboard">Commentaires</a></li>
-                            <li class="li-dashboard"><a href="index.php?action=moderation" class="intern-link-dashboard">Signalés ()</a></li>
+                            <li class="li-dashboard"><a href="index.php?action=comments" class="intern-link-dashboard">Commentaires</a></li>
+                            <li class="li-dashboard"><a href="index.php?action=warning" class="intern-link-dashboard">Signalés ()</a></li>
                         
                         </ul>
 

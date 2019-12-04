@@ -96,17 +96,6 @@ class ControleurDashboard
         ));
     }
 
-    //déclenche la vue de la liste des chapitres
-    public function chapterList()
-    {
-        // affichage de la vue
-        $chapters = $this->chapitre->getChapitres();
-        $vue = new Vue("ChapterList");
-        $vue->generer(array(
-            'chapters' => $chapters
-        ));
-    }
-
     // modifier un chapitre
     public function edit()
     {
@@ -182,13 +171,33 @@ class ControleurDashboard
         ]);
     }
 
-    public function comments()
+    //suppression d'un chapitre
+    public function deleteChapitre()
+    {
+        if(isset($_POST['supp'])){
+            $chapitre =  $this->chapitre->deleteChapitre();
+        }
+       
+    }
+
+    //déclenche la vue de la liste des chapitres
+    public function chapterList()
     {
         // affichage de la vue
-        $comments = $this->commentaire->getCommentaires();
+        $chapters = $this->chapitre->getChapitres();
+        $vue = new Vue("ChapterList");
+        $vue->generer(array(
+            'chapters' => $chapters
+        ));
+    }
+
+    public function commentsList()
+    {
+        // affichage de la vue
+        $comments = $this->commentaire->getAllCommentaires();
         $vue = new Vue("Comments");
         $vue->generer(array(
-            'comment' => $comment
+            'comments' => $comments
         ));
     }
 }
