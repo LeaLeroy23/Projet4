@@ -138,9 +138,9 @@
 
                     <form name="contactForm" id="contactForm" method="POST" action="index.php?action=chapitre&id=<?=$chapitre['id'];?>">
                         <!--<fieldset>-->
-
+                            
                             <div class="form-field">
-                                <input type="text" name="author" id="auteur" class="full-width" placeholder="Votre Nom*" value="<?= isset($author) ? $author : '' ?>">
+                                <input type="text" name="author" id="auteur" class="full-width" placeholder="Votre Nom*" value="<?= isset($form['author']) ? $form['author']: '' ?>">
                                 <?php if (isset($errors['message']['author'])) { ?>
                                     <p class="errors">Votre nom ne doit pas être vide et doit comporter au maximum 100 caractères </p>
                                 <?php } if (isset($errors['form']['author'])) {?>
@@ -149,10 +149,10 @@
                             </div>
 
                             <div class="form-field">
-                                <input type="text" name="email" id="Email" class="full-width" placeholder="Votre Email*" value="<?= isset($email) ? $email : '' ?>">
-                                <?php if (isset($errors['message']['author'])) { ?>
+                                <input type="text" name="email" id="Email" class="full-width" placeholder="Votre Email*" value="<?= isset($form['email']) ? $form['email'] : '' ?>">
+                                <?php if (isset($errors['message']['email'])) { ?>
                                     <p class="errors">Votre nom ne doit pas être vide et doit comporter au maximum 100 caractères </p>
-                                <?php } if (isset($errors['form']['author'])) {?>
+                                <?php } if (isset($errors['form']['email'])) {?>
                                     <p class="errors">Votre nom à une taille supérieur à 100 caractères</p>
                                 <?php } ?>
                             </div>
@@ -168,7 +168,9 @@
 
                             <input type="hidden" name="id" value="<?= $chapitre['id']; ?>"/>
 
-                            <input type="submit" class="btn btn--primary btn-wide btn--large full-width" value="commenter">
+                            <input type="submit" name="commenter" value="commenter">
+
+                            <!--<input type="submit" name="commenter" class="btn btn--primary btn-wide btn--large full-width" value="commenter">-->
 
                         <!--</fieldset>-->
                     </form> <!-- end form -->

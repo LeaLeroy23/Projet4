@@ -16,7 +16,7 @@ class Commentaire extends Modele
 
     public function getAllCommentaires()
     {
-        $sql = 'select COM_ID as id, COM_date as date, COM_author as author, COM_email as email, COM_content as content from comment';
+        $sql = 'select COM_ID, COM_date as date, COM_author as author, COM_email as email, COM_content as content, id from comment';
         $commentaires = $this->executerRequete($sql);
         return $commentaires;
     }
@@ -24,8 +24,8 @@ class Commentaire extends Modele
     // Ajoute un commentaire dans la base
     public function addComment($author, $email, $content, $idChapitre)
     {
-       	$sql = 'insert into comment(COM_ID, COM_date, COM_author, COM_email, COM_content, id)' . 'values(?, ?, ?, ?)';
-        //$date = date(DATE_W3C);  // Récupère la date courante
+       	$sql = 'insert into comment(COM_ID, COM_date, COM_author, COM_email, COM_content, id)' . 'values(?, ?, ?, ?, ?, ?)';
+        //$date = date(DATE_W3C);  //Récupère la date courante
         $this->executerRequete($sql, array($author, $email, $content, $idChapitre));
     }
 
