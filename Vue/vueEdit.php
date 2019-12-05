@@ -6,7 +6,7 @@
         include 'gabaritSidebar.php';
         ?>
 
-            <div class="col-10">
+            <div class="col-10 background_area">
                 <div class="container-dashboard" id="dashboard">
 
                     <div class="row row-dashboard">

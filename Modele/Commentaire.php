@@ -30,8 +30,10 @@ class Commentaire extends Modele
     }
 
     //suppression du commentaire
-    public function deleteComment()
+    public function deleteCommentaire()
     {
-      $sql = 'delete from comment';
+      $sql = 'delete from comment where id=?';
+      $commentaires = $this->executerRequete($sql);
+      return $commentaires;
     }
 }

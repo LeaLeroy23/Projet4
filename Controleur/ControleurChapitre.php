@@ -12,12 +12,27 @@ class ControleurChapitre
     public function __construct()
     {
         $this->chapitre = new Chapitre();
+        $this->chapitres = new Chapitre();
         $this->commentaire = new Commentaire();
     }
+
+     // Affiche la liste de tous les chapitres du blog
+     public function chapitres()
+     {
+         $chapitres = $this->chapitres->getChapitres();
+         $vue = new Vue("Chapitres");
+         $vue->generer(array('chapitres' => $chapitres));
+     }
+ 
+     public static function excerpt($data, $endValue = 250, $beginValue = 0)
+     {
+         return substr($data, $beginValue, $endValue);
+     }
 
     // Affiche les détails sur un chapitre
     public function chapitre($idChapitre)
     {
+        // ajouter un commentaire
         $errors=[];
         $form=[];
 
@@ -55,7 +70,7 @@ class ControleurChapitre
                 $idChapitre = $_POST['id'];
 
                 //echo 'votre commentaire a été mis en ligne';
-                //$this->commentaire->addComment($author, $email, $content, $idChapitre);
+                $this->commentaire->addComment($author, $email, $content, $idChapitre);
             }
         }
 
@@ -69,60 +84,5 @@ class ControleurChapitre
             'form' => $form
         ));
     }
-
-    //Ajoute un chapitre
-    public function ajouterChapitre($title, $content, $add_date, $url_photo)
-    {
-        // Sauvegarde du chapitre
-        $this->chapitre->addChapter($title, $content, $add_date, $url_photo);
-        // Actualisation de l'affichage du dashboard
-    }
-
-    //ajouter un commentaire
-    public function commenter()
-    {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (isset($_POST['commenter'])) {
-                $author = $_POST['author'];
-                if (empty($author)) {
-                    $errors['message']['author'] = 'votre nom est vide';
-                }
-                if (strlen($author)>100) {
-                    $errors['form']['author'] = 'votre nom est trop long';
-                } else {
-                }
-
-                print_r($author);
-
-                $email = $_POST['email'];
-                if (empty($email)) {
-                    $errors['message']['email'] = 'votre email est vide';
-                }
-                if (strlen($email)>100) {
-                    $errors['form']['email'] = 'votre email est trop long';
-                } else {
-                }
-
-                $content = $_POST['content'];
-                if (empty($content)) {
-                    $errors['message']['content'] = 'votre commentaire est vide';
-                }
-                if (strlen($content)>1000) {
-                    $errors['form']['content'] = 'votre commentaire est trop long';
-                } else {
-                }
-
-                $idChapitre = $_POST['id'];
-
-                //echo 'votre commentaire a été mis en ligne';
-                die();
-
-                $this->commentaire->addComment($author, $email, $content, $idChapitre);
-            }
-        }
-
-        $this->commentaire->addComment($author, $email, $content, $idChapitre);
-
-        // Sauvegarde du commentaire
-    }
+    
 }

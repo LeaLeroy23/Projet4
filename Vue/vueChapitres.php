@@ -31,7 +31,7 @@
 
                       <div class="item-entry__cat" style="width: 90%; margin: 0 auto; border-top: 2px solid #6666;">
 
-                        <p class="chapitre-text"><?= ControleurChapitres::excerpt($chapitre['content']); ?></p>
+                        <p class="chapitre-text"><?= ControleurChapitre::excerpt($chapitre['content']); ?></p>
 
                         <p class="chapitre-date">Date de publication: <?= $chapitre['add_date']?></p>
 

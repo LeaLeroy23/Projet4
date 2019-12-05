@@ -61,7 +61,7 @@
                                                 </div>
 
                                                 <div class="col-1 table-comment">
-                                                    <a href="" class="crud-link"><i class="fas fa-times"></i></a>
+                                                    <a href="index.php?action=supprimerCommentaire&id=<?=$chapitre['id'];?>" class="crud-link"><i class="fas fa-times"></i></a>
                                                 </div>
 
                                             </div>

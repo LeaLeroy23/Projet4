@@ -37,6 +37,7 @@ class ControleurDashboard
             if (strlen($title)>100) {
                 $errors['form']['title'] = 'le titre est trop long';
             } else {
+                $form['title'] = $title;
             }
 
             $content = $_POST['content'];
@@ -79,7 +80,7 @@ class ControleurDashboard
                         //echo "votre fichier a été télécharger avec succès";
                     }
                     $this->chapitre->addChapter($title, $content, $add_date, $filename);
-                    echo 'Un chapitre a bien été ajouter au site';
+                    echo '<p class="errors">Un chapitre a bien été ajouter au site</p>';
                 } else {
                     echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
                 }
@@ -171,15 +172,6 @@ class ControleurDashboard
         ]);
     }
 
-    //suppression d'un chapitre
-    public function deleteChapitre()
-    {
-        if(isset($_POST['supp'])){
-            $chapitre =  $this->chapitre->deleteChapitre();
-        }
-       
-    }
-
     //déclenche la vue de la liste des chapitres
     public function chapterList()
     {
@@ -200,4 +192,5 @@ class ControleurDashboard
             'comments' => $comments
         ));
     }
+
 }
