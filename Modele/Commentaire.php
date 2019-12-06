@@ -24,9 +24,10 @@ class Commentaire extends Modele
     // Ajoute un commentaire dans la base
     public function addComment($author, $email, $content, $idChapitre)
     {
-       	$sql = 'insert into comment(COM_ID, COM_date, COM_author, COM_email, COM_content, id)' . 'values(?, ?, ?, ?, ?, ?)';
+       	$sql = 'insert into comment(COM_date, COM_author, COM_email, COM_content, id)' . 'values(COM_date, ?, ?, ?)';
         //$date = date(DATE_W3C);  //Récupère la date courante
-        $this->executerRequete($sql, array($author, $email, $content, $idChapitre));
+		$this->executerRequete($sql, array($author, $email, $content, $idChapitre));
+		//return $commentaires;
     }
 
     //suppression du commentaire

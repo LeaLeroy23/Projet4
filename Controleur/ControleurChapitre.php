@@ -47,8 +47,6 @@ class ControleurChapitre
                 } else {
                 }
 
-                print_r($author);
-
                 $email = $_POST['email'];
                 if (empty($email)) {
                     $errors['message']['email'] = 'votre email est vide';
@@ -69,9 +67,9 @@ class ControleurChapitre
 
                 $idChapitre = $_POST['id'];
 
-                //echo 'votre commentaire a été mis en ligne';
-                $this->commentaire->addComment($author, $email, $content, $idChapitre);
+                echo 'votre commentaire a été mis en ligne';
             }
+            $this->commentaire->addComment($author, $email, $content, $idChapitre);
         }
 
         $chapitre = $this->chapitre->getChapitre($idChapitre);

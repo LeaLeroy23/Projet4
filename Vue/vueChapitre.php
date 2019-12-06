@@ -108,7 +108,7 @@
                                     <div class="comment__author"><?= $commentaire['author']; ?></div>
 
                                     <div class="comment__meta">
-                                        <div class="comment__time"><?= $commentaire['date']; ?></div>
+                                        <div class="comment__time"><?= $commentaire['COM_date']; ?></div>
                                         <!--<div class="comment__reply">
                                             <a class="comment-reply-link" href="#0">Reply</a>
                                         </div>-->
