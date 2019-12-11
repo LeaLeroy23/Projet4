@@ -20,7 +20,7 @@
                                     <label>
 
                                     <div class="crud-block">
-                                        <div class="col-3 table-comment">
+                                        <div class="col-2 table-comment">
                                             <p>Chapitre</p>
                                         </div>
 
@@ -28,7 +28,7 @@
                                             <p>Auteur</p>
                                         </div>
 
-                                        <div class="col-4 table-comment">
+                                        <div class="col-5 table-comment">
                                             <p>Content</p>
                                         </div>
 
@@ -40,19 +40,19 @@
                                         </div>
 
                                     </div>                   
-                                        
+                                       
                                         <?php foreach ($comments as $comment): ?>
-                                            <div class="crud-block">
-
-                                                <div class="col-3 table-comment">
-                                                    <p class="comment_list">Chapitre</p>
+                                         
+                                        <div class="crud-block">
+                                                <div class="col-2 table-comment">
+                                                    <p class="comment_list">Chapitre <?= $comment['COM_chapter_id'];?></p>
                                                 </div>
 
                                                 <div class="col-2 table-comment">
                                                     <p class="comment_list"><?= $comment['author']; ?></p>
                                                 </div>
 
-                                                <div class="col-4 table-comment">
+                                                <div class="col-5 table-comment">
                                                     <p class="comment_list"><?= $comment['content']; ?></p>
                                                 </div>
 
@@ -61,7 +61,10 @@
                                                 </div>
 
                                                 <div class="col-1 table-comment">
-                                                    <a href="index.php?action=supprimerCommentaire&id=<?=$chapitre['id'];?>" class="crud-link"><i class="fas fa-times"></i></a>
+                                                    <form method="POST" action="index.php?action=deleteComment">
+                                                        <input type='hidden' name="comment_id" value='<?= $comment['COM_ID']; ?>'>
+                                                        <input type="submit" value="supp" name="supp">
+                                                    </form>
                                                 </div>
 
                                             </div>

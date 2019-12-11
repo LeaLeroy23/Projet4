@@ -134,7 +134,7 @@
                         <div class="s-footer__copyright">
 
                             <span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tout droit réservé | Ce thème  a été fait avec <i class="fa fa-heart" aria-hidden="true"></i> <br />par <a href="https://lea-leroy.com" target="_blank">Lea Leroy</a>
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tout droit réservé | Ce thème  a été fait avec <i class="fa fa-heart" aria-hidden="true"></i> <br />par <a href="https://lea-leroy.com" target="_blank">Stratos Consulting</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </span>
                                 

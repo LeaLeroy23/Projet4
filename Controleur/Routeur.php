@@ -56,7 +56,7 @@ class Routeur
                     $this->ctrlDashboard->edit();
                 }elseif ($_GET['action'] == 'comments') {
                     $this->ctrlDashboard->commentsList();
-                }elseif ($_GET['action'] == 'supprimerCommentaire') {
+                }elseif ($_GET['action'] == 'deleteComment') {
                     $this->ctrlDashboard->deleteComment();
                 }else {
                     throw new Exception("Action non valide");

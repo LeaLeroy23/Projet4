@@ -23,15 +23,15 @@
                                     <div class="col-12">
                                       <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= isset($form['title']) ? $form['title'] : '' ?>'>
                                           <?php if (isset($errors['message']['title'])) { ?>
-                                              <p class="errors">Le titre ne doit pas être vide et doit comporter au maximum 100 caractères </p>
+                                              <p class="errors"><?= $errors['message']['title'] ?></p>
                                           <?php } if (isset($errors['form']['title'])) {?>
-                                              <p class="errors">Le titre à une taille supérieur à 100 caractères</p>
+                                              <p class="errors"><?php $errors['form']['title']; ?></p>
                                           <?php } ?>
                                       <textarea id="form-writting" name="content" placeholder="Contenu"><?= isset($form['content']) ? $form['content'] : '' ?></textarea>
                                       <?php if (isset($errors['message']['content'])) { ?>
-                                          <p class="errors">Le contenu ne doit pas être vide</p>
+                                          <p class="errors"><?= $errors['message']['content']; ?></p>
                                       <?php } if (isset($errors['form']['content'])) {?>
-                                          <p class="errors">Le contenu ne doit pas dépasser 2000 caractères</p>
+                                          <p class="errors"><?= $errors['form']['content']; ?></p>
                                       <?php } ?>
                                         <div class="col-4">
                                           <input type="date" name="add_date">

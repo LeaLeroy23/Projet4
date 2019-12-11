@@ -32,17 +32,17 @@ class ControleurDashboard
             //je traite les données
             $title = $_POST['title'];
             if (empty($title)) {
-                $errors['message']['title'] = 'le titre est vide';
+                $errors['message']['title'] = 'Le titre ne doit pas être vide';
             }
             if (strlen($title)>100) {
-                $errors['form']['title'] = 'le titre est trop long';
+                $errors['form']['title'] = 'Le titre ne doit pas être aussi long';
             } else {
                 $form['title'] = $title;
             }
 
             $content = $_POST['content'];
             if (empty($content)) {
-                $errors['message']['content'] = 'le contenu est vide';
+                $errors['message']['content'] = 'Le contenu ne doit pas être vide';
             } else {
                 $form['content'] = $content;
             }
@@ -109,16 +109,17 @@ class ControleurDashboard
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $title = $_POST['title'];
             if (empty($title)) {
-                $errors['message']['title'] = 'le titre est vide';
+                $errors['message']['title'] = 'Le titre ne doit pas être vide';
             }
             if (strlen($title)>100) {
-                $errors['form']['title'] = 'le titre est trop long';
+                $errors['form']['title'] = 'Le titre est trop long';
             } else {
+                $form['title'] = $title;
             }
 
             $content = $_POST['content'];
             if (empty($content)) {
-                $errors['message']['content'] = 'le contenu est vide';
+                $errors['message']['content'] = 'Be contenu ne doit pas être vide';
             } else {
                 $form['content'] = $content;
             }
@@ -185,12 +186,33 @@ class ControleurDashboard
 
     public function commentsList()
     {
+        /*if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            if (isset($_GET['supp'])) {
+                $this->commentaire->deleteCommentaire();
+                echo 'vote commentaire va etre supprimer';
+            } 
+        }*/
+
+
         // affichage de la vue
+        //$chapter = $this->chapitre->getChapitre();
         $comments = $this->commentaire->getAllCommentaires();
         $vue = new Vue("Comments");
         $vue->generer(array(
+            //'chapter' => $chapter,
             'comments' => $comments
         ));
+    }
+
+    public function deleteComment()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['supp'])) {
+                $COM_id = $_POST['comment_id'];
+                $this->commentaire->deleteCommentaire($COM_id);
+                echo 'vote commentaire va etre supprimer';
+            } 
+        }
     }
 
 }

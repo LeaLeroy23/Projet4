@@ -108,7 +108,7 @@
                                     <div class="comment__author"><?= $commentaire['author']; ?></div>
 
                                     <div class="comment__meta">
-                                        <div class="comment__time"><?= $commentaire['COM_date']; ?></div>
+                                        <div class="comment__time"><?= $commentaire['date']; ?></div>
                                         <!--<div class="comment__reply">
                                             <a class="comment-reply-link" href="#0">Reply</a>
                                         </div>-->
@@ -136,7 +136,7 @@
 
                     <h3 class="h2">Laisser un commentaire</h3>
 
-                    <form name="contactForm" id="contactForm" method="POST" action="index.php?action=chapitre&id=<?=$chapitre['id'];?>">
+                    <form name="contactForm" id="contactForm" method="POST" action="index.php?action=chapitre&id=<?=$chapitre['id'];?>#contactForm">
                         <!--<fieldset>-->
                             
                             <div class="form-field">
@@ -147,13 +147,13 @@
                                     <p class="errors">Votre nom à une taille supérieur à 100 caractères</p>
                                 <?php } ?>
                             </div>
-
+                            
                             <div class="form-field">
                                 <input type="text" name="email" id="Email" class="full-width" placeholder="Votre Email*" value="<?= isset($form['email']) ? $form['email'] : '' ?>">
                                 <?php if (isset($errors['message']['email'])) { ?>
-                                    <p class="errors">Votre nom ne doit pas être vide et doit comporter au maximum 100 caractères </p>
+                                    <p class="errors"><?php echo $errors['message']['email']; ?></p>
                                 <?php } if (isset($errors['form']['email'])) {?>
-                                    <p class="errors">Votre nom à une taille supérieur à 100 caractères</p>
+                                    <p class="errors"><?php $errors['form']['email']; ?></p>
                                 <?php } ?>
                             </div>
 
@@ -168,9 +168,7 @@
 
                             <input type="hidden" name="id" value="<?= $chapitre['id']; ?>"/>
 
-                            <input type="submit" name="commenter" value="commenter">
-
-                            <!--<input type="submit" name="commenter" class="btn btn--primary btn-wide btn--large full-width" value="commenter">-->
+                            <input type="submit" name="commenter" value="commenter" class="btn btn--primary btn-wide btn--large full-width">
 
                         <!--</fieldset>-->
                     </form> <!-- end form -->

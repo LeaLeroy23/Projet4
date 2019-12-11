@@ -45,15 +45,19 @@ class ControleurChapitre
                 if (strlen($author)>100) {
                     $errors['form']['author'] = 'votre nom est trop long';
                 } else {
+                    $form['author'] = $author;
                 }
 
                 $email = $_POST['email'];
-                if (empty($email)) {
-                    $errors['message']['email'] = 'votre email est vide';
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $errors['message']['email'] = "votre email n'est pas au bon format";
+                }else {
+                    $form['email'] = $email;
                 }
                 if (strlen($email)>100) {
                     $errors['form']['email'] = 'votre email est trop long';
                 } else {
+                    $form['email'] = $email;
                 }
 
                 $content = $_POST['content'];
@@ -63,13 +67,16 @@ class ControleurChapitre
                 if (strlen($content)>1000) {
                     $errors['form']['content'] = 'votre commentaire est trop long';
                 } else {
+                    $form['content'] = $content;
                 }
 
                 $idChapitre = $_POST['id'];
-
-                echo 'votre commentaire a été mis en ligne';
+                if (empty($errors)){
+                    $this->commentaire->addComment($author, $email, $content, $idChapitre);
+                    $form = [];
+                }
             }
-            $this->commentaire->addComment($author, $email, $content, $idChapitre);
+            
         }
 
         $chapitre = $this->chapitre->getChapitre($idChapitre);
