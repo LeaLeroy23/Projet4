@@ -42,6 +42,8 @@ class Routeur
                     }
                 } elseif ($_GET['action'] == 'commenter') {
                     $this->ctrlChapitre->commenter();
+                } elseif ($_GET['action'] == 'flagComment') {
+                    $this->ctrlChapitre->flagComment();
                 } elseif ($_GET['action'] == 'chapitres') {
                     $this->ctrlChapitre->chapitres();
                 } elseif ($_GET['action'] == 'contact') {

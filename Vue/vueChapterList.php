@@ -22,22 +22,22 @@
                                         <?php foreach ($chapters as $chapter): ?>
                                             <div class="crud-block">
 
-                                                <div class="col-9">
+                                                <div class="col-6">
                                                     <a href="<?= "index.php?action=chapitre&id=" . $chapter['id']; ?>" class="crud-link">
                                                         <p><?= $chapter['title']; ?></p>
                                                     </a>
                                                 </div>
 
-                                                <div class="col-1">
-                                                    <a href="<?="index.php?action=edit&id=" . $chapter['id']; ?>" class="crud-link"><i class="fas fa-comments"></i></a>
+                                                <div class="col-3">
+                                                    <form method="POST" action="<?="index.php?action=edit&id=" . $chapter['id']; ?>">
+                                                        <input type="submit" name="suppChapter" value="Modifier">
+                                                    </form>
                                                 </div>
 
-                                                <div class="col-1">
-                                                    <a href="<?="index.php?action=edit&id=" . $chapter['id']; ?>" class="crud-link"><i class="fas fa-edit"></i></a>
-                                                </div>
-
-                                                <div class="col-1">
-                                                    <a href="" class="crud-link"><i class="fas fa-trash-alt"></i></a>
+                                                <div class="col-3">
+                                                    <form method="POST" action="index.php?action=chapterList">
+                                                        <input type="submit" name="suppChapter" value="Supprimer">
+                                                    </form>
                                                 </div>
 
                                             </div>

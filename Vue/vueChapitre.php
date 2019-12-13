@@ -109,9 +109,12 @@
 
                                     <div class="comment__meta">
                                         <div class="comment__time"><?= $commentaire['date']; ?></div>
-                                        <!--<div class="comment__reply">
-                                            <a class="comment-reply-link" href="#0">Reply</a>
-                                        </div>-->
+                                        <div class="comment__reply">
+                                            <form name="flag" method="POST" action="index.php?action=chapitre&id=<?=$chapitre['id'];?>">
+                                                <input type='hidden' name="comment_id" value='<?= $commentaire['COM_ID']; ?>'>
+                                                <input type="submit" id="flagComment" name="flagComment" value="Signaler">
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -137,40 +140,40 @@
                     <h3 class="h2">Laisser un commentaire</h3>
 
                     <form name="contactForm" id="contactForm" method="POST" action="index.php?action=chapitre&id=<?=$chapitre['id'];?>#contactForm">
-                        <!--<fieldset>-->
+                      
                             
                             <div class="form-field">
                                 <input type="text" name="author" id="auteur" class="full-width" placeholder="Votre Nom*" value="<?= isset($form['author']) ? $form['author']: '' ?>">
                                 <?php if (isset($errors['message']['author'])) { ?>
-                                    <p class="errors">Votre nom ne doit pas être vide et doit comporter au maximum 100 caractères </p>
+                                    <p class="errors"><?= $errors['message']['author']; ?></p>
                                 <?php } if (isset($errors['form']['author'])) {?>
-                                    <p class="errors">Votre nom à une taille supérieur à 100 caractères</p>
+                                    <p class="errors"><?= $errors['form']['author']; ?></p>
                                 <?php } ?>
                             </div>
                             
                             <div class="form-field">
                                 <input type="text" name="email" id="Email" class="full-width" placeholder="Votre Email*" value="<?= isset($form['email']) ? $form['email'] : '' ?>">
                                 <?php if (isset($errors['message']['email'])) { ?>
-                                    <p class="errors"><?php echo $errors['message']['email']; ?></p>
+                                    <p class="errors"><?= $errors['message']['email']; ?></p>
                                 <?php } if (isset($errors['form']['email'])) {?>
-                                    <p class="errors"><?php $errors['form']['email']; ?></p>
+                                    <p class="errors"><?= $errors['form']['email']; ?></p>
                                 <?php } ?>
                             </div>
 
                             <div class="message form-field">
                                 <textarea name="content" id="Message" class="full-width" placeholder="Votre Message*"><?= isset($form['content']) ? $form['content'] : '' ?></textarea>
                                 <?php if (isset($errors['message']['content'])) { ?>
-                                    <p class="errors">Le contenu ne doit pas être vide</p>
+                                    <p class="errors"><?= $errors['message']['content']; ?></p>
                                 <?php } if (isset($errors['form']['content'])) {?>
-                                    <p class="errors">Le contenu ne doit pas dépasser 2000 caractères</p>
+                                    <p class="errors"><?= $errors['form']['content']; ?></p>
                                 <?php } ?>
                             </div>
+                            
 
                             <input type="hidden" name="id" value="<?= $chapitre['id']; ?>"/>
 
                             <input type="submit" name="commenter" value="commenter" class="btn btn--primary btn-wide btn--large full-width">
-
-                        <!--</fieldset>-->
+                        
                     </form> <!-- end form -->
 
                 </div>

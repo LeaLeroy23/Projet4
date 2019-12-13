@@ -186,14 +186,6 @@ class ControleurDashboard
 
     public function commentsList()
     {
-        /*if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            if (isset($_GET['supp'])) {
-                $this->commentaire->deleteCommentaire();
-                echo 'vote commentaire va etre supprimer';
-            } 
-        }*/
-
-
         // affichage de la vue
         //$chapter = $this->chapitre->getChapitre();
         $comments = $this->commentaire->getAllCommentaires();
@@ -208,8 +200,8 @@ class ControleurDashboard
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['supp'])) {
-                $COM_id = $_POST['comment_id'];
-                $this->commentaire->deleteCommentaire($COM_id);
+                $COM_ID = $_POST['comment_id'];
+                $this->commentaire->deleteCommentaire($COM_ID);
                 echo 'vote commentaire va etre supprimer';
             } 
         }

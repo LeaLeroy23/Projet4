@@ -71,6 +71,9 @@ class ControleurChapitre
                 }
 
                 $idChapitre = $_POST['id'];
+
+                //$this->commentaire->addComment($author, $email, $content);
+
                 if (empty($errors)){
                     $this->commentaire->addComment($author, $email, $content, $idChapitre);
                     $form = [];
@@ -79,6 +82,14 @@ class ControleurChapitre
             
         }
 
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['flagComment'])) {
+                $COM_ID = $_POST['comment_id'];
+                $this->commentaire->flagComment($COM_ID);
+                //$errors['form']['flagcomment'] = 'Ce commentaire a été signalé';
+            }
+        }
+        
         $chapitre = $this->chapitre->getChapitre($idChapitre);
         $commentaires = $this->commentaire->getCommentaires($idChapitre);
         $vue = new Vue("Chapitre");
@@ -89,5 +100,5 @@ class ControleurChapitre
             'form' => $form
         ));
     }
-    
+
 }
