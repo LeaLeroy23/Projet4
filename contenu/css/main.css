@@ -3237,6 +3237,7 @@ body.search-is-visible {
 
 .col-nav{
   padding-left: 0px;
+  background-color: #fff;
 }
 
  .bloc-dash{
@@ -3344,6 +3345,7 @@ body.search-is-visible {
 
 .background_area{
   padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .table-comment{

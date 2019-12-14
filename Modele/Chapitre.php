@@ -53,10 +53,10 @@ class Chapitre extends Modele
         $this->executerRequete($sql, array($title, $content, $url_photo, $idChapitre));
     }
 
-    public function deleteChapter($title, $content, $add_date, $url_photo)
+    public function deleteChapitre($idChapitre)
     {
-        $sql = "DELETE FROM chapter";
-        $this->executerRequete($sql, array($title, $content, $add_date, $url_photo));
+        $sql = "DELETE FROM chapter WHERE id=?";
+        $this->executerRequete($sql, array($idChapitre));
     }
     
 }

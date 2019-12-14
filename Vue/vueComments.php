@@ -32,11 +32,11 @@
                                             <p>Content</p>
                                         </div>
 
-                                        <div class="col-2 table-comment">
+                                        <!--<div class="col-2 table-comment">
                                             <p>Date</p>
-                                        </div>
+                                        </div>-->
 
-                                        <div class="col-1 table-comment">
+                                        <div class="col-2 table-comment">
                                         </div>
 
                                     </div>                   
@@ -56,14 +56,14 @@
                                                     <p class="comment_list"><?= $comment['content']; ?></p>
                                                 </div>
 
-                                                <div class="col-2 table-comment">
+                                                <!--<div class="col-2 table-comment">
                                                     <p class="comment_list"><?= $comment['date']; ?></p>
-                                                </div>
+                                                </div>-->
 
-                                                <div class="col-1 table-comment">
+                                                <div class="col-2 table-comment">
                                                     <form method="POST" action="index.php?action=deleteComment">
                                                         <input type='hidden' name="comment_id" value='<?= $comment['COM_ID']; ?>'>
-                                                        <input type="submit" value="supp" name="supp">
+                                                        <input type="submit" value="Supprimé" name="supp">
                                                     </form>
                                                 </div>
 

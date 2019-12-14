@@ -184,6 +184,18 @@ class ControleurDashboard
         ));
     }
 
+    //Suppression d'un chapitre
+    public function deleteChapter()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['deleteChapter'])) {
+                $idChapitre = $_POST['id'];
+                $this->chapitre->deleteChapitre($idChapitre);
+            } 
+        }
+        //$this->chapitre->getChapitres();
+    }
+
     public function commentsList()
     {
         // affichage de la vue
@@ -202,7 +214,6 @@ class ControleurDashboard
             if (isset($_POST['supp'])) {
                 $COM_ID = $_POST['comment_id'];
                 $this->commentaire->deleteCommentaire($COM_ID);
-                echo 'vote commentaire va etre supprimer';
             } 
         }
     }

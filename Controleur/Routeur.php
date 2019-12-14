@@ -56,6 +56,8 @@ class Routeur
                     $this->ctrlDashboard->chapterList();
                 } elseif ($_GET['action'] == 'edit') {
                     $this->ctrlDashboard->edit();
+                }elseif ($_GET['action'] == 'deleteChapter') {
+                    $this->ctrlDashboard->deleteChapter();
                 }elseif ($_GET['action'] == 'comments') {
                     $this->ctrlDashboard->commentsList();
                 }elseif ($_GET['action'] == 'deleteComment') {

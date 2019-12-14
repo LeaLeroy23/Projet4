@@ -29,14 +29,15 @@
                                                 </div>
 
                                                 <div class="col-3">
-                                                    <form method="POST" action="<?="index.php?action=edit&id=" . $chapter['id']; ?>">
-                                                        <input type="submit" name="suppChapter" value="Modifier">
+                                                    <form method="POST" action="<?= "index.php?action=edit&id=" . $chapter['id']; ?>">
+                                                        <input type="submit" name="editChapter" value="Modifier">
                                                     </form>
                                                 </div>
 
                                                 <div class="col-3">
-                                                    <form method="POST" action="index.php?action=chapterList">
-                                                        <input type="submit" name="suppChapter" value="Supprimer">
+                                                    <form method="POST" action="index.php?action=deleteChapter">
+                                                        <input type='hidden' name="id" value='<?= $chapter['id']; ?>'>
+                                                        <input type="submit" name="deleteChapter" value="Supprimer">
                                                     </form>
                                                 </div>
 
