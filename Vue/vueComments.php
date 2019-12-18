@@ -63,7 +63,7 @@
                                                 <div class="col-2 table-comment">
                                                     <form method="POST" action="index.php?action=deleteComment">
                                                         <input type='hidden' name="comment_id" value='<?= $comment['COM_ID']; ?>'>
-                                                        <input type="submit" value="Supprimé" name="supp">
+                                                        <input type="submit" class="btn-primary" value="Supprimer" name="supp">
                                                     </form>
                                                 </div>
 

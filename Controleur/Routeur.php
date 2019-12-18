@@ -48,7 +48,7 @@ class Routeur
                     $this->ctrlChapitre->chapitres();
                 } elseif ($_GET['action'] == 'contact') {
                     $this->ctrlContact->contact();
-                } elseif ($_GET['action'] == 'login') {
+                } elseif ($_GET['action'] == 'connexion') {
                     $this->ctrlConnexion->login();
                 } elseif ($_GET['action'] == 'dashboard') {
                     $this->ctrlDashboard->dashboard();

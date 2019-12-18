@@ -84,6 +84,9 @@ class ControleurChapitre
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['flagComment'])) {
+                /*echo '<pre>';
+                print_r($_POST);
+                die();*/
                 $COM_ID = $_POST['comment_id'];
                 $this->commentaire->flagComment($COM_ID);
                 //$errors['form']['flagcomment'] = 'Ce commentaire a été signalé';

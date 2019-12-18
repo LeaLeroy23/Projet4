@@ -190,10 +190,13 @@ class ControleurDashboard
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['deleteChapter'])) {
                 $idChapitre = $_POST['id'];
-                $this->chapitre->deleteChapitre($idChapitre);
+                if ($this->chapitre->getChapitre($idChapitre)){
+                    $this->chapitre->deleteChapitre($idChapitre);
+                } 
             } 
         }
-        //$this->chapitre->getChapitres();
+        header("Location: index.php?action=chapterList");
+        exit;
     }
 
     public function commentsList()

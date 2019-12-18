@@ -22,14 +22,24 @@
                 <fieldset>
                 <input type="hidden" name="submitted" id="submitted" value="1"/>
                 <div>
-                    <input name="username" id="username" class="full-width" placeholder="Identifiant" value="" type="text">
+                    <input name="email"class="full-width" placeholder="Identifiant" value="<?= isset($form['email']) ? $form['email'] : '' ?>" type="text">
+                    <?php if (isset($errors['message']['email'])) { ?>
+                        <p class="errors"><?= $errors['message']['email'] ?></p>
+                    <?php } if (isset($errors['form']['email'])) {?>
+                        <p class="errors"><?php $errors['form']['email']; ?></p>
+                    <?php } ?>
                 </div>
 
                 <div class="form-field">
-                    <input name="password" id="cEmail" class="full-width" placeholder="Mot de passe" value="" type="text">
+                    <input name="password" class="full-width" placeholder="Mot de passe" value="<?= isset($form['password']) ? $form['password'] : '' ?>" type="text">
+                    <?php if (isset($errors['message']['password'])) { ?>
+                        <p class="errors"><?= $errors['message']['password'] ?></p>
+                    <?php } if (isset($errors['form']['password'])) {?>
+                        <p class="errors"><?php $errors['form']['password']; ?></p>
+                    <?php } ?>
                 </div>
 
-                <input type="submit" name="login" class="submit btn btn--primary btn--large full-width">Suivez-nous Jean !</button>
+                <input type="submit" name="connect" value="Suivez-nous Jean !" class="submit btn btn--primary btn--large full-width">
 
                 </fieldset>
             </form>

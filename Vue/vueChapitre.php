@@ -111,7 +111,7 @@
                                         <div class="comment__time"><?= $commentaire['date']; ?></div>
                                         <div class="comment__reply">
                                             <form name="flag" method="POST" action="index.php?action=chapitre&id=<?=$chapitre['id'];?>">
-                                                <input type='hidden' name="comment_id" value='<?= $commentaire['COM_ID']; ?>'>
+                                                <input type='hidden' name="comment_id" value='<?= $commentaire['id']; ?>'>
                                                 <input type="submit" id="flagComment" name="flagComment" value="Signaler">
                                             </form>
                                         </div>
