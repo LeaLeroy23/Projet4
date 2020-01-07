@@ -15,9 +15,6 @@ class ControleurConnexion
 
     public function login()
     {
-        //$email = (isset($_POST['email']) ? $_POST['email'] : NULL);
-        //$password = isset($_POST['password']) ? $_POST['password'] : NULL;
-
         $errors=[];
         $form=[];
 
@@ -37,23 +34,36 @@ class ControleurConnexion
             }
 
             if (empty($errors)){
-                $user = $this->connexion->getUser($email, $password);
-                // if user = O => message erreur 'identifiant incoorect' si user exist on va recupere user password et recuperer aussi le user passsword form
-                echo '<pre>';
-                print_r($user);
-                die();
-                //$form = [];
-                //header (Location: admin); exit;
+                $user = $this->connexion->getUser($email);
+
+                if (!empty($user['email'])){
+                    $passwordbdd = $user['password'];
+
+                    if (password_verify($password, $passwordbdd)) {
+                    
+                        $_SESSION['user'] = $user['email'];
+                        
+                        header("Location: index.php?action=dashboard");
+                        exit();
+                    }
+                
+                }
+                $form['message'] = "Identification incorrect";
             }
 
         }
 
-        //$this->connexion->getConnexion($email, $password);
         $vue = new vue("Connexion");
         $vue->generer(array(
             'errors' => $errors,
             'form' => $form
-
         ));
     }
+
+    public function logout(){
+        session_destroy();
+        header("Location: index.php");
+        exit();
+    }
+
 }

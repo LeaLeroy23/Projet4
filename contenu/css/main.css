@@ -1122,6 +1122,7 @@ input[type="button"].btn--primary {
   background: #111860;
   border-color: #111860;
   color: #FFFFFF;
+  line-height: normal;
 }
 
 .btn.btn--primary:hover,

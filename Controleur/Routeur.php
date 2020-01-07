@@ -2,7 +2,6 @@
 // require
 require_once 'Controleur/ControleurAccueil.php';
 require_once 'Controleur/ControleurChapitre.php';
-//require_once 'Controleur/ControleurChapitres.php'; /*pour l'affichage de la liste*/
 require_once 'Controleur/ControleurConnexion.php';
 require_once 'Controleur/ControleurDashboard.php';
 require_once 'Controleur/ControleurContact.php';
@@ -12,7 +11,6 @@ class Routeur
 {
     private $ctrlAccueil;
     private $ctrlChapitre;
-    //private $ctrlChapitres;
     private $ctrlConnexion;
     private $ctrlDashboard;
     private $ctrlContact;
@@ -22,7 +20,6 @@ class Routeur
     {
         $this->ctrlAccueil = new ControleurAccueil();
         $this->ctrlChapitre = new ControleurChapitre();
-        //$this->ctrlChapitres = new ControleurChapitres();
         $this->ctrlConnexion = new ControleurConnexion();
         $this->ctrlDashboard = new ControleurDashboard();
         $this->ctrlContact = new ControleurContact();
@@ -50,7 +47,9 @@ class Routeur
                     $this->ctrlContact->contact();
                 } elseif ($_GET['action'] == 'connexion') {
                     $this->ctrlConnexion->login();
-                } elseif ($_GET['action'] == 'dashboard') {
+                } elseif ($_GET['action'] == 'deconnexion') {
+                    $this->ctrlConnexion->logout();
+                }elseif ($_GET['action'] == 'dashboard') {
                     $this->ctrlDashboard->dashboard();
                 } elseif ($_GET['action'] == 'chapterList') {
                     $this->ctrlDashboard->chapterList();
@@ -60,6 +59,8 @@ class Routeur
                     $this->ctrlDashboard->deleteChapter();
                 }elseif ($_GET['action'] == 'comments') {
                     $this->ctrlDashboard->commentsList();
+                }elseif ($_GET['action'] == 'authorizeComment') {
+                    $this->ctrlDashboard->authorizeComment();
                 }elseif ($_GET['action'] == 'deleteComment') {
                     $this->ctrlDashboard->deleteComment();
                 }else {

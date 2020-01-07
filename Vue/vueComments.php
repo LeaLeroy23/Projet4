@@ -12,7 +12,7 @@
 
                         <div class="col-12" id="box-dashboard">
 
-                            <h4 class="title-dashboard"><i class="fas fa-comments"></i>Liste des commentaires (<?= $comments->rowCount(); ?>)</h4>
+                            <h4 class="title-dashboard"><i class="fas fa-comments"></i>Liste des commentaires signalés (<?= $comments->rowCount(); ?>)</h4>
 
                             <div class="row">
                                 <div class="col-12">
@@ -32,12 +32,6 @@
                                             <p>Content</p>
                                         </div>
 
-                                        <!--<div class="col-2 table-comment">
-                                            <p>Date</p>
-                                        </div>-->
-
-                                        <div class="col-2 table-comment">
-                                        </div>
 
                                     </div>                   
                                        
@@ -52,18 +46,24 @@
                                                     <p class="comment_list"><?= $comment['author']; ?></p>
                                                 </div>
 
-                                                <div class="col-5 table-comment">
+                                                <div class="col-3 table-comment">
                                                     <p class="comment_list"><?= $comment['content']; ?></p>
                                                 </div>
 
-                                                <!--<div class="col-2 table-comment">
-                                                    <p class="comment_list"><?= $comment['date']; ?></p>
-                                                </div>-->
+                                                <div class="col-2 table-comment">
+                                                    <form method="POST" action="index.php?action=authorizeComment">
+                                                        <input type='hidden' name="comment_id" value='<?= $comment['COM_ID']; ?>'>
+                                                        <input type="submit" class="btn--primary" value="Autoriser" name="authorizeComment">
+                                                    </form>
+                                                </div>
 
                                                 <div class="col-2 table-comment">
                                                     <form method="POST" action="index.php?action=deleteComment">
                                                         <input type='hidden' name="comment_id" value='<?= $comment['COM_ID']; ?>'>
-                                                        <input type="submit" class="btn-primary" value="Supprimer" name="supp">
+                                                        <input type="submit" class="btn--primary" value="Supprimer" name="supp">
+                                                        <?php if (isset($errors['message']['supp'])) {?>
+                                                            <p class="success"><?=$errors['message']['supp'];?>
+                                                        <?php }?>
                                                     </form>
                                                 </div>
 

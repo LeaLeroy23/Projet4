@@ -67,7 +67,7 @@
         </article> <!-- end entry/article -->
 
 
-        <div class="s-content__entry-nav">
+        <!--<div class="s-content__entry-nav">
             <div class="row s-content__nav">
                 <div class="col-six s-content__prev">
                     <a href="#0" rel="prev">
@@ -82,7 +82,7 @@
                     </a>
                 </div>
             </div>
-        </div> <!-- end s-content__pagenav -->
+        </div> end s-content__pagenav -->
 
         <div class="comments-wrap">
 
@@ -93,9 +93,9 @@
 
                     <!-- START commentlist -->
                     <ol class="commentlist">
+                    <?php foreach ($commentaires as $commentaire): ?>
 
                         <li class="depth-1 comment">
-                          <?php foreach ($commentaires as $commentaire): ?>
 
                             <div class="comment__avatar">
                                 <img class="avatar" src="contenu/images/avatars/user-01.jpg" alt="" width="50" height="50">
@@ -112,7 +112,7 @@
                                         <div class="comment__reply">
                                             <form name="flag" method="POST" action="index.php?action=chapitre&id=<?=$chapitre['id'];?>">
                                                 <input type='hidden' name="comment_id" value='<?= $commentaire['id']; ?>'>
-                                                <input type="submit" id="flagComment" name="flagComment" value="Signaler">
+                                                <input type="submit" class="btn--primary" id="flagComment" name="flagComment" value="Signaler">
                                             </form>
                                         </div>
                                     </div>
@@ -123,8 +123,8 @@
                                 </div>
 
                             </div>
-                          <?php endforeach; ?>
-                        </li> <!-- end comment level 1 -->
+                        </li> 
+                        <?php endforeach; ?><!-- end comment level 1 -->
 
                     </ol>
                     <!-- END commentlist -->
@@ -172,7 +172,7 @@
 
                             <input type="hidden" name="id" value="<?= $chapitre['id']; ?>"/>
 
-                            <input type="submit" name="commenter" value="commenter" class="btn btn--primary btn-wide btn--large full-width">
+                            <input type="submit" name="commenter" value="commenter" class="btn btn-primary btn-wide btn--large full-width">
                         
                     </form> <!-- end form -->
 

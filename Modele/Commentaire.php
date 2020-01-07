@@ -8,7 +8,7 @@ class Commentaire extends Modele
   // Renvoie la liste des commentaires associés à un chapitre
     public function getCommentaires($idChapitre, $status = 1)
     {
-        $sql = 'select COM_ID as id, COM_date as date, COM_author as author, COM_email as email, COM_content as content, COM_chapter_id from comment where COM_chapter_id=? AND COM_status= ?';
+        $sql = 'select id as id, date_com as date, author, email, content, chapter_id from comment where chapter_id=? AND status= ?';
 		    $commentaires = $this->executerRequete($sql, array($idChapitre, $status));
         return $commentaires;
 	}
@@ -16,7 +16,7 @@ class Commentaire extends Modele
 	// Ajoute un commentaire dans la base
 	public function addComment($author, $email, $content, $idChapitre)
 	{
-		$sql = 'insert into comment(COM_author, COM_email, COM_content, COM_chapter_id, COM_status) values(?, ?, ?, ?, ?)';
+		$sql = 'insert into comment(author, email, content, chapter_id, status) values(?, ?, ?, ?, ?)';
 		$this->executerRequete($sql, array($author, $email, $content, $idChapitre, 1));
 		//return $commentaires;
 	}
@@ -24,14 +24,21 @@ class Commentaire extends Modele
 	//signalé un commentaire
 	public function flagComment($COM_ID)
 	{
-		$sql = 'UPDATE comment SET COM_status = "0" WHERE COM_ID = ?';
+		$sql = 'UPDATE comment SET status = "0" WHERE id = ?';
+		$this->executerRequete($sql, array($COM_ID));
+	}
+
+	//autoriser un commentaire signalé
+	public function autoriseCommentaire($COM_ID)
+	{
+		$sql = 'UPDATE comment SET status = "1" WHERE id = ?';
 		$this->executerRequete($sql, array($COM_ID));
 	}
 	
-
+	//recuperation des commentaires signalés pour tableau vueComments
   	public function getAllCommentaires()
   	{
-		$sql = 'select COM_ID, COM_date as date, COM_author as author, COM_email as email, COM_content as content, COM_chapter_id, COM_status from comment where COM_status=0';
+		$sql = 'select id, date_com as date, author, email, content, chapter_id, status from comment where status=0';
 		$commentaires = $this->executerRequete($sql);
 		return $commentaires;
   	}
@@ -39,7 +46,7 @@ class Commentaire extends Modele
     //suppression du commentaire
     public function deleteCommentaire($COM_ID)
     {
-      $sql = 'DELETE FROM comment WHERE COM_ID=?';
+      $sql = 'DELETE FROM comment WHERE id=?';
       $this->executerRequete($sql, array($COM_ID));
     }
 }

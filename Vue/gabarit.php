@@ -75,13 +75,17 @@
                       <a href="index.php?action=contact">Contact</a>
                     </li>
 
-                    <li>
-                        <a href="index.php?action=connexion">Connexion</a>
-                    </li>
+                    <?php if (!isset($_SESSION['user'])) { ?>
+                    <li><a href="index.php?action=connexion">Connexion</a></li>
+                    <?php } ?>
+                    
+                    <?php if (isset($_SESSION['user'])) { ?>
+                    <li><a href="index.php?action=dashboard">Administration</a></li>
+                    
+                    <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                    <?php } ?>
 
                 </ul> <!-- end header__nav -->
-
-                <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
 
             </nav> <!-- end header__nav-wrap -->
 

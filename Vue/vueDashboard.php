@@ -39,7 +39,7 @@
                                         <div class="col-4">
                                           <input type="file" name="url_photo" id="url_photo">
                                         </div>
-                                          <input type="submit" id="form-writting" value="Publier">
+                                          <input type="submit" class="btn--primary" id="form-writting" value="Publier">
                                     </div>
                                     <!--Fin -- Formulaire de redaction d'un chapitre-->
                                 

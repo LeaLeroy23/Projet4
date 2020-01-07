@@ -4,7 +4,6 @@ require_once 'Modele.php';
 
 class Chapitre extends Modele
 {
-
     // Renvoie la liste des chapitres du blog
     public function getChapitres()
     {

@@ -30,14 +30,14 @@
 
                                                 <div class="col-3">
                                                     <form method="POST" action="<?= "index.php?action=edit&id=" . $chapter['id']; ?>">
-                                                        <input type="submit" class="btn-primary" name="editChapter" value="Modifier">
+                                                        <input type="submit" class="btn--primary" name="editChapter" value="Modifier">
                                                     </form>
                                                 </div>
 
                                                 <div class="col-3">
                                                     <form method="POST" action="index.php?action=deleteChapter">
                                                         <input type='hidden' name="id" value='<?= $chapter['id']; ?>'>
-                                                        <input type="submit" class="btn-primary" name="deleteChapter" value="Supprimer">
+                                                        <input type="submit" class="btn--primary" name="deleteChapter" value="Supprimer">
                                                     </form>
                                                 </div>
 
