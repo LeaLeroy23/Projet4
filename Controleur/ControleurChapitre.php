@@ -29,10 +29,10 @@ class ControleurChapitre
          return substr($data, $beginValue, $endValue);
      }
 
-    // Affiche les détails sur un chapitre
+    /**Affiche les détails sur un chapitre*/ 
     public function chapitre($idChapitre)
     {
-        // ajouter un commentaire
+        /**ajouter un commentaire*/ 
         $errors=[];
         $form=[];
 

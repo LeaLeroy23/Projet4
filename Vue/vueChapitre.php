@@ -32,12 +32,6 @@
                   <?= $chapitre['content']; ?>
                 </p>
 
-                <p>
-                <!--<img src="contenu/images/wheel-1000.jpg" srcset="contenu/images/wheel-2000.jpg 2000w, images/wheel-1000.jpg 1000w, images/wheel-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">-->
-                </p>
-
-
-
                 <div class="entry__taxonomies">
                      <!-- end entry__cat -->
 
@@ -65,24 +59,6 @@
             </div> <!-- s-entry__main -->
 
         </article> <!-- end entry/article -->
-
-
-        <!--<div class="s-content__entry-nav">
-            <div class="row s-content__nav">
-                <div class="col-six s-content__prev">
-                    <a href="#0" rel="prev">
-                        <span>Previous Post</span>
-                        The Pomodoro Technique Really Works.
-                    </a>
-                </div>
-                <div class="col-six s-content__next">
-                    <a href="#0" rel="next">
-                        <span>Next Post</span>
-                        3 Benefits of Minimalism In Interior Design.
-                    </a>
-                </div>
-            </div>
-        </div> end s-content__pagenav -->
 
         <div class="comments-wrap">
 

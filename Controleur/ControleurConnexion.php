@@ -15,6 +15,11 @@ class ControleurConnexion
 
     public function login()
     {
+        if (isset($_SESSION['user'])) {
+            header("Location: index.php");
+            exit();
+        }
+
         $errors=[];
         $form=[];
 
@@ -62,6 +67,7 @@ class ControleurConnexion
 
     public function logout(){
         session_destroy();
+        unset($_SESSION);
         header("Location: index.php");
         exit();
     }

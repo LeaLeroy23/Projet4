@@ -12,7 +12,7 @@ class ControleurAccueil
         $this->chapitre = new Chapitre();
     }
 
-    // Affiche la liste de tous les chapitres du blog
+    /**Affiche la liste de tous les chapitres du blog*/ 
     public function accueil()
     {
         $chapitres = $this->chapitre->getChapitresLimit();

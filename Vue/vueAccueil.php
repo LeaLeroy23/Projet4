@@ -16,7 +16,7 @@
 
                             <div class="entry__background">
                             
-                                <img src="<?= './contenu/upload/' . $chapitre['url_photo'];?>"><!--$_SERVER['REMOTE_HOST] 'contenu/upload' $chapitre['url_photo']-->
+                                <img src="<?= './contenu/upload/' . $chapitre['url_photo'];?>">
                             </div>
 
                             <div class="entry__content">

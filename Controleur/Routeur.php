@@ -1,10 +1,9 @@
 <?php
-// require
+/** require */
 require_once 'Controleur/ControleurAccueil.php';
 require_once 'Controleur/ControleurChapitre.php';
 require_once 'Controleur/ControleurConnexion.php';
 require_once 'Controleur/ControleurDashboard.php';
-require_once 'Controleur/ControleurContact.php';
 require_once 'Vue/vue.php';
 
 class Routeur
@@ -13,7 +12,6 @@ class Routeur
     private $ctrlChapitre;
     private $ctrlConnexion;
     private $ctrlDashboard;
-    private $ctrlContact;
 
 
     public function __construct()
@@ -22,10 +20,9 @@ class Routeur
         $this->ctrlChapitre = new ControleurChapitre();
         $this->ctrlConnexion = new ControleurConnexion();
         $this->ctrlDashboard = new ControleurDashboard();
-        $this->ctrlContact = new ControleurContact();
     }
 
-    // Route une requête entrante : exécution l'action associée
+    /**Route une requête entrante : exécution l'action associée*/
     public function routerRequete()
     {
         try {
@@ -43,30 +40,28 @@ class Routeur
                     $this->ctrlChapitre->flagComment();
                 } elseif ($_GET['action'] == 'chapitres') {
                     $this->ctrlChapitre->chapitres();
-                } elseif ($_GET['action'] == 'contact') {
-                    $this->ctrlContact->contact();
                 } elseif ($_GET['action'] == 'connexion') {
                     $this->ctrlConnexion->login();
                 } elseif ($_GET['action'] == 'deconnexion') {
                     $this->ctrlConnexion->logout();
-                }elseif ($_GET['action'] == 'dashboard') {
+                } elseif ($_GET['action'] == 'dashboard') {
                     $this->ctrlDashboard->dashboard();
                 } elseif ($_GET['action'] == 'chapterList') {
                     $this->ctrlDashboard->chapterList();
                 } elseif ($_GET['action'] == 'edit') {
                     $this->ctrlDashboard->edit();
-                }elseif ($_GET['action'] == 'deleteChapter') {
+                } elseif ($_GET['action'] == 'deleteChapter') {
                     $this->ctrlDashboard->deleteChapter();
-                }elseif ($_GET['action'] == 'comments') {
+                } elseif ($_GET['action'] == 'comments') {
                     $this->ctrlDashboard->commentsList();
-                }elseif ($_GET['action'] == 'authorizeComment') {
+                } elseif ($_GET['action'] == 'authorizeComment') {
                     $this->ctrlDashboard->authorizeComment();
-                }elseif ($_GET['action'] == 'deleteComment') {
+                } elseif ($_GET['action'] == 'deleteComment') {
                     $this->ctrlDashboard->deleteComment();
-                }else {
+                } else {
                     throw new Exception("Action non valide");
                 }
-            } else {  // aucune action définie : affichage de l'accueil
+            } else {
                 $this->ctrlAccueil->accueil();
             }
         } catch (Exception $e) {
@@ -75,14 +70,15 @@ class Routeur
     }
 
 
-    // Affiche une erreur
+    /** Affiche une erreur */
+
     private function erreur($msgErreur)
     {
         $vue = new Vue("Erreur");
         $vue->generer(array('msgErreur' => $msgErreur));
     }
 
-    // Recherche un paramètre dans un tableau
+    /** Recherche un paramètre dans un tableau */
     private function getParametre($tableau, $nom)
     {
         if (isset($tableau[$nom])) {

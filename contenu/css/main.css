@@ -3321,7 +3321,15 @@ body.search-is-visible {
   margin-right: 3%;
 }
 
+.form-box{
+  margin-top: 1rem;
+}
+
 #form-writting{
+  width: 100%;
+}
+
+#form-title{
   width: 100%;
 }
 

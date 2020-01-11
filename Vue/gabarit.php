@@ -19,16 +19,9 @@
     <link rel="stylesheet" href="contenu/css/vendor.css">
     <link rel="stylesheet" href="contenu/css/main.css">
     <script src="https://kit.fontawesome.com/8ce6adae27.js" crossorigin="anonymous"></script>
-    <!--<link rel="stylesheet" href="contenu/css/bootstrap.min.css">-->
 
     <!--script TinyMCE-->
-    <script src="https://cdn.tiny.cloud/1/78mkrrxmcpeanii9qztublptgkaurxri8bz5npmreh11moog/tinymce/5/tinymce.min.js" ></script>
-    <script>
-        tinymce.init({
-        selector: 'titre',
-        selector: 'chapitres.tinymce',
-        });
-    </script>
+    <script src="https://cdn.tiny.cloud/1/78mkrrxmcpeanii9qztublptgkaurxri8bz5npmreh11moog/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <!-- script
     ================================================== -->
@@ -36,13 +29,11 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.jpg" type="image/x-icon">
 
 </head>
 
     <body id="top">
-
 
         <!-- header
         ================================================== -->
@@ -76,13 +67,13 @@
                     </li>
 
                     <?php if (!isset($_SESSION['user'])) { ?>
-                    <li><a href="index.php?action=connexion">Connexion</a></li>
+                        <li><a href="index.php?action=connexion">Connexion</a></li>
                     <?php } ?>
                     
                     <?php if (isset($_SESSION['user'])) { ?>
-                    <li><a href="index.php?action=dashboard">Administration</a></li>
+                        <li><a href="index.php?action=dashboard">Administration</a></li>
                     
-                    <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                        <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
                     <?php } ?>
 
                 </ul> <!-- end header__nav -->
@@ -91,10 +82,7 @@
 
         </header> <!-- s-header -->
 
-    
-
         <?= $contenu; ?>
-
 
         <!-- s-footer
         ================================================== -->
@@ -156,13 +144,11 @@
 
         </footer> <!-- end s-footer -->
 
-
-                <!-- Java Script
+                <!-- JavaScript
                 ================================================== -->
                 <script src="contenu/js/jquery-3.2.1.min.js"></script>
                 <script src="contenu/js/plugins.js"></script>
                 <script src="contenu/js/main.js"></script>
-                <script src="https://cdn.tiny.cloud/1/78mkrrxmcpeanii9qztublptgkaurxri8bz5npmreh11moog/tinymce/5/tinymce.min.js"></script>
 
     </body>
 

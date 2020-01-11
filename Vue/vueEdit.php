@@ -3,7 +3,7 @@
 <body id="top">
     <section class="s-content dashboard-section">
         <?php
-        include 'gabaritSidebar.php';
+            include 'gabaritSidebar.php';
         ?>
 
             <div class="col-10 background_area">
@@ -21,7 +21,7 @@
                             <h4 class="title-dashboard"><i class="fas fa-pen"></i>Modification d'un chapitre</h4>
 
                                 <div class="col-12">
-                                    <input type="text" id="form-writting" name="title" placeholder="Titre" value='<?= $chapitre['title'];?>'>
+                                    <input type="text" id="form-title" name="title" placeholder="Titre" value='<?= $chapitre['title'];?>'>
                                     <?php if (isset($errors['message']['title'])) { ?>
                                         <p class="errors">Le titre ne doit pas être vide et doit comporter au maximum 100 caractères </p>
                                     <?php } if (isset($errors['form']['title'])) {?>
@@ -35,8 +35,16 @@
                                         <p class="errors">Le contenu ne doit pas dépasser 2000 caractères</p>
                                     <?php } ?>
 
+                                    <script>
+                                            tinymce.init({
+                                                selector: '#form-writting',
+                                                /*plugins: 'tinydrive',
+                                                toolbar: 'insertfile',
+                                                toolbar_drawer: 'floating',*/
+                                            });
+                                        </script>  
 
-                                    <div class="col-4">
+                                    <div class="col-4 form-box">
                                         <input type="file" name="url_photo" id="url_photo" placeholder="<?= $chapitre['url_photo'];?>">
                                     </div>
 

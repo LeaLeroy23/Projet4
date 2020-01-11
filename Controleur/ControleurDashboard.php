@@ -9,7 +9,7 @@ class ControleurDashboard
     private $chapitre;
     private $commentaire;
 
-    //définition de constante pour l'utilisation dans plusieurs fonciton
+    /**définition de constante pour l'utilisation dans plusieurs fonciton*/
     const MAXSIZE = 5*1024*1024;
 
     public function __construct()
@@ -18,90 +18,86 @@ class ControleurDashboard
         $this->commentaire = new Commentaire();
     }
 
-    // Affiche la liste de tous les chapitres du blog
+    /**
+     * Affiche la liste de tous les chapitres du blog
+     */
     public function dashboard()
     {
         if (!isset($_SESSION['user'])) {
             header("Location: index.php");
             exit();
         }
-
-            $errors=[];
-            $form=[];
-            $maxsize = 5 * 1024 * 1024;
+        $errors=[];
+        $form=[];
+        $maxsize = 5 * 1024 * 1024;
         
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                //le formulaire est posté
-                //je traite les données
-                $title = $_POST['title'];
-                if (empty($title)) {
-                    $errors['message']['title'] = 'Le titre ne doit pas être vide';
-                }
-                if (strlen($title)>100) {
-                    $errors['form']['title'] = 'Le titre ne doit pas être aussi long';
-                } else {
-                    $form['title'] = $title;
-                }
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $title = $_POST['title'];
+            if (empty($title)) {
+                $errors['message']['title'] = 'Le titre ne doit pas être vide';
+            }
+            if (strlen($title)>100) {
+                $errors['form']['title'] = 'Le titre ne doit pas être aussi long';
+            } else {
+                $form['title'] = $title;
+            }
 
-                $content = $_POST['content'];
-                if (empty($content)) {
-                    $errors['message']['content'] = 'Le contenu ne doit pas être vide';
-                } else {
-                    $form['content'] = $content;
-                }
+            $content = $_POST['content'];
+            if (empty($content)) {
+                $errors['message']['content'] = 'Le contenu ne doit pas être vide';
+            } else {
+                $form['content'] = $content;
+            }
             
-                $add_date = $_POST['add_date'];
+            $add_date = $_POST['add_date'];
 
-                //traitement d'un fichier a uplader
-                // Vérifie si le fichier a été uploadé sans erreur.
-                if (isset($_FILES["url_photo"]) && $_FILES["url_photo"]["error"] == 0) {
-                    $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png", "PNG" => "image/PNG");
-                    $filename = $_FILES["url_photo"]["name"];
-                    $filetype = $_FILES["url_photo"]["type"];
-                    $filesize = $_FILES["url_photo"]["size"];
+            /**traitement d'un fichier a uplader*/
+            /** Vérifie si le fichier a été uploadé sans erreur.*/
+            if (isset($_FILES["url_photo"]) && $_FILES["url_photo"]["error"] == 0) {
+                $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png", "PNG" => "image/PNG");
+                $filename = $_FILES["url_photo"]["name"];
+                $filetype = $_FILES["url_photo"]["type"];
+                $filesize = $_FILES["url_photo"]["size"];
 
-                    // Vérifie l'extension du fichier
-                    $ext = pathinfo($filename, PATHINFO_EXTENSION);
-                    if (!array_key_exists($ext, $allowed)) {
-                        echo("Erreur : Veuillez sélectionner un format de fichier valide.");
-                    }
+                /** Vérifie l'extension du fichier*/
+                $ext = pathinfo($filename, PATHINFO_EXTENSION);
+                if (!array_key_exists($ext, $allowed)) {
+                    echo("Erreur : Veuillez sélectionner un format de fichier valide.");
+                }
 
-                    // Vérifie la taille du fichier - 5Mo maximum
-                    if ($filesize > self::MAXSIZE) {
-                        die("Erreur: La taille du fichier est supérieure à la limite autorisée.");
-                    }
+                /** Vérifie la taille du fichier - 5Mo maximum*/
+                if ($filesize > self::MAXSIZE) {
+                    die("Erreur: La taille du fichier est supérieure à la limite autorisée.");
+                }
 
-                    // Vérifie le type MIME du fichier
-                    if (in_array($filetype, $allowed)) {
-                        //verifie si le fichier existe avant de le telecharger
-                    //if(file_exists($_SERVER['REMOTE_HOST'] . DIRECTORY_SEPARATOR . 'upload'. DIRECTORY_SEPARATOR . 'contenu' . DIRECTORY_SEPARATOR))
-                    if (file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])) { //$_SERVER['REMOTE_HOST'] DIRECTORY_SEPARATOR
+                /** Vérifie le type MIME du fichier*/
+                if (in_array($filetype, $allowed)) {
+                    /**verifie si le fichier existe avant de le telecharger*/
+                    if (file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])) {
                         echo $_FILES["url_photo"]["name"] . "existe déjà.";
                     } else {
                         $filename = uniqid() . '.' . $ext;
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  $filename);
-                        //echo "votre fichier a été télécharger avec succès";
                     }
-                        $this->chapitre->addChapter($title, $content, $add_date, $filename);
-                        $form['message']['submit'] = 'Votre chapitre a bien été ajouter';
-                    } else {
-                        echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
-                    }
+                    $this->chapitre->addChapter($title, $content, $add_date, $filename);
+                    $form['message']['submit'] = 'Votre chapitre a bien été ajouter';
+                } else {
+                    echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
                 }
             }
+        }
 
-            // affichage de la vue
-            $chapters = $this->chapitre->getChapitres();
-            $vue = new Vue("Dashboard");
-            $vue->generer(array(
+        /**affichage de la vue*/ 
+        $chapters = $this->chapitre->getChapitres();
+        $vue = new Vue("Dashboard");
+        $vue->generer(array(
             'chapters' => $chapters,
             'errors' => $errors,
             'form' => $form
         ));
-        
     }
 
-    // modifier un chapitre
+    /** modifier un chapitre*/
     public function edit()
     {
         if (!isset($_SESSION['user'])) {
@@ -128,40 +124,38 @@ class ControleurDashboard
 
             $content = $_POST['content'];
             if (empty($content)) {
-                $errors['message']['content'] = 'Be contenu ne doit pas être vide';
+                $errors['message']['content'] = 'Le contenu ne doit pas être vide';
             } else {
                 $form['content'] = $content;
             }
 
-            //traitement d'un fichier a uplader
-            // Vérifie si le fichier a été uploadé sans erreur.
+            /**traitement d'un fichier a uplader*/
+            /** Vérifie si le fichier a été uploadé sans erreur.*/
             if (isset($_FILES["url_photo"]) && $_FILES["url_photo"]["error"] == 0) {
                 $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png", "PNG" => "image/PNG");
                 $filename = $_FILES["url_photo"]["name"];
                 $filetype = $_FILES["url_photo"]["type"];
                 $filesize = $_FILES["url_photo"]["size"];
 
-                // Vérifie l'extension du fichier
+                /** Vérifie l'extension du fichier*/
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
                 if (!array_key_exists($ext, $allowed)) {
                     die("Erreur : Veuillez sélectionner un format de fichier valide.");
                 }
 
-                // Vérifie la taille du fichier - 5Mo maximum
+                /** Vérifie la taille du fichier - 5Mo maximum*/
                 if ($filesize > self::MAXSIZE) {
                     die("Erreur: La taille du fichier est supérieure à la limite autorisée.");
                 }
 
-                // Vérifie le type MIME du fichier
+                /** Vérifie le type MIME du fichier*/
                 if (in_array($filetype, $allowed)) {
-                    //verifie si le fichier existe avant de le telecharger
-                    //if(file_exists($_SERVER['REMOTE_HOST'] . DIRECTORY_SEPARATOR . 'upload'. DIRECTORY_SEPARATOR . 'contenu' . DIRECTORY_SEPARATOR))
-                    if (file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])) { //$_SERVER['REMOTE_HOST'] DIRECTORY_SEPARATOR
+                    /**verifie si le fichier existe avant de le telecharger*/
+                    if (file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])) {
                         echo $_FILES["url_photo"]["name"] . "existe déjà.";
                     } else {
                         $filename = uniqid() . '.' . $ext;
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  $filename);
-                        //echo "votre fichier a été télécharger avec succès";
                     }
                     $this->chapitre->updateChapter($title, $content, $filename, $chapter_id);
                     echo 'Un chapitre a bien été modifié';
@@ -169,10 +163,9 @@ class ControleurDashboard
                     echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
                 }
             }
-
         }
 
-        // affichage de la vue
+        /** affichage de la vue*/
         $chapitre = $this->chapitre->getChapitre($chapter_id);
         $vue = new Vue("Edit");
         $vue->generer([
@@ -182,7 +175,7 @@ class ControleurDashboard
         ]);
     }
 
-    //déclenche la vue de la liste des chapitres
+    /**déclenche la vue de la liste des chapitres*/
     public function chapterList()
     {
         if (!isset($_SESSION['user'])) {
@@ -190,7 +183,7 @@ class ControleurDashboard
             exit();
         }
 
-        // affichage de la vue
+        /** affichage de la vue*/
         $chapters = $this->chapitre->getChapitres();
         $vue = new Vue("ChapterList");
         $vue->generer(array(
@@ -198,22 +191,27 @@ class ControleurDashboard
         ));
     }
 
-    //Suppression d'un chapitre via la vueChapterList
+    /**Suppression d'un chapitre via la vueChapterList*/
     public function deleteChapter()
     {
+        if (!isset($_SESSION['user'])) {
+            header("Location: index.php");
+            exit();
+        }
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['deleteChapter'])) {
                 $idChapitre = $_POST['id'];
-                if ($this->chapitre->getChapitre($idChapitre)){
+                if ($this->chapitre->getChapitre($idChapitre)) {
                     $this->chapitre->deleteChapitre($idChapitre);
-                } 
-            } 
+                }
+            }
         }
         header("Location: index.php?action=chapterList");
         exit;
     }
 
-    // afficher la liste des commentaire signalé dans le vueComments
+    /**afficher la liste des commentaire signalé dans le vueComments*/ 
     public function commentsList()
     {
         if (!isset($_SESSION['user'])) {
@@ -221,7 +219,7 @@ class ControleurDashboard
             exit();
         }
 
-        // affichage de la vue
+        /**affichage de la vue*/ 
         $comments = $this->commentaire->getAllCommentaires();
         $vue = new Vue("Comments");
         $vue->generer(array(
@@ -229,35 +227,44 @@ class ControleurDashboard
         ));
     }
 
-    // autorisation de commentaire signalé via la page vueComments
+    /**autorisation de commentaire signalé via la page vueComments*/ 
     public function authorizeComment()
     {
+        if (!isset($_SESSION['user'])) {
+            header("Location: index.php");
+            exit();
+        }
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['authorizeComment'])) {
                 $COM_ID = $_POST['comment_id'];
-                if ($this->commentaire->getCommentaires($COM_ID)){
+                if ($this->commentaire->getCommentaires($COM_ID)) {
                     $this->commentaire->autoriseCommentaire($COM_ID);
-                } 
-            } 
+                }
+            }
         }
         header("Location: index.php?action=comments");
         exit;
     }
 
-    // suppression de commentaire via la page vueComments
+    /**suppression de commentaire via la page vueComments*/ 
     public function deleteComment()
     {
+        if (!isset($_SESSION['user'])) {
+            header("Location: index.php");
+            exit();
+        }
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['supp'])) {
                 $COM_ID = $_POST['comment_id'];
-                if ($this->commentaire->getCommentaires($COM_ID)){
+                if ($this->commentaire->getCommentaires($COM_ID)) {
                     $this->commentaire->deleteCommentaire($COM_ID);
                     $errors['massage']['supp'] = "Le commentaire de" . $COM_author . "a bien été supprimer";
-                } 
-            } 
+                }
+            }
         }
         header("Location: index.php?action=comments");
         exit;
     }
-
 }
