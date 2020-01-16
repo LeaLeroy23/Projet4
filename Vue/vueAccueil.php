@@ -15,8 +15,12 @@
                         <div class="entry">
 
                             <div class="entry__background">
+                                <?php if (empty($chapitre['url_photo'])){ ?>
+                                    <img src='./contenu/upload/default.jpg'>
+                                <?php } else { ?>
+                                    <img src="<?= './contenu/upload/' . $chapitre['url_photo'];?>">
+                                <?php } ?>
                             
-                                <img src="<?= './contenu/upload/' . $chapitre['url_photo'];?>">
                             </div>
 
                             <div class="entry__content">
@@ -30,7 +34,10 @@
                                     </a>
                                     <ul class="entry__meta">
                                         <li>Jean Forteroche</a></li>
-                                        <li><?= $chapitre['add_date']?></li>
+                                        <?php
+                                        $date = new Datetime($chapitre['add_date']);
+                                        ?>
+                                        <li><?= $date->format('d-m-yy'); ?></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->

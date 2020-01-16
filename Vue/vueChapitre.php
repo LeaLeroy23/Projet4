@@ -7,18 +7,23 @@
 
         <article class="row entry format-standard">
 
-            <div class="entry__media col-full">
+        <?php if (!empty($chapitre['url_photo'])) : ?>
+           <div class="entry__media col-full">
                 <div class="entry__post-thumb">
                     <img src="<?=  './contenu/upload/' . $chapitre['url_photo']; ?>">
                 </div>
             </div>
+        <?php endif; ?>
 
             <div class="entry__header col-full">
                 <h1 class="entry__header-title display-1">
                     <?= $chapitre['title']; ?>
                 </h1>
                 <ul class="entry__header-meta">
-                    <li class="date"><?= $chapitre['add_date']; ?></li>
+                    <?php
+                        $date = new Datetime($chapitre['add_date']);
+                    ?>
+                    <li class="date"><?= $date->format('d-m-yy'); ?></li>
                     <li class="byline">
                         Par
                         <a href="#0">Jean Forteroche</a>
@@ -84,7 +89,11 @@
                                     <div class="comment__author"><?= $commentaire['author']; ?></div>
 
                                     <div class="comment__meta">
-                                        <div class="comment__time"><?= $commentaire['date']; ?></div>
+                                        <?php $date = new Datetime($commentaire['date']);?>
+                                        <div class="comment__time">
+                                            <?= $date->format('d-m-yy'); ?>
+                                        </div>
+                                        
                                         <div class="comment__reply">
                                             <form name="flag" method="POST" action="index.php?action=chapitre&id=<?=$chapitre['id'];?>">
                                                 <input type='hidden' name="comment_id" value='<?= $commentaire['id']; ?>'>

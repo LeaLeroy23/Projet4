@@ -62,10 +62,6 @@
                         <a href="index.php?action=chapitres">Chapitres</a>
                     </li>
 
-                    <li>
-                      <a href="index.php?action=contact">Contact</a>
-                    </li>
-
                     <?php if (!isset($_SESSION['user'])) { ?>
                         <li><a href="index.php?action=connexion">Connexion</a></li>
                     <?php } ?>

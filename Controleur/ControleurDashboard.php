@@ -50,7 +50,12 @@ class ControleurDashboard
             }
             
             $add_date = $_POST['add_date'];
-
+            if (empty($add_date)) {
+                $errors['message']['add_date'] = 'La date ne doit pas être vide';
+            } else {
+                $form['add_date'] = $add_date;
+            }
+            $filename = "";
             /**traitement d'un fichier a uplader*/
             /** Vérifie si le fichier a été uploadé sans erreur.*/
             if (isset($_FILES["url_photo"]) && $_FILES["url_photo"]["error"] == 0) {
@@ -62,7 +67,7 @@ class ControleurDashboard
                 /** Vérifie l'extension du fichier*/
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
                 if (!array_key_exists($ext, $allowed)) {
-                    echo("Erreur : Veuillez sélectionner un format de fichier valide.");
+                    die("Erreur : Veuillez sélectionner un format de fichier valide.");
                 }
 
                 /** Vérifie la taille du fichier - 5Mo maximum*/
@@ -74,17 +79,21 @@ class ControleurDashboard
                 if (in_array($filetype, $allowed)) {
                     /**verifie si le fichier existe avant de le telecharger*/
                     if (file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])) {
-                        echo $_FILES["url_photo"]["name"] . "existe déjà.";
+                        die($_FILES["url_photo"]["name"] . "existe déjà.");
                     } else {
                         $filename = uniqid() . '.' . $ext;
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  $filename);
                     }
-                    $this->chapitre->addChapter($title, $content, $add_date, $filename);
-                    $form['message']['submit'] = 'Votre chapitre a bien été ajouter';
                 } else {
-                    echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
+                    die("Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.");
                 }
             }
+            if (empty($errors)) {
+                $this->chapitre->addChapter($title, $content, $add_date, $filename);
+                header("Location: index.php?action=chapterList");
+            exit();
+            }
+            
         }
 
         /**affichage de la vue*/ 
@@ -152,15 +161,15 @@ class ControleurDashboard
                 if (in_array($filetype, $allowed)) {
                     /**verifie si le fichier existe avant de le telecharger*/
                     if (file_exists("./contenu/upload/" . $_FILES["url_photo"]["name"])) {
-                        echo $_FILES["url_photo"]["name"] . "existe déjà.";
+                        die($_FILES["url_photo"]["name"] . "existe déjà.");
                     } else {
                         $filename = uniqid() . '.' . $ext;
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  $filename);
                     }
                     $this->chapitre->updateChapter($title, $content, $filename, $chapter_id);
-                    echo 'Un chapitre a bien été modifié';
+                    die('Un chapitre a bien été modifié');
                 } else {
-                    echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
+                    die("Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.");
                 }
             }
         }

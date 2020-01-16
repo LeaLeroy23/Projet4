@@ -28,31 +28,29 @@
                                             <?php } if (isset($errors['form']['title'])) {?>
                                                 <p class="errors"><?php $errors['form']['title']; ?></p>
                                             <?php } ?>
-                                        <textarea id="form-writting" name="content" placeholder="Contenu"><?= isset($form['content']) ? $form['content'] : '' ?></textarea>
+                                        <textarea id="form-writting" class="w100" name="content" placeholder="Contenu"><?= isset($form['content']) ? $form['content'] : '' ?></textarea>
                                             <?php if (isset($errors['message']['content'])) { ?>
                                                 <p class="errors"><?= $errors['message']['content']; ?></p>
                                             <?php } if (isset($errors['form']['content'])) {?>
                                                 <p class="errors"><?= $errors['form']['content']; ?></p>
                                             <?php } ?>
 
-                                        <script>
-                                            tinymce.init({
-                                                selector: '#form-writting',
-                                                /*plugins: 'tinydrive',
-                                                toolbar: 'insertfile',
-                                                toolbar_drawer: 'floating',*/
-                                            });
-                                        </script>                                    
+                                                                            
 
                                         <div class="col-4 form-box" >
-                                          <input type="date" name="add_date" id="add-date">
+                                          <input type="date" name="add_date" id="add-date" value='<?= isset($form['add_date']) ? $form['add_date'] : '' ?>'>
+                                          <?php if (isset($errors['message']['add_date'])) { ?>
+                                                <p class="errors"><?= $errors['message']['add_date']; ?></p>
+                                            <?php } if (isset($errors['form']['add_date'])) {?>
+                                                <p class="errors"><?= $errors['form']['add_date']; ?></p>
+                                            <?php } ?>
                                         </div>
 
                                         <div class="col-4 form-box">
                                           <input type="file" name="url_photo" id="url_photo">
                                         </div>
 
-                                          <input type="submit" class="btn--primary" id="form-writting" value="Publier">
+                                          <input type="submit" class="btn--primary w100" value="Publier">
                                     </div>
                                     <!--Fin -- Formulaire de redaction d'un chapitre-->
                                 
@@ -71,4 +69,10 @@
         </div>
 		
     </section>
+    <script>
+                                            tinymce.init({
+                                                selector: '#form-writting',
+                                                
+                                            }); 
+                                        </script>
 </body>
