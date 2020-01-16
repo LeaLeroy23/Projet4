@@ -70,9 +70,9 @@
 		
     </section>
     <script>
-                                            tinymce.init({
-                                                selector: '#form-writting',
+        tinymce.init({
+        selector: '#form-writting',
                                                 
-                                            }); 
-                                        </script>
+        }); 
+    </script>
 </body>

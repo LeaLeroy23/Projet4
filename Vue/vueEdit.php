@@ -28,27 +28,18 @@
                                         <p class="errors">Le titre à une taille supérieur à 100 caractères</p>
                                     <?php } ?>
 
-                                    <textarea id="form-writting" name="content" placeholder="Contenu"><?= $chapitre['content'];?></textarea>
+                                    <textarea id="form-writting" class="w100" name="content" placeholder="Contenu"><?= $chapitre['content'];?></textarea>
                                     <?php if (isset($errors['message']['content'])) { ?>
                                         <p class="errors">Le contenu ne doit pas être vide</p>
                                     <?php } if (isset($errors['form']['content'])) {?>
                                         <p class="errors">Le contenu ne doit pas dépasser 2000 caractères</p>
                                     <?php } ?>
 
-                                    <script>
-                                            tinymce.init({
-                                                selector: '#form-writting',
-                                                /*plugins: 'tinydrive',
-                                                toolbar: 'insertfile',
-                                                toolbar_drawer: 'floating',*/
-                                            });
-                                        </script>  
-
                                     <div class="col-4 form-box">
                                         <input type="file" name="url_photo" id="url_photo" placeholder="<?= $chapitre['url_photo'];?>">
                                     </div>
 
-                                        <input type="submit" id="form-updating" value="mettre à jour">
+                                        <input type="submit" class="w100" value="mettre à jour">
                                 </div>
                                 
                             </form>
@@ -63,5 +54,10 @@
         
         </div>
     </section>
-
+    <script>
+        tinymce.init({
+        selector: '#form-writting',
+                                                
+        }); 
+    </script>
 </body>

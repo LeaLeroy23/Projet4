@@ -166,11 +166,16 @@ class ControleurDashboard
                         $filename = uniqid() . '.' . $ext;
                         move_uploaded_file($_FILES["url_photo"]["tmp_name"], "./contenu/upload/" .  $filename);
                     }
-                    $this->chapitre->updateChapter($title, $content, $filename, $chapter_id);
+                    //$this->chapitre->updateChapter($title, $content, $filename, $chapter_id);
                     die('Un chapitre a bien été modifié');
                 } else {
                     die("Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.");
                 }
+            }
+            if (empty($errors)) {
+                $this->chapitre->updateChapter($title, $content, $filename, $chapter_id);
+                header("Location: index.php?action=chapterList");
+            exit();
             }
         }
 
