@@ -27,7 +27,7 @@ class ControleurConnexion
             $email = $_POST['email'];
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors['message']['email'] = "votre email n'est pas au bon format";
-            }else {
+            } else {
                 $form['email'] = $email;
             }
 
