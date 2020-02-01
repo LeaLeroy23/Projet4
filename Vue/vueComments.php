@@ -39,7 +39,7 @@
                                          
                                         <div class="crud-block">
                                                 <div class="col-2 table-comment">
-                                                    <p class="comment_list">Chapitre <?= $comment['COM_chapter_id'];?></p>
+                                                    <p class="comment_list">Chapitre <?= $comment['chapter_id'];?></p>
                                                 </div>
 
                                                 <div class="col-2 table-comment">
@@ -52,14 +52,14 @@
 
                                                 <div class="col-2 table-comment">
                                                     <form method="POST" action="index.php?action=authorizeComment">
-                                                        <input type='hidden' name="comment_id" value='<?= $comment['COM_ID']; ?>'>
+                                                        <input type='hidden' name="comment_id" value='<?= $comment['id']; ?>'>
                                                         <input type="submit" class="btn--primary" value="Autoriser" name="authorizeComment">
                                                     </form>
                                                 </div>
 
                                                 <div class="col-2 table-comment">
                                                     <form method="POST" action="index.php?action=deleteComment">
-                                                        <input type='hidden' name="comment_id" value='<?= $comment['COM_ID']; ?>'>
+                                                        <input type='hidden' name="comment_id" value='<?= $comment['id']; ?>'>
                                                         <input type="submit" class="btn--primary" value="Supprimer" name="supp">
                                                         <?php if (isset($errors['message']['supp'])) {?>
                                                             <p class="success"><?=$errors['message']['supp'];?>
